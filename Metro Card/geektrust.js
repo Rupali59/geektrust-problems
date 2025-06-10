@@ -1,33 +1,38 @@
 const fs = require("fs");
-const reader = require("readline");
+const readline = require("readline");
 const filename = process.argv[2];
-const command_parser = require("./command_parser");
+const command_parser = require("./commands/command_parser");
+const errors = require("./errors");
 
 if (!filename) {
-    console.error("❌ Error: No input file specified.");
+    console.error(errors.NO_INPUT);
     process.exit(1);
 }
 
 // Check if file exists before proceeding
 if (!fs.existsSync(filename)) {
-    console.error(`❌ Error: File "${filename}" does not exist.`);
+    console.error(`${errors.FILE_DNE} "${filename}"`);
     process.exit(1);
 }
 
 try {
-    lineReader = reader.createInterface({
+    const lineReader = readline.createInterface({
         input: fs.createReadStream(filename),
+        crlfDelay: Infinity, // good for cross-platform compatibility
     });
 
-        lineReader.on("line", function(line) {
-            console.log("Parsing:", line);
-            command_parser.parseCommand(line)
-        });
+    lineReader.on("line", (line) => {
+        command_parser.parseCommand(line);
+    });
 
-    lineReader.on("close", function() {
-        console.log("all done, son");
+    lineReader.on("error", (err) => {
+        console.error(errors.READFILE_ERROR, err.message);
+    });
+
+    lineReader.on("close", () => {
+        // Optional: something like console.log("Processing complete.");
     });
 } catch (e) {
-    console.error(`❌ Error: File reading encountered error: "${e}"`);
+    console.error(`${errors.READFILE_ERROR} "${e}"`);
     process.exit(1);
 }
