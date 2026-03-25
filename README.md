@@ -49,6 +49,8 @@ Structured copy (JSON): **[`data/geektrust/portfolio-badges.json`](data/geektrus
 
 **Definitions index (links to JSON):** [`problems/README.md`](problems/README.md) · **Portfolio notes:** [`PORTFOLIO.md`](PORTFOLIO.md) · **Repo layout:** [`docs/REPO-LAYOUT.md`](docs/REPO-LAYOUT.md)
 
+**Generate / refresh challenge scaffolds** from [`data/geektrust/problems/`](data/geektrust/problems/): `node scripts/scaffold-geektrust-challenges.mjs` (see [`problems/README.md`](problems/README.md) for flags).
+
 **How to run / input file format:** each challenge folder’s **README** follows Geektrust’s guidelines (`metro-card/`, `power-of-g-man/`, `geekdemy-node/`, etc.).
 
 ---

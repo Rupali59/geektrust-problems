@@ -1,0 +1,6 @@
+OFFERING-JAVA-JAMES 
+
+INPUT_DATA_ERROR 
+(because of missing instructor and course-offering-date) 
+
+OFFERING-KUBERNETES-WOODY

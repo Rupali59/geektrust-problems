@@ -1,0 +1,10 @@
+REG-COURSE-ANDY-JAVA ACCEPTED 
+
+
+REG-COURSE-WOO-JAVA ACCEPTED 
+
+COURSE_FULL_ERROR 
+(because max limit of java course=2) 
+
+INPUT_DATA_ERROR 
+(because email and  course-offering-id missing)

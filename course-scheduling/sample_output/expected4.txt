@@ -1,0 +1,2 @@
+REG-COURSE-ANDY-JAVA CANCEL_REJECTED
+(because ALLOT course-offering is already run)
