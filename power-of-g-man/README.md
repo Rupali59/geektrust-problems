@@ -1,3 +1,63 @@
+# Power of G-Man
+
+**Official challenge:** [Power of G-Man on Geektrust](https://www.geektrust.com/candidates/coding/detailed/power-of-g-man)
+
+## Problem statement
+
+G-Man is a video game character who must move from a **source** cell to a **destination** cell on a **6 × 6** grid. There can be many paths; G-Man must reach the destination using the **least total power**.
+
+### Position
+
+- Position is **x**, **y** on the grid.
+- **Direction** is one of **N**, **E**, **S**, **W** (compass).
+- Example: `2 1 N` means x = 2, y = 1, facing North.
+
+### Power rules
+
+G-Man starts with **200** power. Each action costs power:
+
+| Action | Cost |
+|--------|------|
+| **90° turn** (left or right, one step) | **5** per turn |
+| **Move** 1 grid point forward | **10** per step |
+
+Examples (from the problem spec):
+
+- From `2 1 E` to `4 1`: 2 grid steps → **20** power.
+- From `2 1 S` to `4 5`: 2 turns + 6 grid steps → **70** power (2×5 + 6×10).
+
+### Goal
+
+From the given **source** (coordinates + facing) and **destination** (coordinates), compute the **minimum power** used along any valid path (turns + moves). Print **remaining** power: `200 − power_spent`.
+
+**Output format:** `POWER <integer>`
+
+### Assumptions
+
+- Grid is **6 × 6**; coordinates stay within the valid range given in the challenge (commonly **0–6**).
+- Direction is always **N**, **E**, **S**, or **W**.
+- Destination is reachable on the grid.
+- Only **destination coordinates** matter; **final facing at the destination does not** matter.
+
+### Input / output (typical)
+
+Your program reads a text file path from the command line. Lines are usually shaped like:
+
+```
+SOURCE <x> <y> <DIRECTION>
+DESTINATION <x> <y>
+```
+
+Example:
+
+| Input | Output |
+|-------|--------|
+| `SOURCE 2 1 E`<br>`DESTINATION 4 3` | `POWER 155` |
+
+Use `sample_input/input1.txt` and `sample_input/input2.txt` with the exact format required when you submit.
+
+---
+
 # Pre-requisites
 * NodeJS 12.6.0/14.15.4/16.10.0
 * npm

@@ -1,8 +1,12 @@
-# Metro Card #
-A new metro train has been launched from the Central station to the Airport. It is a non-stop train, which means the train will stop only at the Airport with no intermediate stops. 
-It is also possible to return from the Airport back to the Central station. This is also a non-stop journey.
- 
-## MetroCard ##
+# Metro Card
+
+**Official challenge:** [Metro Card on Geektrust](https://www.geektrust.com/candidates/coding/detailed/metro-card)
+
+## Problem statement
+
+A new metro train has been launched from the **Central** station to the **Airport**. It is a **non-stop** train: it stops only at the Airport with no intermediate stops. Passengers can also return from the **Airport** to **Central**, again non-stop.
+
+## MetroCard
  Metro authority prefers money to be collected via MetroCard. MetroCard is an electronic payment utility that can be used to pay for the metro travel charges. The MetroCard is like a wallet loaded with money. Each person traveling in this metro must carry a MetroCard and each card will have a unique number. 
  
  To travel by this train, one needs a MetroCard. If the MetroCard doesn’t have sufficient balance, then the remaining cost for the travel needs to be paid by recharging the MetroCard. This auto recharge loads only the required amount of money for the journey and the station collects a 2% service fee for the transaction. 
