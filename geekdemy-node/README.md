@@ -1,3 +1,11 @@
+# Geekdemy
+
+**Official challenge:** [Geekdemy on Geektrust](https://www.geektrust.com/candidates/coding/detailed/geekdemy)
+
+**Geektrust catalog:** Set **17** · Problem code **`BD-PS17-1`** · `urlName`: `geekdemy` · BACKEND · *“Generate the bill of purchases from Geekdemy”* (wording per API).
+
+---
+
 # Pre-requisites
 * NodeJS 12.6.0/14.15.4/16.10.0
 * npm

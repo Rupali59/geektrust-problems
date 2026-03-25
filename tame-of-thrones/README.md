@@ -2,7 +2,9 @@
 
 **Official challenge:** [Tame of Thrones on Geektrust](https://www.geektrust.com/candidates/coding/detailed/tame-of-thrones)
 
-This folder is for the **Tame of Thrones** backend coding challenge (two problems: **A Golden Crown** and **Breaker of Chains**). Text below matches the published Geektrust problem set (e.g. [problem PDF / Set 5](https://www.geektrust.com/api/pdf/open/PS5)).
+**Geektrust catalog:** Set **5** · Problem code **`BD-PS5-1`** · listed name *“Set 5 - A Golden Crown”* · BACKEND. Problem 2 (*Breaker of Chains*) is bundled with the same Southeros storyline; full spec is in the [Set 5 PDF](https://www.geektrust.com/api/pdf/open/PS5).
+
+This folder holds the **Tame of Thrones** material (**A Golden Crown** + **Breaker of Chains**). Narrative and rules below follow that PDF.
 
 ---
 

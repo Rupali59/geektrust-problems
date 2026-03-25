@@ -2,6 +2,8 @@
 
 **Official challenge:** [Power of G-Man on Geektrust](https://www.geektrust.com/candidates/coding/detailed/power-of-g-man)
 
+**Geektrust catalog:** Set **16** · Problem code **`BD-PS16-1`** · `urlName`: `power-of-g-man` · BACKEND · *“Find the remaining power G-Man has after taking the shortest path”* (wording per API).
+
 ## Problem statement
 
 G-Man is a video game character who must move from a **source** cell to a **destination** cell on a **6 × 6** grid. There can be many paths; G-Man must reach the destination using the **least total power**.

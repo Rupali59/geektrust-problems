@@ -2,6 +2,8 @@
 
 **Official challenge:** [Metro Card on Geektrust](https://www.geektrust.com/candidates/coding/detailed/metro-card)
 
+**Geektrust catalog:** Set **20** · Problem code **`BD-PS20-1`** · `urlName`: `metro-card` · BACKEND · *“Calculate the total charge's incurred for each person travelling in metro train”* (wording per API).
+
 ## Problem statement
 
 A new metro train has been launched from the **Central** station to the **Airport**. It is a **non-stop** train: it stops only at the Airport with no intermediate stops. Passengers can also return from the **Airport** to **Central**, again non-stop.
