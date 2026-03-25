@@ -4,6 +4,24 @@
 
 **Geektrust catalog:** Set **16** · Problem code **`BD-PS16-1`** · `urlName`: `power-of-g-man` · BACKEND · *“Find the remaining power G-Man has after taking the shortest path”* (wording per API).
 
+## Status
+
+**In progress** — Geektrust template only; core logic in `geektrust.js` not implemented yet.
+
+## Repository layout
+
+```
+power-of-g-man/
+├── geektrust.js          # Entry (implement me)
+├── test.js
+├── sample_input/
+├── run.sh / run.bat
+├── package.json
+└── README.md
+```
+
+**One-line definition:** [problems/README.md](../problems/README.md#power-of-g-man)
+
 ## Problem statement
 
 G-Man is a video game character who must move from a **source** cell to a **destination** cell on a **6 × 6** grid. There can be many paths; G-Man must reach the destination using the **least total power**.

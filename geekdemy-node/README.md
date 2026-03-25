@@ -4,6 +4,24 @@
 
 **Geektrust catalog:** Set **17** · Problem code **`BD-PS17-1`** · `urlName`: `geekdemy` · BACKEND · *“Generate the bill of purchases from Geekdemy”* (wording per API).
 
+## Status
+
+**In progress** — Geektrust template only; billing logic not implemented yet.
+
+## Repository layout
+
+```
+geekdemy-node/
+├── geektrust.js          # Entry (implement me)
+├── test.js
+├── sample_input/
+├── run.sh / run.bat
+├── package.json
+└── README.md
+```
+
+**One-line definition:** [problems/README.md](../problems/README.md#geekdemy)
+
 ---
 
 # Pre-requisites

@@ -4,6 +4,39 @@
 
 **Geektrust catalog:** Set **20** · Problem code **`BD-PS20-1`** · `urlName`: `metro-card` · BACKEND · *“Calculate the total charge's incurred for each person travelling in metro train”* (wording per API).
 
+## Submission status (portfolio)
+
+| | |
+|---|---|
+| **Status** | Submitted & evaluated on Geektrust |
+| **Code quality score** | **95.8** / 100 |
+| **Membership** | **GOLD** |
+| **Stack** | Node.js (evaluation noted **v16.10.0**) |
+| **Unit tests** | **10** passing · coverage reported **~75%** |
+| **Badges earned** | Build · Tests · Correctness · Readability · Maintainability |
+| **Not earned (yet)** | Functional / OO Modelling |
+
+Evaluation also noted **magic numbers** (readability sub-criterion)—e.g. consider named constants in `commands/command_parser.js`.
+
+## Solution layout (this folder)
+
+```
+metro-card/
+├── geektrust.js              # CLI entry — stream input file, dispatch lines
+├── commands/
+│   └── command_parser.js     # BALANCE / CHECK_IN / PRINT_SUMMARY
+├── core/
+│   ├── metro_card.js         # Balances, recharge, 2% service fee
+│   ├── ticket_handler.js     # BALANCE handling
+│   └── travel_handler.js     # CHECK_IN, fares, return discount, summaries
+├── errors.js                 # Error messages
+├── test/                     # Mocha
+├── sample_input/
+├── run.sh / run.bat
+├── package.json
+└── README.md
+```
+
 ## Problem statement
 
 A new metro train has been launched from the **Central** station to the **Airport**. It is a **non-stop** train: it stops only at the Airport with no intermediate stops. Passengers can also return from the **Airport** to **Central**, again non-stop.

@@ -6,6 +6,22 @@
 
 This folder holds the **Tame of Thrones** material (**A Golden Crown** + **Breaker of Chains**). Narrative and rules below follow that PDF.
 
+## Status
+
+**Specification + assets** — problem definitions and a local copy of the *Breaker of Chains* message list. No Node `package.json` / submission app in this folder yet.
+
+## Repository layout
+
+```
+tame-of-thrones/
+├── README.md                    # This file — full problem write-up
+├── resources/
+│   └── boc-messages.txt         # Message pool for Problem 2
+└── (add geektrust.js + package when you implement)
+```
+
+**One-line definition:** [problems/README.md](../problems/README.md#tame-of-thrones)
+
 ---
 
 ## Getting started (Geektrust expectations)
@@ -93,7 +109,7 @@ Each ballot entry should include:
 
 ## Reference in this repo
 
-- `Problem2/boc-messages.txt` — message list / input artefact for Breaker of Chains (if you use it as your source of random messages).
+- `resources/boc-messages.txt` — message list for *Breaker of Chains* (local copy of the official pool / gist).
 
 ## Help
 
