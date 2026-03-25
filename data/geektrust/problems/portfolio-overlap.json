@@ -1,0 +1,145 @@
+{
+  "default": {
+    "slug": "portfolio-overlap",
+    "problemId": "BD-PS10-1"
+  },
+  "slug": "portfolio-overlap",
+  "problemId": "BD-PS10-1",
+  "problemStatement": {
+    "contentSections": [
+      {
+        "isStatement": true,
+        "hasHeading": false,
+        "statement": "You work at MyFund&Stocks, a platform that lets investors track their investments in equity mutual funds."
+      },
+      {
+        "isStatement": true,
+        "hasHeading": false,
+        "statement": "Equity mutual funds are a collection of individual stocks. Fund overlap is the term used to quantify the percentage of common stocks between different mutual funds. Investors prefer to have funds with as low an overlap as possible, since investing in different mutual funds with a high overlap will not give the benefits of diversification."
+      },
+      {
+        "isStatement": true,
+        "hasHeading": false,
+        "hasHTMLContent": true,
+        "statement": "Available mutual funds and their respective stocks are mentioned <a href=\"https://geektrust.s3.ap-southeast-1.amazonaws.com/portfolio-overlap/stock_data.json\" target=\"_blank\">here.</a>"
+      },
+      {
+        "isStatement": true,
+        "hasHeading": true,
+        "heading": "Portfolio Overlap",
+        "statement": "Overlap is defined as a measure of the commonality between portfolios."
+      },
+      {
+        "isStatement": true,
+        "hasHeading": false,
+        "statement": "Suppose there are 2 funds A & B. The overlap between them is given as the number of stocks in common, counting both portfolio A and B( (i.e. double counting the common elements) divided by the total number of elements in portfolio A and portfolio B."
+      },
+      {
+        "isStatement": true,
+        "hasHeading": true,
+        "heading": "Overlap (A,B) =",
+        "statement": "2*(No of common stocks in A & B)/ (No of stocks in A + No of stocks in B) * 100"
+      },
+      {
+        "isStatement": true,
+        "hasOrderedList": true,
+        "statement": "Your program should take as input:",
+        "orderedList": [
+          "Name of current funds the user holds in his/her portfolio.",
+          "New funds to be added.",
+          "Stock to be added for existing fund."
+        ]
+      },
+      {
+        "isStatement": true,
+        "hasOrderedList": true,
+        "statement": "The output should be",
+        "orderedList": [
+          "Overlapping stocks of the new fund with the current funds.",
+          "If a given fund name is not present while calculating overlap or adding stocks to existing fund, the output should be FUND_NOT_FOUND."
+        ]
+      },
+      {
+        "isStatement": true,
+        "hasHeading": true,
+        "heading": "Input Commands",
+        "statement": "There are 4 input commands defined to separate out the actions. Your input format will start with either of these commands i.e CURRENT_PORTFOLIO, CALCULATE_OVERLAP, OVERLAP_PERCENTAGE, ADD_STOCK",
+        "hasSubStatements": true,
+        "subStatements": [
+          {
+            "subStatementHeading": "CURRENT_PORTFOLIO",
+            "subStatementHasHeading": true,
+            "subStatement": "The CURRENT_PORTFOLIO command receives the current funds that the user holds in his/her portfolio.",
+            "subStatementExamples": "Format - CURRENT_PORTFOLIO FUND_NAME_1 FUND_NAME_2\n\nExample- CURRENT_PORTFOLIO AXIS_BLUECHIP ICICI_PRU_BLUECHIP means that the current fund that the user holds in his/her portfolio are AXIS_BLUECHIP and ICICI_PRU_BLUECHIP"
+          },
+          {
+            "subStatementHeading": "CALCULATE_OVERLAP",
+            "subStatementHasHeading": true,
+            "subStatement": "The CALCULATE_OVERLAP command receives the fund name and calculates the overlap between that fund with each fund in the current portfolio.",
+            "subStatementExamples": "Format - CALCULATE_OVERLAP FUND_NAME\n\nExample - CALCULATE_OVERLAP AXIS_BLUECHIP means calculate the percentage of overlapping stocks of AXIS_BLUECHIP with each fund that the user holds in his/her current portfolio."
+          },
+          {
+            "subStatementHeading": "ADD_STOCK",
+            "subStatementHasHeading": true,
+            "subStatement": "The ADD_STOCK command receives the fund name to which the new stock will be added and the name of the new stock.",
+            "subStatementExamples": "Format - ADD_STOCK FUND_NAME STOCK_NAME\n\nExample - ADD_STOCK AXIS_BLUECHIP HDFC BANK LIMITED means we have to add the stock HDFC BANK LIMITED to AXIS_BLUECHIP fund."
+          }
+        ]
+      },
+      {
+        "isStatement": true,
+        "hasOrderedList": true,
+        "hasHeading": true,
+        "heading": "Assumptions",
+        "statement": null,
+        "orderedList": [
+          "All the input funds will be those that are present in the available funds json provided.",
+          "The overlap percentages will be rounded to 2 decimal points",
+          "The stocks names can have spaces in between, for eg: HDFC BANK LIMITED"
+        ]
+      }
+    ]
+  },
+  "sampleInputOutput": {
+    "sampleSections": [
+      {
+        "sectionId": 1,
+        "hasHeading": true,
+        "heading": "SAMPLE INPUT-OUTPUT 1",
+        "content": [
+          {
+            "sectionHeading": "INPUT:",
+            "isText": true,
+            "hasHeading": true,
+            "textContent": "CURRENT_PORTFOLIO AXIS_BLUECHIP ICICI_PRU_BLUECHIP UTI_NIFTY_INDEX\nCALCULATE_OVERLAP MIRAE_ASSET_EMERGING_BLUECHIP\nCALCULATE_OVERLAP MIRAE_ASSET_LARGE_CAP\nADD_STOCK AXIS_BLUECHIP TCS\nCALCULATE_OVERLAP MIRAE_ASSET_EMERGING_BLUECHIP"
+          },
+          {
+            "sectionHeading": "OUTPUT:",
+            "isText": true,
+            "hasHeading": true,
+            "textContent": "MIRAE_ASSET_EMERGING_BLUECHIP AXIS_BLUECHIP 39.13%\nMIRAE_ASSET_EMERGING_BLUECHIP ICICI_PRU_BLUECHIP 38.10%\nMIRAE_ASSET_EMERGING_BLUECHIP UTI_NIFTY_INDEX 65.52%\nMIRAE_ASSET_LARGE_CAP AXIS_BLUECHIP 43.75%\nMIRAE_ASSET_LARGE_CAP ICICI_PRU_BLUECHIP 44.62%\nMIRAE_ASSET_LARGE_CAP UTI_NIFTY_INDEX 95.00%\nMIRAE_ASSET_EMERGING_BLUECHIP AXIS_BLUECHIP 38.71%\nMIRAE_ASSET_EMERGING_BLUECHIP ICICI_PRU_BLUECHIP 38.10%\nMIRAE_ASSET_EMERGING_BLUECHIP UTI_NIFTY_INDEX 65.52%"
+          }
+        ]
+      },
+      {
+        "sectionId": 2,
+        "hasHeading": true,
+        "heading": "SAMPLE INPUT-OUTPUT 2",
+        "content": [
+          {
+            "sectionHeading": "INPUT:",
+            "isText": true,
+            "hasHeading": true,
+            "textContent": "CURRENT_PORTFOLIO UTI_NIFTY_INDEX AXIS_MIDCAP PARAG_PARIKH_FLEXI_CAP\nCALCULATE_OVERLAP ICICI_PRU_NIFTY_NEXT_50_INDEX\nCALCULATE_OVERLAP NIPPON_INDIA_PHARMA_FUND\nADD_STOCK PARAG_PARIKH_FLEXI_CAP NOCIL\nADD_STOCK AXIS_MIDCAP NOCIL\nCALCULATE_OVERLAP ICICI_PRU_NIFTY_NEXT_50_INDEX"
+          },
+          {
+            "sectionHeading": "OUTPUT:",
+            "isText": true,
+            "hasHeading": true,
+            "textContent": "ICICI_PRU_NIFTY_NEXT_50_INDEX UTI_NIFTY_INDEX 20.37%\nICICI_PRU_NIFTY_NEXT_50_INDEX AXIS_MIDCAP 14.81%\nICICI_PRU_NIFTY_NEXT_50_INDEX PARAG_PARIKH_FLEXI_CAP 7.41%\nFUND_NOT_FOUND\nICICI_PRU_NIFTY_NEXT_50_INDEX UTI_NIFTY_INDEX 20.37%\nICICI_PRU_NIFTY_NEXT_50_INDEX AXIS_MIDCAP 14.68%\nICICI_PRU_NIFTY_NEXT_50_INDEX PARAG_PARIKH_FLEXI_CAP 7.32%"
+          }
+        ]
+      }
+    ]
+  }
+}

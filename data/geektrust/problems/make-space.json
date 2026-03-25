@@ -1,0 +1,322 @@
+{
+  "default": {
+    "slug": "make-space",
+    "problemId": "BD-PS9-1"
+  },
+  "slug": "make-space",
+  "problemId": "BD-PS9-1",
+  "problemStatement": {
+    "contentSections": [
+      {
+        "isStatement": true,
+        "hasHeading": false,
+        "statement": "Make Space Ltd. is a startup offering a co-working space to individuals, freelancers and startups. They provide a common workspace where anyone can come and work. Along with it, they have dedicated meeting rooms that their customers can book for private discussions."
+      },
+      {
+        "isStatement": true,
+        "hasHeading": false,
+        "statement": "They are looking for a scheduling system to effectively schedule meetings. Can you build such a system for Make Space Ltd.?"
+      },
+      {
+        "isStatement": true,
+        "hasHeading": false,
+        "statement": "Make Space Ltd. currently has 3 meeting rooms with varying capacity"
+      },
+      {
+        "isTable": true,
+        "hasTableHeading": false,
+        "tableData": [
+          {
+            "isHeaderRow": true,
+            "data": {
+              "name": "Name",
+              "capacity": "Person Capacity"
+            }
+          },
+          {
+            "isDataRow": true,
+            "data": {
+              "name": "C-Cave",
+              "capacity": "3 people"
+            }
+          },
+          {
+            "isDataRow": true,
+            "data": {
+              "name": "D-Tower",
+              "capacity": "7 People"
+            }
+          },
+          {
+            "isDataRow": true,
+            "data": {
+              "name": "G-Mansion",
+              "capacity": "20 People"
+            }
+          }
+        ]
+      },
+      {
+        "isStatement": true,
+        "hasHeading": true,
+        "heading": "Person Capacity :",
+        "statement": "Maximum number of people the meeting room can accommodate."
+      },
+      {
+        "isStatement": true,
+        "hasHeading": true,
+        "heading": "Buffer Time :",
+        "statement": "Buffer time is the time used to clean up the meeting room. It happens at fixed times from 09:00 - 09:15, 13:15 - 13:45 and 18:45 - 19:00. During this time, no meeting rooms will be available to book."
+      },
+      {
+        "isStatement": true,
+        "hasOrderedList": true,
+        "statement": "Rules",
+        "orderedList": [
+          "Bookings can be made only in a single day from 00:00 to night 23:45. It cannot overlap across days. So you cannot book from 23:00 to 01:00, but can from 23:00 to 23:45.",
+          "A booking can be started and ended only in 15 minute intervals, i.e. XX:00, XX:15, XX:30, XX:45. This means a booking can be made at 01:15 or 16:00 but not 15:35 or 16:03.",
+          "The rooms will be allocated only to those who book them, on a first come first serve basis.",
+          "The most optimal room which can accommodate the number of people will be allocated. For eg., if you asked for a 4 person capacity requirement then the D-Tower (7 person capacity) will be allocated, provided it is available.",
+          "In case if the room of desired capacity is not available, the next available capacity room will be allocated. For eg., If you asked for the 4 person capacity room between 12:00 to 13:00 and the D-Tower is not available then the G-Mansion will be allocated, provided it is available.",
+          "No meetings can be scheduled during the buffer time. If the booking time overlaps with the buffer time NO_VACANT_ROOM should be printed.",
+          "Bookings can be only made for 2 or more people and upto a maximum of 20 people. If the person capacity for booking is outside of 2-20 range NO_VACANT_ROOM should be printed.",
+          "Time input should follow HH:MM format (24 hours format). If an incorrect time input is provided then INCORRECT_INPUT should be printed."
+        ]
+      },
+      {
+        "isStatement": true,
+        "hasOrderedList": true,
+        "statement": "Input Constraints",
+        "orderedList": [
+          "Time will be in HH:MM (24 hours) format.",
+          "Time input should always consider the 15 minute time interval",
+          "For all the time inputs end_time > start_time"
+        ]
+      },
+      {
+        "isStatement": true,
+        "hasHeading": true,
+        "heading": "Input Details",
+        "statement": "The system will take two types of inputs:",
+        "hasSubStatements": true,
+        "subStatements": [
+          {
+            "subStatementHeading": "Book Meeting Room",
+            "subStatementHasHeading": true,
+            "subStatement": "As a co-working space customer, I shall schedule a meeting by giving a time period and capacity requirement.",
+            "subStatementExamples": "Format - BOOK <start_time(inclusive)> <end_time(exclusive)> <person_capacity>\nExample - BOOK 14:15 16:00 12\nPossible Output:\n“<Meeting_Room_Name>” - If the booking is successful\n“NO_VACANT_ROOM” - If no room is vacant during the requested time period."
+          },
+          {
+            "subStatementHeading": "View available meeting rooms",
+            "subStatementHasHeading": true,
+            "subStatement": "As a co-working space customer, I would like to view a list of available meeting rooms by giving a time period. This should print the rooms in the ascending order of the room capacity. The rooms printed should be separated by a single space character.",
+            "subStatementExamples": "Format - VACANCY <start_time(inclusive)> <end_time(exclusive)>\nExample - VACANCY 14:30 15:00\nOutput: C-Cave G-Mansion"
+          }
+        ]
+      }
+    ]
+  },
+  "sampleInputOutput": {
+    "sampleSections": [
+      {
+        "sectionId": 1,
+        "content": [
+          {
+            "sectionHeading": "SAMPLE INPUT-OUTPUT 1",
+            "isTable": true,
+            "hasHeading": true,
+            "tableData": [
+              {
+                "isHeaderRow": true,
+                "data": {
+                  "input": "INPUT",
+                  "output": "OUTPUT"
+                }
+              },
+              {
+                "isDataRow": true,
+                "data": {
+                  "input": "VACANCY 10:00 12:00",
+                  "output": "C-Cave D-Tower G-Mansion"
+                }
+              },
+              {
+                "isDataRow": true,
+                "data": {
+                  "input": "BOOK 11:00 11:45 2",
+                  "output": "C-Cave"
+                }
+              },
+              {
+                "isDataRow": true,
+                "data": {
+                  "input": "BOOK 11:30 13:00 35",
+                  "output": "NO_VACANT_ROOM"
+                }
+              },
+              {
+                "isDataRow": true,
+                "data": {
+                  "input": "BOOK 11:30 13:00 15",
+                  "output": "G-Mansion"
+                }
+              },
+              {
+                "isDataRow": true,
+                "data": {
+                  "input": "VACANCY 11:30 12:00",
+                  "output": "D-Tower"
+                }
+              },
+              {
+                "isDataRow": true,
+                "data": {
+                  "input": "BOOK 14:00 15:30 3",
+                  "output": "C-Cave"
+                }
+              },
+              {
+                "isDataRow": true,
+                "data": {
+                  "input": "BOOK 15:00 16:30 2",
+                  "output": "D-Tower"
+                }
+              },
+              {
+                "isDataRow": true,
+                "data": {
+                  "input": "BOOK 15:15 12:15 12",
+                  "output": "INCORRECT_INPUT"
+                }
+              },
+              {
+                "isDataRow": true,
+                "data": {
+                  "input": "BOOK 15:30 16:30 2",
+                  "output": "C-Cave"
+                }
+              },
+              {
+                "isDataRow": true,
+                "data": {
+                  "input": "VACANCY 15:45 16:00",
+                  "output": "G-Mansion"
+                }
+              },
+              {
+                "isDataRow": true,
+                "data": {
+                  "input": "BOOK 16:00 17:00 5",
+                  "output": "G-Mansion"
+                }
+              },
+              {
+                "isDataRow": true,
+                "data": {
+                  "input": "VACANCY 18:00 19:00",
+                  "output": "NO_VACANT_ROOM"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "sectionId": 2,
+        "content": [
+          {
+            "sectionHeading": "SAMPLE INPUT-OUTPUT 1",
+            "isTable": true,
+            "hasHeading": true,
+            "tableData": [
+              {
+                "isHeaderRow": true,
+                "data": {
+                  "input": "Input",
+                  "output": "Output"
+                }
+              },
+              {
+                "isDataRow": true,
+                "data": {
+                  "input": "BOOK 09:30 13:15 2",
+                  "output": "C-Cave"
+                }
+              },
+              {
+                "isDataRow": true,
+                "data": {
+                  "input": "BOOK 13:45 18:45 2",
+                  "output": "C-Cave"
+                }
+              },
+              {
+                "isDataRow": true,
+                "data": {
+                  "input": "BOOK 12:55 14:00 3",
+                  "output": "INCORRECT_INPUT"
+                }
+              },
+              {
+                "isDataRow": true,
+                "data": {
+                  "input": "BOOK 13:45 17:15 6",
+                  "output": "D-Tower"
+                }
+              },
+              {
+                "isDataRow": true,
+                "data": {
+                  "input": "VACANCY 13:45 15:00",
+                  "output": "G-Mansion"
+                }
+              },
+              {
+                "isDataRow": true,
+                "data": {
+                  "input": "BOOK 14:00 15:00 2",
+                  "output": "G-Mansion"
+                }
+              },
+              {
+                "isDataRow": true,
+                "data": {
+                  "input": "BOOK 17:00 18:30 12",
+                  "output": "G-Mansion"
+                }
+              },
+              {
+                "isDataRow": true,
+                "data": {
+                  "input": "VACANCY 17:00 18:00",
+                  "output": "NO_VACANT_ROOM"
+                }
+              },
+              {
+                "isDataRow": true,
+                "data": {
+                  "input": "VACANCY 17:30 18:00",
+                  "output": "D-Tower"
+                }
+              },
+              {
+                "isDataRow": true,
+                "data": {
+                  "input": "BOOK 17:00 18:30 12",
+                  "output": "NO_VACANT_ROOM"
+                }
+              },
+              {
+                "isDataRow": true,
+                "data": {
+                  "input": "BOOK 15:35 16:35 12",
+                  "output": "INCORRECT_INPUT"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

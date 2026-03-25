@@ -1,0 +1,464 @@
+{
+  "default": {
+    "slug": "stationery-shop",
+    "problemId": "BD-PS18-1"
+  },
+  "slug": "stationery-shop",
+  "problemId": "BD-PS18-1",
+  "problemStatement": {
+    "usesExperimentalComponent": true,
+    "contentSections": [
+      {
+        "isMadeUpOfSubSections": true,
+        "hasSectionHeading": true,
+        "sectionHeading": "Context",
+        "subSections": [
+          {
+            "isStatement": true,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": "College stationery shop is running its annual clearance sale. It is offering steep discounts on a few of the products for this exclusive sale event. They need your help in coming up with a bill calculator.\n"
+          }
+        ]
+      },
+      {
+        "isMadeUpOfSubSections": true,
+        "hasSectionHeading": true,
+        "sectionHeading": "Products",
+        "subSections": [
+          {
+            "hasSubSectionHeading": false,
+            "isStatement": true,
+            "statement": "There are 2 different categories of products. The cost and discount per products are different. \nFollowing products are available for the sale at the shop.\n",
+            "isImage": true,
+            "imageClasses": [
+              "three-fourth-width",
+              "center-align"
+            ],
+            "imageSource": "https://geektrust.sgp1.cdn.digitaloceanspaces.com/assets/v2/problems/stationery-shop/stationery-products.webp"
+          },
+          {
+            "hasSubsectionHeading": true,
+            "subSectionHeading": "Clearance Sale Rules",
+            "hasOrderedList": true,
+            "orderedList": [
+              "For each clothing item, the maximum quantity that can be purchased is 2.",
+              "For each stationery item, the maximum quantity that can be purchased is 3.",
+              "Discounts can be applied only if the total purchase amount is 1000 rupees or more.",
+              "An additional discount of 5% can be applied if the total amount to pay is 3000 rupees or more.",
+              "There is a 10% sales tax on total bill. The tax is calculated after all the discounts are applied"
+            ]
+          }
+        ]
+      },
+      {
+        "isMadeUpOfSubSections": true,
+        "hasSectionHeading": true,
+        "sectionHeading": "Goal",
+        "subSections": [
+          {
+            "isStatement": true,
+            "hasSubsectionHeading": false,
+            "statement": "Build a command-line application to calculate the total bill amount for the purchase. The application should generate the total bill of the products after applying the discounts, if any and the sales tax. \n",
+            "hasOrderedList": true,
+            "orderedList": [
+              "Program should take each individual product with quantity as input.",
+              "Program should print the total amount to pay and total discount applied in a purchase",
+              "Program should print an error message if the terms and conditions are not met"
+            ]
+          },
+          {
+            "hasSubsectionHeading": true,
+            "subSectionHeading": "Assumptions",
+            "isStatement": false,
+            "hasOrderedList": true,
+            "orderedList": [
+              "Tax will be applied at the end of bill calculation after the discounts are applied if any.",
+              "Keep the decimal precision to 2 decimal places."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "sampleInputOutput": {
+    "usesExperimentalComponent": true,
+    "contentSections": [
+      {
+        "hasHeading": true,
+        "heading": "Input Commands & Format",
+        "subSections": [
+          {
+            "isStatement": true,
+            "statement": "Your program should take individual product with quantity as input.\n"
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "ADD_ITEM"
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "<ITEM_NAME> <QUANTITY>"
+              }
+            ]
+          },
+          {
+            "isStatement": false,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": null,
+            "hasOrderedList": true,
+            "orderedList": [
+              "Adds the specified item and quantity of product to the purchases",
+              "If the item is added successfully, then it should print:"
+            ]
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "\t\tITEM_ADDED"
+              }
+            ]
+          },
+          {
+            "isStatement": false,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": null,
+            "hasOrderedList": true,
+            "orderedList": [
+              "If the quantity exceeds the maximum limit set by clearance sales rules, then it should not accept the item and print the following error:"
+            ]
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "\t\tERROR_QUANTITY_EXCEEDED\n"
+              }
+            ]
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "PRINT_BILL"
+              }
+            ]
+          },
+          {
+            "isStatement": false,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": null,
+            "hasOrderedList": true,
+            "orderedList": [
+              "Prints the total discount applied and the total amount to pay."
+            ]
+          }
+        ]
+      },
+      {
+        "hasHeading": true,
+        "heading": "Output Commands & Format",
+        "subSections": [
+          {
+            "isStatement": true,
+            "statement": "Your program should print the total discount applied and the total amount to pay\n"
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "TOTAL_DISCOUNT"
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "<AMOUNT>"
+              }
+            ]
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "TOTAL_AMOUNT_TO_PAY"
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "<AMOUNT>"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "hasHeading": true,
+        "heading": "Sample Input/Output 1",
+        "subSections": [
+          {
+            "isTable": true,
+            "tableData": [
+              {
+                "isHeaderRow": true,
+                "data": {
+                  "input": "INPUT",
+                  "output": "OUTPUT"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "input": [
+                    ""
+                  ],
+                  "output": [
+                    ""
+                  ]
+                },
+                "usesCustomData": true,
+                "data": {
+                  "input": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ADD_ITEM"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "TSHIRT 2\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ADD_ITEM"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "NOTEBOOK 1 \n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "PRINT_BILL"
+                    }
+                  ],
+                  "output": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ITEM_ADDED\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ITEM_ADDED\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "TOTAL_DISCOUNT"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "240.00\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "TOTAL_AMOUNT_TO_PAY"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "2156.00"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "hasSubsectionHeading": true,
+            "subSectionHeading": "Explanation",
+            "isImage": true,
+            "imageClasses": [
+              "half-width",
+              "center-align"
+            ],
+            "imageSource": "https://geektrust.sgp1.cdn.digitaloceanspaces.com/assets/v2/problems/stationery-shop/stationery-io-explanation.webp"
+          }
+        ]
+      },
+      {
+        "hasHeading": true,
+        "heading": "Sample Input/Output 2",
+        "subSections": [
+          {
+            "isTable": true,
+            "tableData": [
+              {
+                "isHeaderRow": true,
+                "data": {
+                  "input": "INPUT",
+                  "output": "OUTPUT"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "input": [
+                    ""
+                  ],
+                  "output": [
+                    ""
+                  ]
+                },
+                "usesCustomData": true,
+                "data": {
+                  "input": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ADD_ITEM"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "NOTEBOOK 3\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ADD_ITEM"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "JACKET 5\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ADD_ITEM"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "PENS 1 \n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "PRINT_BILL"
+                    }
+                  ],
+                  "output": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ITEM_ADDED\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ERROR_QUANTITY_EXCEEDED\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ITEM_ADDED\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "TOTAL_DISCOUNT"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "0.00\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "TOTAL_AMOUNT_TO_PAY"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "990.00"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

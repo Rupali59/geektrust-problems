@@ -34,7 +34,7 @@ Structured copy (JSON): **[`data/geektrust/portfolio-badges.json`](data/geektrus
 | **This repo** | [github.com/Rupali59/geektrust-problems](https://github.com/Rupali59/geektrust-problems) |
 | **Link this repo on Geektrust** | [Code portfolio](https://www.geektrust.com/candidates/coding/code-portfolio) |
 
-**Problem specs** (JSON) live in [`data/geektrust/problems/`](data/geektrust/problems/). **`portfolio-badges.json`** is your showcase copy from the Geektrust report (update when you earn new badges).
+**All Geektrust coding challenges** in the live app bundle are mirrored as JSON under [`data/geektrust/problems/`](data/geektrust/problems/) (see [`problems-index.json`](data/geektrust/problems-index.json) and [`problems/README.md`](problems/README.md)). **`portfolio-badges.json`** is your showcase copy from the Geektrust report.
 
 ---
 

@@ -1,0 +1,952 @@
+{
+  "default": {
+    "slug": "doremi-subscription",
+    "problemId": "BD-PS14-1"
+  },
+  "slug": "doremi-subscription",
+  "problemId": "BD-PS14-1",
+  "problemStatement": {
+    "usesExperimentalComponent": true,
+    "contentSections": [
+      {
+        "isMadeUpOfSubSections": true,
+        "hasSectionHeading": true,
+        "sectionHeading": "Context",
+        "subSections": [
+          {
+            "isStatement": true,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": "DoReMi is a streaming app which allows users to listen to music, podcasts and watch videos. They offer different subscription plans for different categories of services. Users can subscribe to any of these plans.",
+            "hasOrderedList": true,
+            "orderedList": [
+              "A user can choose only one plan per category.",
+              "All plans, by default, can only be streamed on one device."
+            ]
+          },
+          {
+            "isTable": true,
+            "hasTableHeading": true,
+            "hasTableDescription": false,
+            "tableHeading": "Music streaming subscription plans",
+            "tableData": [
+              {
+                "isHeaderRow": true,
+                "data": {
+                  "free": "FREE",
+                  "personal": "PERSONAL",
+                  "premium": "PREMIUM"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "free": [
+                    ""
+                  ],
+                  "personal": [
+                    ""
+                  ],
+                  "premium": [
+                    ""
+                  ]
+                },
+                "data": {
+                  "free": "1 month Trial",
+                  "personal": "Rs.100 for 1 month",
+                  "premium": "Rs. 250 for 3 months"
+                }
+              }
+            ]
+          },
+          {
+            "isTable": true,
+            "hasTableHeading": true,
+            "hasTableDescription": false,
+            "tableHeading": "Video streaming subscription plans",
+            "tableData": [
+              {
+                "isHeaderRow": true,
+                "data": {
+                  "free": "FREE",
+                  "personal": "PERSONAL",
+                  "premium": "PREMIUM"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "free": [
+                    ""
+                  ],
+                  "personal": [
+                    ""
+                  ],
+                  "premium": [
+                    ""
+                  ]
+                },
+                "data": {
+                  "free": "1 month Trial",
+                  "personal": "Rs.200 for 1 month",
+                  "premium": "Rs. 500 for 3 months"
+                }
+              }
+            ]
+          },
+          {
+            "isTable": true,
+            "hasTableHeading": true,
+            "hasTableDescription": false,
+            "tableHeading": "Podcast streaming subscription plans",
+            "tableData": [
+              {
+                "isHeaderRow": true,
+                "data": {
+                  "free": "FREE",
+                  "personal": "PERSONAL",
+                  "premium": "PREMIUM"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "free": [
+                    ""
+                  ],
+                  "personal": [
+                    ""
+                  ],
+                  "premium": [
+                    ""
+                  ]
+                },
+                "data": {
+                  "free": "1 month Trial",
+                  "personal": "Rs.100 for 1 month",
+                  "premium": "Rs. 300 for 3 months"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "isMadeUpOfSubSections": true,
+        "hasSectionHeading": true,
+        "sectionHeading": "Top Up",
+        "subSections": [
+          {
+            "isStatement": true,
+            "hasSubsectionHeading": false,
+            "statement": "DoReMi allows users to add a top up to increase the number of devices that they can stream to for an additional cost.\n",
+            "hasOrderedList": true,
+            "orderedList": [
+              "A user can choose only one top up. ",
+              "The subscribed top up is applicable for all subscriptions.",
+              "A top up can be added only when a subscription exists.\n"
+            ]
+          },
+          {
+            "isTable": true,
+            "hasTableHeading": false,
+            "hasTableDescription": false,
+            "tableData": [
+              {
+                "isHeaderRow": true,
+                "data": {
+                  "four_device": "FOUR_DEVICE",
+                  "ten_device": "TEN_DEVICE"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "four_device": [
+                    ""
+                  ],
+                  "ten_device": [
+                    ""
+                  ]
+                },
+                "data": {
+                  "four_device": "Upto 4 Devices",
+                  "ten_device": "Upto 10 Devices"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "four_device": [
+                    ""
+                  ],
+                  "ten_device": [
+                    ""
+                  ]
+                },
+                "data": {
+                  "four_device": "Total cost: Rs.50 for 1 month",
+                  "ten_device": "Total cost: Rs.100 for 1 month"
+                }
+              }
+            ]
+          },
+          {
+            "isStatement": true,
+            "hasSubsectionHeading": true,
+            "subSectionHeading": "Renewal Reminder",
+            "statement": "Once a user subscribes to a plan, the user needs to be notified 10 days before the plan expires."
+          }
+        ]
+      },
+      {
+        "isMadeUpOfSubSections": true,
+        "hasSectionHeading": true,
+        "sectionHeading": "Goal",
+        "subSections": [
+          {
+            "isStatement": true,
+            "hasSubsectionHeading": false,
+            "statement": "Given a date when the subscription starts, your program should print: \n",
+            "hasOrderedList": true,
+            "orderedList": [
+              "The date on which the reminder should be sent for each subscription category",
+              "The total amount for renewal. Renewal amount is the sum of all the subscription plan amount and top up amount."
+            ]
+          },
+          {
+            "isStatement": true,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "hasGlobalClass": true,
+            "globalClass": [
+              "green-bg"
+            ],
+            "statement": "💡 Pro tip: Aim to get the Readability and Correctness (I/O) badges - your profile can go forward with most companies with those 2 badges. The rest can be improved upon later!"
+          }
+        ]
+      },
+      {
+        "hasSectionHeading": true,
+        "sectionHeading": "Assumptions",
+        "isMadeUpOfSubSections": true,
+        "subSections": [
+          {
+            "hasSubsectionHeading": false,
+            "hasOrderedList": true,
+            "orderedList": [
+              "A user can buy only one category of subscription at a time.",
+              "By default all plans can only be streamed on one device",
+              "A user can buy only one category of top up at a time.",
+              "One top up applies to all the subscriptions being bought."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "sampleInputOutput": {
+    "usesExperimentalComponent": true,
+    "contentSections": [
+      {
+        "hasHeading": true,
+        "heading": "Input Commands & Format",
+        "subSections": [
+          {
+            "isStatement": true,
+            "statement": "Your program should take as input the start date for subscriptions, subscriptions plans to be added, top up to be added.\n"
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "START_SUBSCRIPTION"
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "DD-MM-YYYY"
+              }
+            ]
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "ADD_SUBSCRIPTION"
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "SUBSCRIPTION_CATEGORY PLAN_NAME"
+              }
+            ]
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "ADD_TOPUP"
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "TOP_UP_NAME NO_OF_MONTHS"
+              }
+            ]
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "PRINT_RENEWAL_DETAILS"
+              }
+            ]
+          },
+          {
+            "hasHeading": true,
+            "heading": "Examples :",
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "START_SUBSCRIPTION"
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "20-02-2022"
+              }
+            ]
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "ADD_SUBSCRIPTION"
+              },
+              {
+                "wordClass": [],
+                "word": "MUSIC  PERSONAL"
+              }
+            ]
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "ADD_SUBSCRIPTION"
+              },
+              {
+                "wordClass": [],
+                "word": "VIDEO PREMIUM"
+              }
+            ]
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "ADD_TOPUP"
+              },
+              {
+                "wordClass": [],
+                "word": "ADD_TOPUP"
+              }
+            ]
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "PRINT_RENEWAL_DETAILS"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "hasHeading": true,
+        "heading": "Output Commands & Format",
+        "subSections": [
+          {
+            "isStatement": true,
+            "statement": "Your program should print the renewal date for each subscription category and the total renewal amount on executing the command PRINT_RENEWAL_DETAILS.\n"
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "RENEWAL_REMINDER"
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "SUBSCRIPTION_CATEGORY DD-MM-YYYY"
+              }
+            ]
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "RENEWAL_AMOUNT"
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "AMOUNT"
+              }
+            ]
+          },
+          {
+            "hasHeading": true,
+            "heading": "Examples :",
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "RENEWAL_REMINDER"
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "MUSIC 10-03-2022 "
+              }
+            ]
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "RENEWAL_REMINDER"
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "VIDEO 10-05-2022"
+              }
+            ]
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "RENEWAL_AMOUNT"
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "700"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "hasHeading": true,
+        "heading": "Sample Input/Output 1",
+        "subSections": [
+          {
+            "isTable": true,
+            "tableData": [
+              {
+                "isHeaderRow": true,
+                "data": {
+                  "input": "INPUT",
+                  "output": "OUTPUT"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "input": [
+                    ""
+                  ],
+                  "output": [
+                    ""
+                  ]
+                },
+                "usesCustomData": true,
+                "data": {
+                  "input": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "START_SUBSCRIPTION"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "20-02-2022\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ADD_SUBSCRIPTION"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "MUSIC PERSONAL\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ADD_SUBSCRIPTION"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "VIDEO PREMIUM\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ADD_SUBSCRIPTION"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "PODCAST FREE\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ADD_TOPUP"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "FOUR_DEVICE 3\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "PRINT_RENEWAL_DETAILS"
+                    }
+                  ],
+                  "output": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "RENEWAL_REMINDER"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "MUSIC 10-03-2022\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "RENEWAL_REMINDER"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "VIDEO 10-05-2022\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "RENEWAL_REMINDER"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "PODCAST 10-03-2022\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "RENEWAL_AMOUNT"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "750\n"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "hasHeading": true,
+            "heading": "Explanation",
+            "isTable": true,
+            "tableData": [
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "left": [
+                    ""
+                  ],
+                  "right": [
+                    ""
+                  ]
+                },
+                "data": {
+                  "left": "Music Streaming for 1 Month [Personal plan] \n Video Streaming  for 3 Month [Premium plan] \n Podcast Streaming  for 1 Month Trial [Free plan] \n FOUR_DEVICE’s for 3 months (50 X 3) \n Total",
+                  "right": "100\n500\n0\n150\n750"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "hasHeading": true,
+        "heading": "Error Scenarios",
+        "subSections": [
+          {
+            "isStatement": true,
+            "statement": "When a user adds the same category of subscription or top up twice or more, error_code should be printed. Error code should be printed when the date format is wrong.\n"
+          },
+          {
+            "isTable": true,
+            "hasTableHeading": true,
+            "tableHeading": "Error Scenarios & Error Codes",
+            "tableData": [
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "input": [],
+                  "output": []
+                },
+                "usesCustomData": true,
+                "data": {
+                  "input": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "START_SUBSCRIPTION"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "07-19-2022"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "\nADD_SUBSCRIPTION"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "MUSIC PREMIUM\n"
+                    }
+                  ],
+                  "output": [
+                    {
+                      "wordClass": [],
+                      "word": "INVALID_DATE"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "\nADD_SUBSCRIPTION_FAILED"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "INVALID_DATE"
+                    }
+                  ]
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "input": [],
+                  "output": []
+                },
+                "usesCustomData": true,
+                "data": {
+                  "input": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "PRINT_RENEWAL_DETAILS\n"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "(when no subscriptions found)"
+                    }
+                  ],
+                  "output": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "SUBSCRIPTIONS_NOT_FOUND"
+                    }
+                  ]
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "input": [],
+                  "output": []
+                },
+                "usesCustomData": true,
+                "data": {
+                  "input": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ADD_SUBSCRIPTION"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "MUSIC PERSONAL\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ADD_SUBSCRIPTION"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "MUSIC PREMIUM\n"
+                    }
+                  ],
+                  "output": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ADD_SUBSCRIPTION_FAILED"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "DUPLICATE_CATEGORY"
+                    }
+                  ]
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "input": [],
+                  "output": []
+                },
+                "usesCustomData": true,
+                "data": {
+                  "input": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ADD_TOPUP"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "TEN_DEVICE 2\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ADD_TOPUP"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "FOUR_DEVICE 1\n"
+                    }
+                  ],
+                  "output": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ADD_TOPUP_FAILED"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "DUPLICATE_TOPUP"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "hasHeading": true,
+        "heading": "Sample Error Input/Output",
+        "subSections": [
+          {
+            "isTable": true,
+            "tableData": [
+              {
+                "isHeaderRow": true,
+                "data": {
+                  "input": "INPUT",
+                  "output": "OUTPUT"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "input": [
+                    ""
+                  ],
+                  "output": [
+                    ""
+                  ]
+                },
+                "usesCustomData": true,
+                "data": {
+                  "input": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "START_SUBSCRIPTION"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "07-01-2022\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ADD_TOPUP"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "TEN_DEVICE 2\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "PRINT_RENEWAL_DETAILS"
+                    }
+                  ],
+                  "output": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ADD_TOPUP_FAILED"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "SUBSCRIPTIONS_NOT_FOUND\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "SUBSCRIPTIONS_NOT_FOUND"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "generatedAt": "2026-03-25T10:05:46.285Z",
+  "problems": [
+    {
+      "slug": "family",
+      "problemId": "BD-PS1-1",
+      "detailedUrl": "https://www.geektrust.com/candidates/coding/detailed/family",
+      "hasEmbeddedPayload": false
+    },
+    {
+      "slug": "portfolio-overlap",
+      "problemId": "BD-PS10-1",
+      "detailedUrl": "https://www.geektrust.com/candidates/coding/detailed/portfolio-overlap",
+      "hasEmbeddedPayload": true
+    },
+    {
+      "slug": "water-management",
+      "problemId": "BD-PS11-1",
+      "detailedUrl": "https://www.geektrust.com/candidates/coding/detailed/water-management",
+      "hasEmbeddedPayload": true
+    },
+    {
+      "slug": "expenses-management",
+      "problemId": "BD-PS12-1",
+      "detailedUrl": "https://www.geektrust.com/candidates/coding/detailed/expenses-management",
+      "hasEmbeddedPayload": true
+    },
+    {
+      "slug": "racetrack-management",
+      "problemId": "BD-PS13-1",
+      "detailedUrl": "https://www.geektrust.com/candidates/coding/detailed/racetrack-management",
+      "hasEmbeddedPayload": true
+    },
+    {
+      "slug": "doremi-subscription",
+      "problemId": "BD-PS14-1",
+      "detailedUrl": "https://www.geektrust.com/candidates/coding/detailed/doremi-subscription",
+      "hasEmbeddedPayload": true
+    },
+    {
+      "slug": "course-scheduling",
+      "problemId": "BD-PS15-1",
+      "detailedUrl": "https://www.geektrust.com/candidates/coding/detailed/course-scheduling",
+      "hasEmbeddedPayload": true
+    },
+    {
+      "slug": "power-of-g-man",
+      "problemId": "BD-PS16-1",
+      "detailedUrl": "https://www.geektrust.com/candidates/coding/detailed/power-of-g-man",
+      "hasEmbeddedPayload": true
+    },
+    {
+      "slug": "geekdemy",
+      "problemId": "BD-PS17-1",
+      "detailedUrl": "https://www.geektrust.com/candidates/coding/detailed/geekdemy",
+      "hasEmbeddedPayload": true
+    },
+    {
+      "slug": "stationery-shop",
+      "problemId": "BD-PS18-1",
+      "detailedUrl": "https://www.geektrust.com/candidates/coding/detailed/stationery-shop",
+      "hasEmbeddedPayload": true
+    },
+    {
+      "slug": "toll-calculator",
+      "problemId": "BD-PS19-1",
+      "detailedUrl": "https://www.geektrust.com/candidates/coding/detailed/toll-calculator",
+      "hasEmbeddedPayload": true
+    },
+    {
+      "slug": "war",
+      "problemId": "BD-PS2-1",
+      "detailedUrl": "https://www.geektrust.com/candidates/coding/detailed/war",
+      "hasEmbeddedPayload": false
+    },
+    {
+      "slug": "metro-card",
+      "problemId": "BD-PS20-1",
+      "detailedUrl": "https://www.geektrust.com/candidates/coding/detailed/metro-card",
+      "hasEmbeddedPayload": true
+    },
+    {
+      "slug": "ride-sharing",
+      "problemId": "BD-PS21-1",
+      "detailedUrl": "https://www.geektrust.com/candidates/coding/detailed/ride-sharing",
+      "hasEmbeddedPayload": true
+    },
+    {
+      "slug": "traffic",
+      "problemId": "BD-PS3-1",
+      "detailedUrl": "https://www.geektrust.com/candidates/coding/detailed/traffic",
+      "hasEmbeddedPayload": false
+    },
+    {
+      "slug": "tame-of-thrones",
+      "problemId": "BD-PS5-1",
+      "detailedUrl": "https://www.geektrust.com/candidates/coding/detailed/tame-of-thrones",
+      "hasEmbeddedPayload": false
+    },
+    {
+      "slug": "the-ledger-co",
+      "problemId": "BD-PS6-1",
+      "detailedUrl": "https://www.geektrust.com/candidates/coding/detailed/the-ledger-co",
+      "hasEmbeddedPayload": true
+    },
+    {
+      "slug": "my-money",
+      "problemId": "BD-PS7-1",
+      "detailedUrl": "https://www.geektrust.com/candidates/coding/detailed/my-money",
+      "hasEmbeddedPayload": true
+    },
+    {
+      "slug": "train",
+      "problemId": "BD-PS8-1",
+      "detailedUrl": "https://www.geektrust.com/candidates/coding/detailed/train",
+      "hasEmbeddedPayload": true
+    },
+    {
+      "slug": "make-space",
+      "problemId": "BD-PS9-1",
+      "detailedUrl": "https://www.geektrust.com/candidates/coding/detailed/make-space",
+      "hasEmbeddedPayload": true
+    },
+    {
+      "slug": "finding-falcone",
+      "problemId": "MO-PS1-1",
+      "detailedUrl": "https://www.geektrust.com/candidates/coding/detailed/finding-falcone",
+      "hasEmbeddedPayload": true
+    },
+    {
+      "slug": "space",
+      "problemId": "UI-PS1-1",
+      "detailedUrl": "https://www.geektrust.com/candidates/coding/detailed/space",
+      "hasEmbeddedPayload": true
+    },
+    {
+      "slug": "admin-ui",
+      "problemId": "UI-PS2-1",
+      "detailedUrl": "https://www.geektrust.com/candidates/coding/detailed/admin-ui",
+      "hasEmbeddedPayload": true
+    },
+    {
+      "slug": "teerex-store",
+      "problemId": "UI-PS3-1",
+      "detailedUrl": "https://www.geektrust.com/candidates/coding/detailed/teerex-store",
+      "hasEmbeddedPayload": true
+    }
+  ]
+}

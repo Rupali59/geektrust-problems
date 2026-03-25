@@ -1,0 +1,817 @@
+{
+  "default": {
+    "slug": "racetrack-management",
+    "problemId": "BD-PS13-1"
+  },
+  "slug": "racetrack-management",
+  "problemId": "BD-PS13-1",
+  "tabHeadings": {
+    "inputOutput": "Input / Output"
+  },
+  "problemStatement": {
+    "usesExperimentalComponent": true,
+    "contentSections": [
+      {
+        "isMadeUpOfSubSections": true,
+        "hasSectionHeading": true,
+        "sectionHeading": "Context",
+        "subSections": [
+          {
+            "isStatement": true,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": "GeekRacers, an adventure sports company, owns race tracks on which they allow customers to drive their ​​bikes, cars and SUVs. There are separate dedicated tracks for each type of vehicle. Each track has a limit on the number of vehicles that can be driven simultaneously."
+          },
+          {
+            "isStatement": true,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": "\nGeekRacers offer 2 types of tracks:",
+            "hasOrderedList": true,
+            "orderedList": [
+              "Regular, it allows all types of vehicles to race on it.",
+              "VIP, it can only be used by cars and SUVs."
+            ]
+          }
+        ]
+      },
+      {
+        "isMadeUpOfSubSections": true,
+        "hasSectionHeading": true,
+        "sectionHeading": "Booking Fee",
+        "subSections": [
+          {
+            "isTable": true,
+            "hasTableHeading": false,
+            "hasTableDescription": true,
+            "tableDescription": "The fee differs based on the type of race track and the type of vehicle.",
+            "tableData": [
+              {
+                "isHeaderRow": true,
+                "data": {
+                  "a_trackType": "Race Track Type",
+                  "b_vehicleType": "Vehicle Type",
+                  "c_noOfVehicles": "No. of Vehicles allowed",
+                  "d_costPerHour": "Cost Per Hour"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "a_trackType": [
+                    ""
+                  ],
+                  "b_vehicleType": [
+                    ""
+                  ],
+                  "c_noOfVehicles": [
+                    ""
+                  ],
+                  "d_costPerHour": [
+                    ""
+                  ]
+                },
+                "data": {
+                  "a_trackType": [
+                    "REGULAR"
+                  ],
+                  "b_vehicleType": [
+                    "BIKE"
+                  ],
+                  "c_noOfVehicles": [
+                    "4"
+                  ],
+                  "d_costPerHour": [
+                    "60"
+                  ]
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "a_trackType": [
+                    ""
+                  ],
+                  "b_vehicleType": [
+                    ""
+                  ],
+                  "c_noOfVehicles": [
+                    ""
+                  ],
+                  "d_costPerHour": [
+                    ""
+                  ]
+                },
+                "data": {
+                  "a_trackType": [
+                    "REGULAR"
+                  ],
+                  "b_vehicleType": [
+                    "CAR"
+                  ],
+                  "c_noOfVehicles": [
+                    "2"
+                  ],
+                  "d_costPerHour": [
+                    "120"
+                  ]
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "a_trackType": [
+                    ""
+                  ],
+                  "b_vehicleType": [
+                    ""
+                  ],
+                  "c_noOfVehicles": [
+                    ""
+                  ],
+                  "d_costPerHour": [
+                    ""
+                  ]
+                },
+                "data": {
+                  "a_trackType": [
+                    "VIP"
+                  ],
+                  "b_vehicleType": [
+                    "CAR"
+                  ],
+                  "c_noOfVehicles": [
+                    "1"
+                  ],
+                  "d_costPerHour": [
+                    "250"
+                  ]
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "a_trackType": [
+                    ""
+                  ],
+                  "b_vehicleType": [
+                    ""
+                  ],
+                  "c_noOfVehicles": [
+                    ""
+                  ],
+                  "d_costPerHour": [
+                    ""
+                  ]
+                },
+                "data": {
+                  "a_trackType": [
+                    "REGULAR"
+                  ],
+                  "b_vehicleType": [
+                    "SUV"
+                  ],
+                  "c_noOfVehicles": [
+                    "2"
+                  ],
+                  "d_costPerHour": [
+                    "200"
+                  ]
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "a_trackType": [
+                    ""
+                  ],
+                  "b_vehicleType": [
+                    ""
+                  ],
+                  "c_noOfVehicles": [
+                    ""
+                  ],
+                  "d_costPerHour": [
+                    ""
+                  ]
+                },
+                "data": {
+                  "a_trackType": [
+                    "VIP"
+                  ],
+                  "b_vehicleType": [
+                    "SUV"
+                  ],
+                  "c_noOfVehicles": [
+                    "1"
+                  ],
+                  "d_costPerHour": [
+                    "300"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "isMadeUpOfSubSections": true,
+        "hasSectionHeading": true,
+        "sectionHeading": "Booking Rules",
+        "subSections": [
+          {
+            "isStatement": true,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": null,
+            "hasOrderedList": true,
+            "orderedList": [
+              "The race track has to be booked for a minimum of 3 Hrs per vehicle. ",
+              "By default, all the vehicles can book only a regular race track.",
+              "If the regular racetrack is not available, cars or SUVs can be upgraded to a VIP race track.",
+              "Beyond the first 3 hrs, an additional 50 is charged per hour (applicable to all vehicles and all tracks).",
+              "An extra time of 15 minutes beyond the allotted 3 Hrs is not chargeable (provided the track is available).",
+              "If the extra time is more than 15 mts, one will be charged for the whole hour.\n eg. If extra time is 20 mins, then they are charged for 1 hour and if extra time is 1hr 5min, then they will be charged for 2 hours.",
+              "Racetracks can be booked from 1 PM to 8PM (both are inclusive).",
+              "All experiences have to be completed by 8PM. Hence, the last booking needs to be done by 5PM."
+            ]
+          },
+          {
+            "isStatement": false,
+            "hasHeading": false,
+            "hasSubsectionHeading": true,
+            "subSectionHeading": "Assumptions",
+            "statement": null,
+            "hasOrderedList": true,
+            "orderedList": [
+              "Vehicles can only use their dedicated tracks. That means a car can only use a track meant for cars and cannot switch to an SUV track even if it is available.",
+              "All the input commands have to be handled in first come first serve mode."
+            ]
+          }
+        ]
+      },
+      {
+        "isMadeUpOfSubSections": true,
+        "hasSectionHeading": true,
+        "sectionHeading": "Goal",
+        "subSections": [
+          {
+            "isStatement": true,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": "Your goal is to calculate the total revenue generated under each racetrack type. \n\nTotal revenue = Revenue earned for the default booking period + Revenue earned from additional booking period."
+          }
+        ]
+      }
+    ]
+  },
+  "sampleInputOutput": {
+    "usesExperimentalComponent": true,
+    "contentSections": [
+      {
+        "hasHeading": true,
+        "heading": "Input Commands & Format",
+        "subSections": [
+          {
+            "isStatement": true,
+            "statement": "Your program should take the booking details of vehicles and the extra time beyond the 3 Hr default booking as input.\n"
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "BOOK"
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "TYPE_OF_VEHICLE VEHICLE_NUMBER ENTRY_TIME_IN_HH:MM"
+              }
+            ]
+          },
+          {
+            "isStatement": false,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": null,
+            "hasOrderedList": true,
+            "orderedList": [
+              "Books a track for a particular vehicle",
+              "It outputs SUCCESS if the booking was successful.",
+              "It outputs RACETRACK_FULL if the race track is full.",
+              "It outputs INVALID_ENTRY_TIME if the entry time was invalid."
+            ]
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "\nADDITIONAL"
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "VEHICLE_NUMBER EXIT_TIME_IN_HH:MM"
+              }
+            ]
+          },
+          {
+            "isStatement": false,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": null,
+            "hasOrderedList": true,
+            "orderedList": [
+              "Extends the booking beyond the default booking period.",
+              "It outputs SUCCESS if the extension was successful.",
+              "It outputs RACETRACK_FULL if the racing track is full.",
+              "It outputs INVALID_EXIT_TIME if the exit time was invalid."
+            ]
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "\nREVENUE"
+              }
+            ]
+          },
+          {
+            "isStatement": false,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": null,
+            "hasOrderedList": true,
+            "orderedList": [
+              "Prints the total amount of Revenue from Regular and VIP tracks separately.",
+              "Total revenue includes the cost of booking and additionals if any.",
+              "It outputs in the format : REGULAR_TRACK_REVENUE  VIP_TRACK_REVENUE"
+            ]
+          },
+          {
+            "isTable": true,
+            "hasTableHeading": true,
+            "tableHeading": "Example: ",
+            "tableData": [
+              {
+                "isHeaderRow": true,
+                "data": {
+                  "input": "INPUT",
+                  "output": "OUTPUT"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "input": [
+                    ""
+                  ],
+                  "output": [
+                    ""
+                  ]
+                },
+                "usesCustomData": true,
+                "data": {
+                  "input": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "BOOK"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "BIKE M40 14:00\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "BOOK"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "CAR O34 15:00\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "BOOK"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "SUV A66 11:00\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ADDITIONAL"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "M40 17:40\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ADDITIONAL"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "O34 20:50\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "REVENUE"
+                    }
+                  ],
+                  "output": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "SUCCESS"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "\nSUCCESS"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "\nINVALID_ENTRY_TIME"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "\nSUCCESS"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "\nINVALID_EXIT_TIME"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "\n590 0"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "hasHeading": true,
+        "heading": "Sample Input/Output 1",
+        "subSections": [
+          {
+            "isTable": true,
+            "tableData": [
+              {
+                "isHeaderRow": true,
+                "data": {
+                  "input": "INPUT",
+                  "output": "OUTPUT"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "input": [
+                    ""
+                  ],
+                  "output": [
+                    ""
+                  ]
+                },
+                "usesCustomData": true,
+                "data": {
+                  "input": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "BOOK"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "SUV XY4 12:30\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "BOOK"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "SUV A56 13:10\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "BOOK"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "CAR AB1 14:20\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "BOOK"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "BIKE BIK1 13:00\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "BOOK"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "BIKE BIK2 14:00\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ADDITIONAL"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "BIK2 17:50\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "REVENUE"
+                    }
+                  ],
+                  "output": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "INVALID_ENTRY_TIME"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "\nSUCCESS"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "\nSUCCESS"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "\nSUCCESS"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "\nSUCCESS"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "\nSUCCESS"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "\n1370 0"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "hasHeading": true,
+        "heading": "Sample Input/Output 2",
+        "subSections": [
+          {
+            "isTable": true,
+            "tableData": [
+              {
+                "isHeaderRow": true,
+                "data": {
+                  "input": "INPUT",
+                  "output": "OUTPUT"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "input": [
+                    ""
+                  ],
+                  "output": [
+                    ""
+                  ]
+                },
+                "usesCustomData": true,
+                "data": {
+                  "input": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "BOOK"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "SUV M40 14:00\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "BOOK"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "SUV O34 15:00\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "BOOK"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "SUV XY4 13:00\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "BOOK"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "SUV A56 13:10\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "BOOK"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "SUV AB1 14:20\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "BOOK"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "SUV S45 15:30\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "BOOK"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "SUV XY22 17:00\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "BOOK"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "SUV B56 18:00\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "REVENUE"
+                    }
+                  ],
+                  "output": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "SUCCESS"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "\nSUCCESS"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "\nSUCCESS"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "\nRACETRACK_FULL"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "\nRACETRACK_FULL"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "\nRACETRACK_FULL"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "\nSUCCESS"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "\nINVALID_ENTRY_TIME"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "\n1800 900"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

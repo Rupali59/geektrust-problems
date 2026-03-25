@@ -1,0 +1,657 @@
+{
+  "default": {
+    "slug": "train",
+    "problemId": "BD-PS8-1"
+  },
+  "slug": "train",
+  "problemId": "BD-PS8-1",
+  "tabHeadings": {
+    "inputOutput": "Input / Output"
+  },
+  "problemStatement": {
+    "usesExperimentalComponent": true,
+    "contentSections": [
+      {
+        "isMadeUpOfSubSections": true,
+        "subSections": [
+          {
+            "isStatement": true,
+            "hasHeading": true,
+            "heading": "Context",
+            "statement": "There are 2 super fast trains, Train A and Train B. Train A travels from Chennai to New Delhi. Train B travels from Trivandrum to Guwahati.\n",
+            "hasOrderedList": true,
+            "orderedList": [
+              "Passengers can board these trains only at the source station.",
+              "The trains have only reserved bogies and each bogie will only have passengers to a specific station.",
+              "When the train arrives at a station, the entire bogie with passengers is detached from the train, and the train continues its journey."
+            ]
+          },
+          {
+            "isTable": true,
+            "hasTableHeading": false,
+            "hasTableDescription": true,
+            "tableDescription": "The routes with station code and distances of each station from originating station are as follows: (STATION (CODE) - DISTANCE ):",
+            "tableData": [
+              {
+                "isHeaderRow": true,
+                "data": {
+                  "trainA": "Train A",
+                  "trainB": "Train B"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "trainA": [
+                    ""
+                  ],
+                  "trainB": [
+                    ""
+                  ]
+                },
+                "data": {
+                  "trainA": "CHENNAI (CHN) - 0",
+                  "trainB": "TRIVANDRUM (TVC) -0"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "trainA": [
+                    ""
+                  ],
+                  "trainB": [
+                    ""
+                  ]
+                },
+                "data": {
+                  "trainA": "SALEM (SLM) - 350",
+                  "trainB": "SHORANUR (SRR) - 300"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "trainA": [
+                    ""
+                  ],
+                  "trainB": [
+                    ""
+                  ]
+                },
+                "data": {
+                  "trainA": "BANGALORE (BLR) - 550",
+                  "trainB": "MANGALORE (MAQ) - 600"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "trainA": [
+                    ""
+                  ],
+                  "trainB": [
+                    ""
+                  ]
+                },
+                "data": {
+                  "trainA": "KURNOOL (KRN) - 900",
+                  "trainB": "MADGAON (MAO) - 1000"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "trainA": [
+                    "highlight-cell-blue"
+                  ],
+                  "trainB": [
+                    ""
+                  ]
+                },
+                "data": {
+                  "trainA": "HYDERABAD (HYB) - 1200",
+                  "trainB": "PUNE (PNE) - 1400"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "trainA": [
+                    ""
+                  ],
+                  "trainB": [
+                    "highlight-cell-blue"
+                  ]
+                },
+                "data": {
+                  "trainA": "NAGPUR (NGP) - 1600",
+                  "trainB": "HYDERABAD (HYB) - 2000"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "trainA": [
+                    ""
+                  ],
+                  "trainB": [
+                    ""
+                  ]
+                },
+                "data": {
+                  "trainA": "ITARSI (ITJ) - 1900",
+                  "trainB": "NAGPUR (NGP) - 2400"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "trainA": [
+                    "highlight-cell-green"
+                  ],
+                  "trainB": [
+                    ""
+                  ]
+                },
+                "data": {
+                  "trainA": "BHOPAL (BPL) - 2000",
+                  "trainB": "ITARSI (ITJ) - 2700"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "trainA": [
+                    ""
+                  ],
+                  "trainB": [
+                    "highlight-cell-green"
+                  ]
+                },
+                "data": {
+                  "trainA": "AGRA (AGA) - 2500",
+                  "trainB": "BHOPAL (BPL) - 2800"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "trainA": [
+                    ""
+                  ],
+                  "trainB": [
+                    ""
+                  ]
+                },
+                "data": {
+                  "trainA": "NEW DELHI (NDL) - 2700",
+                  "trainB": "PATNA (PTA) - 3800"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "trainA": [
+                    ""
+                  ],
+                  "trainB": [
+                    ""
+                  ]
+                },
+                "data": {
+                  "trainA": "",
+                  "trainB": "NEW JALPAIGURI (NJP) - 4200"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "trainA": [
+                    ""
+                  ],
+                  "trainB": [
+                    ""
+                  ]
+                },
+                "data": {
+                  "trainA": "",
+                  "trainB": "GUWAHATI (GHY) - 4700"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "isMadeUpOfSubSections": true,
+        "hasSectionHeading": true,
+        "sectionHeading": "The Merger",
+        "subSections": [
+          {
+            "isStatement": true,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": "During a part of their journey, these trains follow the same route and travel as one train - Train AB. \n",
+            "hasOrderedList": true,
+            "orderedList": [
+              "Trains start from their respective source stations and meet at Hyderabad.",
+              "Trains travel as Train AB from Hyderabad till Bhopal as a single train.",
+              "From Bhopal the trains travel again as two independent trains, Train A and Train B.",
+              "Train A can have passengers in the route for Train B and vice versa.    Eg: People can board from Chennai in Train A and travel to Guwahati."
+            ]
+          },
+          {
+            "isStatement": true,
+            "hasHeading": false,
+            "hasSubsectionHeading": true,
+            "subSectionHeading": "Merging Rules",
+            "statement": null,
+            "hasOrderedList": true,
+            "orderedList": [
+              "First, both the engines are attached.",
+              "The remaining bogies from Hyderabad are attached in the descending order of distances they have to travel further from Hyderabad.",
+              "When the merged train reaches a station, the bogie for that station will be the last one and it can be detached quickly."
+            ]
+          }
+        ]
+      },
+      {
+        "isMadeUpOfSubSections": true,
+        "hasSectionHeading": true,
+        "sectionHeading": "Goal",
+        "subSections": [
+          {
+            "isStatement": true,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": "Given the initial bogie order of both trains, your program should print :\n",
+            "hasOrderedList": true,
+            "orderedList": [
+              "The bogie order of arrival of Train A and Train B at Hyderabad",
+              "Train AB's departure bogie order from Hyderabad"
+            ]
+          },
+          {
+            "isStatement": true,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "hasGlobalClass": true,
+            "globalClass": [
+              "green-bg"
+            ],
+            "statement": "💡 Pro tip: Aim to get the Readability and Correctness (I/O) badges - your profile can go forward with most companies with those 2 badges. The rest can be improved upon later!"
+          }
+        ]
+      },
+      {
+        "isMadeUpOfSubSections": true,
+        "hasSectionHeading": true,
+        "sectionHeading": "Assumptions",
+        "statement": null,
+        "subSections": [
+          {
+            "isStatement": true,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": null,
+            "hasOrderedList": true,
+            "orderedList": [
+              "The passengers board only from the source station.",
+              "If there are no passenger bogies to travel from Hyderabad station, then train should stop there. In such a case it should print JOURNEY_ENDED",
+              "The distances are in kilometers.",
+              "If there are multiple bogies with same station as its destination, then they can be arranged next to each other when the Train AB leaves Hyderabad."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "sampleInputOutput": {
+    "usesExperimentalComponent": true,
+    "contentSections": [
+      {
+        "hasHeading": true,
+        "heading": "Input format",
+        "subSections": [
+          {
+            "isStatement": true,
+            "statement": "Your program should take as input the order of bogies of each train from the source station\n"
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "TRAIN_A "
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "ENGINE BOGIE_1 BOGIE_2 BOGIE_3 ... BOGIE_N"
+              }
+            ]
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "TRAIN_B "
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "ENGINE BOGIE_1 BOGIE_2 BOGIE_3 ... BOGIE_N"
+              }
+            ]
+          },
+          {
+            "hasHeading": true,
+            "heading": "Examples :",
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "TRAIN_A "
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "ENGINE NDL NDL KRN GHY SLM NJP NGP BLR"
+              }
+            ]
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "TRAIN_B "
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "ENGINE NJP GHY AGA PNE MAO BPL PTA"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "hasHeading": true,
+        "heading": "Output format",
+        "subSections": [
+          {
+            "isStatement": true,
+            "statement": "The output should be"
+          },
+          {
+            "hasOrderedList": true,
+            "orderedList": [
+              "The order of bogies for Train A while arriving at Hyderabad.",
+              "The order of bogies for Train B while arriving at Hyderabad.",
+              "The order of bogies for Train AB (merged train) while departing from Hyderabad."
+            ]
+          },
+          {
+            "hasHeading": true,
+            "heading": "Examples :",
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "ARRIVAL "
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "TRAIN_A ENGINE NDL NDL GHY NJP NGP"
+              }
+            ]
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "ARRIVAL "
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "TRAIN_B ENGINE NJP GHY AGA BPL PTAP"
+              }
+            ]
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "DEPARTURE "
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "TRAIN_AB ENGINE ENGINE GHY GHY NJP NJP PTA NDL NDL AGA BPL NGP"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "hasHeading": true,
+        "heading": "Sample Input/Output 1",
+        "subSections": [
+          {
+            "isTable": true,
+            "tableData": [
+              {
+                "isHeaderRow": true,
+                "data": {
+                  "input": "INPUT",
+                  "output": "OUTPUT"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "input": [
+                    ""
+                  ],
+                  "output": [
+                    ""
+                  ]
+                },
+                "usesCustomData": true,
+                "data": {
+                  "input": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "TRAIN_A"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": " ENGINE NDL NDL KRN GHY SLM NJP NGP BLR\n\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "TRAIN_B"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": " ENGINE NJP GHY AGA PNE MAO BPL PTA"
+                    }
+                  ],
+                  "output": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ARRIVAL"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": " TRAIN_A ENGINE NDL NDL GHY NJP NGP\n\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ARRIVAL"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": " TRAIN_B ENGINE NJP GHY AGA BPL PTA\n\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "DEPARTURE"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": " TRAIN_AB ENGINE ENGINE GHY GHY NJP NJP PTA NDL NDL AGA BPL NGP"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "hasHeading": true,
+        "heading": "Sample Input/Output 2",
+        "subSections": [
+          {
+            "isTable": true,
+            "tableData": [
+              {
+                "isHeaderRow": true,
+                "data": {
+                  "input": "INPUT",
+                  "output": "OUTPUT"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "input": [
+                    ""
+                  ],
+                  "output": [
+                    ""
+                  ]
+                },
+                "usesCustomData": true,
+                "data": {
+                  "input": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "TRAIN_A"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": " ENGINE SLM BLR KRN HYB SLM NGP ITJ\n\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "TRAIN_B"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": " ENGINE SRR MAO NJP PNE PTA"
+                    }
+                  ],
+                  "output": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ARRIVAL"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": " TRAIN_A ENGINE HYB NGP ITJ\n\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ARRIVAL"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": " TRAIN_B ENGINE NJP PTA\n\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "DEPARTURE"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": " TRAIN_AB ENGINE ENGINE NJP PTA ITJ NGP"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
- * Pulls coding-problem metadata + statements from Geektrust's candidate app bundle
- * (same JSON embedded in https://www.geektrust.com/candidates/coding/challenges).
+ * Pulls ALL coding-problem metadata + embedded statements from Geektrust's
+ * candidate app bundle (same JSON as https://www.geektrust.com/candidates/coding/challenges).
  *
  * Usage: node scripts/sync-geektrust-data.mjs
  *
@@ -18,7 +18,7 @@ const ROOT = join(__dirname, "..")
 const OUT = join(ROOT, "data", "geektrust")
 
 const CHALLENGES_PAGE = "https://www.geektrust.com/candidates/coding/challenges"
-const REPO_SLUGS = ["metro-card", "power-of-g-man", "geekdemy", "tame-of-thrones"]
+const DETAILED_BASE = "https://www.geektrust.com/candidates/coding/detailed"
 
 async function fetchText(url) {
   const res = await fetch(url)
@@ -36,8 +36,7 @@ function parseJsonParseLiterals(js) {
   const re = /JSON\.parse\('((?:[^'\\]|\\.)*)'\)/g
   const catalog = new Map()
   const fullBySlug = new Map()
-  const matches = js.matchAll(re)
-  for (const m of matches) {
+  for (const m of js.matchAll(re)) {
     let raw = m[1]
       .replace(/\\'/g, "'")
       .replace(/\\"/g, '"')
@@ -90,6 +89,7 @@ async function main() {
 
   const entries = [...catalog.values()].sort((a, b) => a.problemId.localeCompare(b.problemId))
   const generatedAt = new Date().toISOString()
+  const withFull = [...fullBySlug.keys()]
 
   await writeFile(
     join(OUT, "sync-meta.json"),
@@ -99,8 +99,9 @@ async function main() {
         challengesPage: CHALLENGES_PAGE,
         mainJsUrl,
         bundleBytes: bundle.length,
-        problemCountInCatalog: entries.length,
-        repoSlugs: REPO_SLUGS,
+        catalogProblemCount: entries.length,
+        problemsWithEmbeddedStatement: withFull.length,
+        problemsStubOnly: entries.length - withFull.length,
       },
       null,
       2
@@ -109,14 +110,24 @@ async function main() {
 
   await writeFile(join(OUT, "catalog.json"), JSON.stringify({ generatedAt, problems: entries }, null, 2) + "\n")
 
-  for (const slug of REPO_SLUGS) {
-    const full =
-      fullBySlug.get(slug) ?? {
-        slug,
-        problemId: catalog.get(slug)?.problemId,
-        note: "minimal payload in bundle",
-      }
-    await writeFile(join(OUT, "problems", `${slug}.json`), JSON.stringify(full, null, 2) + "\n")
+  const problemsIndex = entries.map((e) => ({
+    slug: e.slug,
+    problemId: e.problemId,
+    detailedUrl: `${DETAILED_BASE}/${e.slug}`,
+    hasEmbeddedPayload: fullBySlug.has(e.slug),
+  }))
+
+  await writeFile(join(OUT, "problems-index.json"), JSON.stringify({ generatedAt, problems: problemsIndex }, null, 2) + "\n")
+
+  for (const { slug, problemId } of entries) {
+    const full = fullBySlug.get(slug)
+    const payload = full ?? {
+      slug,
+      problemId,
+      note: "No problemStatement/sampleInputOutput in the app bundle for this slug — open detailedUrl on Geektrust for the full spec.",
+      detailedUrl: `${DETAILED_BASE}/${slug}`,
+    }
+    await writeFile(join(OUT, "problems", `${slug}.json`), JSON.stringify(payload, null, 2) + "\n")
   }
 
   const shareId = process.env.GEEKTRUST_SHARE_BADGE_ID
@@ -127,6 +138,8 @@ async function main() {
 
   console.log("Wrote", OUT)
   console.log("Catalog problems:", entries.length)
+  console.log("With embedded statement JSON:", withFull.length)
+  console.log("Stub-only:", entries.length - withFull.length)
   console.log("Main JS:", mainJsUrl)
   if (shareId) console.log("Share summary: share-summary.json")
 }

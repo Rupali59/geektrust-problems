@@ -1,0 +1,213 @@
+{
+  "default": {
+    "slug": "teerex-store",
+    "problemId": "UI-PS3-1"
+  },
+  "slug": "teerex-store",
+  "problemId": "UI-PS3-1",
+  "problemStatement": {
+    "usesExperimentalComponent": true,
+    "helpCenterURLS": [
+      "https://help.geektrust.com",
+      "https://help.geektrust.com/article/28-badges-to-earn",
+      "https://help.geektrust.com/category/24-frontend"
+    ],
+    "contentSections": [
+      {
+        "hasSectionHeading": false,
+        "subSections": [
+          {
+            "isStatement": true,
+            "hasHeading": true,
+            "heading": "Background",
+            "hasHTMLContent": true,
+            "statement": "King Shan wants to start a t-shirt business, where he sells t-shirts online.\n\n To run his business, he needs a simple webapp where customers can browse through the catalog of t-shirts, add t-shirts to the shopping cart and checkout the items in the cart."
+          }
+        ]
+      },
+      {
+        "hasSectionHeading": false,
+        "subSections": [
+          {
+            "isStatement": true,
+            "hasHeading": true,
+            "heading": "Task",
+            "statement": "Your job is to build a simple UI, which allows a customer to do the following:"
+          },
+          {
+            "hasNestedList": true,
+            "listItems": [
+              {
+                "text": "Browse the catalog on a product listing page"
+              },
+              {
+                "text": "Each card should have the image, name and price."
+              },
+              {
+                "text": "Search using free text which is a combination of one or more of the below attributes",
+                "children": [
+                  {
+                    "text": "Name"
+                  },
+                  {
+                    "text": "Colour"
+                  },
+                  {
+                    "text": "Type"
+                  },
+                  {
+                    "text": "Eg. green polo"
+                  }
+                ]
+              },
+              {
+                "text": "Filter for t-shirts using specific attributes",
+                "children": [
+                  {
+                    "text": "Gender"
+                  },
+                  {
+                    "text": "Colour"
+                  },
+                  {
+                    "text": "Price range"
+                  },
+                  {
+                    "text": "Type"
+                  }
+                ]
+              },
+              {
+                "text": "Add one or more t-shirts to the shopping cart"
+              },
+              {
+                "text": "View the shopping cart by clicking the shopping cart icon"
+              },
+              {
+                "text": "Increase quantity or delete items from the shopping cart"
+              },
+              {
+                "text": "Display the total amount in the shopping cart."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "hasSectionHeading": false,
+        "subSections": [
+          {
+            "isStatement": true,
+            "hasOrderedList": true,
+            "hasHeading": true,
+            "heading": "Rules",
+            "statement": null,
+            "orderedList": [
+              "Every t-shirt type has a limited quantity. If the customer tries to order more than the available quantity, an error message should appear.",
+              "Filter can be applied by itself or on top of the search results.",
+              "Filters and Search need not be retained on navigation between pages, But the items in the cart should be retained.",
+              "The mockup provided is only a sample so that you have an indication of what is expected from you. You could choose to go with a completely different user experience. But you will need to ensure that all requirements mentioned in the problem are covered & there should be navigation between screens.",
+              "All features (search, filter, add to cart etc) should be handled on the client side.",
+              "There are no API's provided for these features.",
+              "There is no need to handle pagination.",
+              "There is no need to implement user registration / login."
+            ]
+          }
+        ]
+      },
+      {
+        "hasSectionHeading": false,
+        "subSections": [
+          {
+            "isStatement": true,
+            "hasOrderedList": true,
+            "hasHeading": true,
+            "heading": "Instructions to Pass Automated Correctness Check",
+            "statement": null,
+            "orderedList": [
+              "Search box placeholder text should start with Search.",
+              "Search icon/button should have class as search-button-container OR trigger search on ENTER.",
+              "Search if triggered by button should have button text as Search.",
+              "Filter labels should be given and match exactly.",
+              "Cart Page should be navigable by /cart.",
+              "Cart link should be an anchor tag.",
+              "Cart page should also have images being displayed along with item details.",
+              "Avoid using libraries like material UI and bootstrap for basic html components like buttons, checkboxes, textbox etc.",
+              "We execute your application and run it on a specific port. This helps us in running automated tests against the UI you have developed. Hence please do not force the application to run on any specific ports in your configuration/package manager file. Please ensure that you are not overriding the PORT environment variable in your configuration/package manager file.",
+              "On executing, your application should be running successfully on http://<hostname>:<port>. For e.g if the hostname of your local system is dev.local and the port you are running is 3030, then your application should be accessible at http://dev.local:3030/ and not just at http://localhost:3030/."
+            ]
+          }
+        ]
+      },
+      {
+        "hasSectionHeading": true,
+        "sectionHeading": "Sample UI Mockups",
+        "subSections": [
+          {
+            "isImage": true,
+            "hasHeading": true,
+            "heading": "Product Listing Page (Sample)",
+            "imageClasses": [
+              "m-15"
+            ],
+            "imageSource": "https://geektrust.sgp1.cdn.digitaloceanspaces.com/assets/v2/problems/teerex-store/product-listing.png"
+          },
+          {
+            "isImage": true,
+            "hasHeading": true,
+            "heading": "Product Listing Page - Responsive (Sample)",
+            "imageClasses": [
+              "grey-border one-third-width"
+            ],
+            "imageSource": "https://geektrust.sgp1.cdn.digitaloceanspaces.com/assets/v2/problems/teerex-store/product-listing-responsive.png"
+          },
+          {
+            "isImage": true,
+            "hasHeading": true,
+            "heading": "Shopping Cart - Pre-Checkout Page (Sample)",
+            "imageClasses": [
+              "grey-border"
+            ],
+            "imageSource": "https://geektrust.sgp1.cdn.digitaloceanspaces.com/assets/v2/problems/teerex-store/shopping-cart.png"
+          }
+        ]
+      },
+      {
+        "hasSectionHeading": true,
+        "sectionHeading": "APIs Provided",
+        "subSections": [
+          {
+            "isStatement": true,
+            "hasHeading": false,
+            "statement": "We provide you an Catalogue API to list all the products and their properties."
+          },
+          {
+            "isStatement": true,
+            "hasHeading": false,
+            "hasSubsectionHeading": true,
+            "subSectionHeading": "Request Type : ",
+            "statement": "GET"
+          },
+          {
+            "isStatement": true,
+            "hasHeading": false,
+            "hasSubsectionHeading": true,
+            "isHyperLink": true,
+            "subSectionHeading": "Endpoint : ",
+            "hyperlink": "https://geektrust.s3.ap-southeast-1.amazonaws.com/coding-problems/shopping-cart/catalogue.json",
+            "statement": "https://geektrust.s3.ap-southeast-1.amazonaws.com/coding-problems/shopping-cart/catalogue.json"
+          },
+          {
+            "isImage": true,
+            "hasHeading": true,
+            "heading": "Shopping Cart - Example JSON",
+            "imageClasses": [
+              "grey-border"
+            ],
+            "imageSource": "https://geektrust.sgp1.cdn.digitaloceanspaces.com/assets/v2/problems/teerex-store/shopping-cart-json.png"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,894 @@
+{
+  "default": {
+    "slug": "course-scheduling",
+    "problemId": "BD-PS15-1"
+  },
+  "slug": "course-scheduling",
+  "problemId": "BD-PS15-1",
+  "tabHeadings": {
+    "inputOutput": "Input / Output"
+  },
+  "problemStatement": {
+    "usesExperimentalComponent": true,
+    "contentSections": [
+      {
+        "isMadeUpOfSubSections": true,
+        "hasSectionHeading": true,
+        "sectionHeading": "Context",
+        "subSections": [
+          {
+            "isStatement": true,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": "The head of the Learning management system (LMS) has hired you as a consultant. The LMS team has the goal of upskilling the employees with the latest topics via courses. You need to help build a system to schedule and manage the courses."
+          }
+        ]
+      },
+      {
+        "isMadeUpOfSubSections": true,
+        "hasSectionHeading": true,
+        "sectionHeading": "Goal",
+        "subSections": [
+          {
+            "isStatement": true,
+            "hasSubsectionHeading": false,
+            "statement": "Your job is to build a simple command line application, which does the following:\n",
+            "hasNestedList": true,
+            "listItems": [
+              {
+                "text": "Add course offering",
+                "children": [
+                  {
+                    "text": "A course offering has course title, instructor and date."
+                  },
+                  {
+                    "text": "It should also contain a minimum & maximum number of employees for the course offering."
+                  }
+                ]
+              },
+              {
+                "text": "Register for the course",
+                "children": [
+                  {
+                    "text": " Employees can register for the courses."
+                  },
+                  {
+                    "text": "If no. of employees registered for the course has reached the maximum, the result will be COURSE_FULL_ERROR."
+                  },
+                  {
+                    "text": "Otherwise, result of registration will be ACCEPTED."
+                  }
+                ]
+              },
+              {
+                "text": "Cancel registration",
+                "children": [
+                  {
+                    "text": "Employees can cancel their registration until the course allotment is completed."
+                  }
+                ]
+              },
+              {
+                "text": "Course allotment",
+                "children": [
+                  {
+                    "text": "This feature allots employees to course offering, before the course offering date."
+                  },
+                  {
+                    "text": "It should print a list of all the employees with their details along with their final course allotment status (Registration Number, Employee Name, Email, Course Offering ID, Course Name, Instructor, Date, Final Status). The list should be sorted based on the Registration number."
+                  },
+                  {
+                    "text": "If sufficient registrations are not received then the course offering itself gets cancelled."
+                  },
+                  {
+                    "text": "The employees who have registered will get confirmed unless the minimum number of registrations is not received."
+                  },
+                  {
+                    "text": "Even if the course offering gets canceled due to the minimum number of employees not registered, the list should be printed."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "isMadeUpOfSubSections": true,
+        "hasSectionHeading": true,
+        "sectionHeading": "Commands",
+        "subSections": [
+          {
+            "isStatement": true,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": "Every input command has an output. The format is as given"
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "<COMMAND> "
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "<parameter-1>...<parameter-n>"
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": " :\t<OUTPUT>\n"
+              }
+            ]
+          },
+          {
+            "isTable": true,
+            "hasTableHeading": true,
+            "tableHeading": "Add course offering",
+            "hasTableDescription": false,
+            "tableData": [
+              {
+                "isHeaderRow": true,
+                "data": {
+                  "command": "COMMAND",
+                  "listOfParameters": "PARAMETERS",
+                  "output": "OUTPUT"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "input": [
+                    ""
+                  ],
+                  "output": [
+                    ""
+                  ]
+                },
+                "usesCustomData": true,
+                "data": {
+                  "command": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ADD-COURSE-OFFERING"
+                    }
+                  ],
+                  "listOfParameters": [
+                    {
+                      "wordClass": [],
+                      "word": "<course-name> <instructor> <date-in-ddmmyyyy> <minEmployees> <maxEmployees>"
+                    }
+                  ],
+                  "output": [
+                    {
+                      "wordClass": [],
+                      "word": "<course-offering-id>"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "isStatement": true,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": "The format of course-offering-id is OFFERING-<COURSE-NAME>-<INSTRUCTOR>\n"
+          },
+          {
+            "isTable": true,
+            "hasTableHeading": true,
+            "tableHeading": "Register for the course",
+            "hasTableDescription": false,
+            "tableData": [
+              {
+                "isHeaderRow": true,
+                "data": {
+                  "command": "COMMAND",
+                  "listOfParameters": "PARAMETERS",
+                  "output": "OUTPUT"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "input": [
+                    ""
+                  ],
+                  "output": [
+                    ""
+                  ]
+                },
+                "usesCustomData": true,
+                "data": {
+                  "command": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "REGISTER"
+                    }
+                  ],
+                  "listOfParameters": [
+                    {
+                      "wordClass": [],
+                      "word": " <email-id> <course-offering-id>"
+                    }
+                  ],
+                  "output": [
+                    {
+                      "wordClass": [],
+                      "word": "<course-registration-id> <status>"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "isStatement": true,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": null,
+            "hasOrderedList": true,
+            "orderedList": [
+              "The combination of email-id and course-offering-id in the input should be unique",
+              "The format of course-registration-id is REG-COURSE-<EMPLOYEE-NAME>-<COURSE-NAME>",
+              "If number of employees has not exceeded the maximum number of employees allowed for the course offering, status will be ACCEPTED",
+              "If number of employees has exceeded the maximum number of employees allowed for the course offering, status will be COURSE_FULL_ERROR",
+              "If the minimum number of employees for the course offering is not reached before the course date, the status of the course offering would be COURSE_CANCELED",
+              "Course-registration-id will only be returned if the status is ACCEPTED"
+            ]
+          },
+          {
+            "isTable": true,
+            "hasTableHeading": true,
+            "tableHeading": "Course allotment",
+            "hasTableDescription": false,
+            "tableDescription": "Employees can register for the courses",
+            "tableData": [
+              {
+                "isHeaderRow": true,
+                "data": {
+                  "command": "COMMAND",
+                  "listOfParameters": "PARAMETERS",
+                  "output": "OUTPUT"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "input": [
+                    ""
+                  ],
+                  "output": [
+                    ""
+                  ]
+                },
+                "usesCustomData": true,
+                "data": {
+                  "command": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ALLOT"
+                    }
+                  ],
+                  "listOfParameters": [
+                    {
+                      "wordClass": [],
+                      "word": "<course-offering-id>"
+                    }
+                  ],
+                  "output": [
+                    {
+                      "wordClass": [],
+                      "word": "<course-registration-id> <email-id> <course-offering-id> <course-name> <instructor> <date-in-ddmmyyyy> <status>"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "isStatement": true,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": "The output should be sorted by course-registration-id in ascending order\n"
+          },
+          {
+            "isTable": true,
+            "hasTableHeading": true,
+            "tableHeading": "Cancel registration",
+            "hasTableDescription": true,
+            "tableDescription": "The employee can cancel the course registration given a course registration id until course allotment",
+            "tableData": [
+              {
+                "isHeaderRow": true,
+                "data": {
+                  "command": "COMMAND",
+                  "listOfParameters": "PARAMETERS",
+                  "output": "OUTPUT"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "input": [
+                    ""
+                  ],
+                  "output": [
+                    ""
+                  ]
+                },
+                "usesCustomData": true,
+                "data": {
+                  "command": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "CANCEL"
+                    }
+                  ],
+                  "listOfParameters": [
+                    {
+                      "wordClass": [],
+                      "word": "<course-registration-id>"
+                    }
+                  ],
+                  "output": [
+                    {
+                      "wordClass": [],
+                      "word": "<course-registration-id> <status>"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "isStatement": true,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": null,
+            "hasOrderedList": true,
+            "orderedList": [
+              "There are 2 statuses : CANCEL_ACCEPTED, CANCEL_REJECTED",
+              "CANCEL_ACCEPTED when the cancellation is successful.",
+              "CANCEL_REJECTED when the course is already allotted."
+            ]
+          }
+        ]
+      },
+      {
+        "isMadeUpOfSubSections": true,
+        "hasSectionHeading": true,
+        "sectionHeading": "Assumptions",
+        "subSections": [
+          {
+            "isStatement": true,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": null,
+            "hasOrderedList": true,
+            "orderedList": [
+              "If there is validation error in the input (data validation or mandatory fields missing) then it should print an error message INPUT_DATA_ERROR.",
+              "Employees can only cancel their registration until the course is allotted.",
+              "Instructor names are unique",
+              "Course names are unique",
+              "None of the input fields accept whitespace (whitespace acts as a delimiter between fields)",
+              "Course offering ID generated is a combination of OFFERING-<COURSENAME>-<INSTRUCTORNAME>",
+              "Registration ID generated is a combination of REG-COURSE-<EMPLOYEENAME>-<COURSENAME>",
+              "<EMPLOYEENAME> is extracted from email ID: everything before the @ sign in the email"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "sampleInputOutput": {
+    "usesExperimentalComponent": true,
+    "contentSections": [
+      {
+        "hasHeading": true,
+        "heading": "Command Examples",
+        "subSections": [
+          {
+            "isTable": true,
+            "hasTableHeading": true,
+            "tableHeading": "ADD-COURSE-OFFERING",
+            "tableData": [
+              {
+                "isHeaderRow": true,
+                "data": {
+                  "input": "INPUT",
+                  "output": "OUTPUT"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "input": [
+                    ""
+                  ],
+                  "output": [
+                    ""
+                  ]
+                },
+                "usesCustomData": true,
+                "data": {
+                  "input": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ADD-COURSE-OFFERING"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": " JAVA JAMES 15062022 1 2 \n\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ADD-COURSE-OFFERING"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": " PYTHON \n\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ADD-COURSE-OFFERING"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": " KUBERNETES WOODY 16062022 2 5 \n"
+                    }
+                  ],
+                  "output": [
+                    {
+                      "wordClass": [],
+                      "word": "OFFERING-JAVA-JAMES \n\n"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "INPUT_DATA_ERROR \n(because of missing instructor and course-offering-date) \n\n"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "OFFERING-KUBERNETES-WOODY \n"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "isTable": true,
+            "hasTableHeading": true,
+            "tableHeading": "REGISTER",
+            "tableData": [
+              {
+                "isHeaderRow": true,
+                "data": {
+                  "input": "INPUT",
+                  "output": "OUTPUT"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "input": [
+                    ""
+                  ],
+                  "output": [
+                    ""
+                  ]
+                },
+                "usesCustomData": true,
+                "data": {
+                  "input": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "REGISTER"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": " ANDY@GMAIL.COM OFFERING-JAVA-JAMES \n\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "REGISTER"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": " WOO@GMAIL.COM OFFERING-JAVA-JAMES \n\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "REGISTER"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": " ALICE@GMAIL.COM OFFERING-JAVA-JAMES \n\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "REGISTER"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": " JON \n"
+                    }
+                  ],
+                  "output": [
+                    {
+                      "wordClass": [],
+                      "word": "REG-COURSE-ANDY-JAVA ACCEPTED \n\n"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "\nREG-COURSE-WOO-JAVA ACCEPTED \n\n"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "COURSE_FULL_ERROR \n(because max limit of java course=2) \n\n"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "INPUT_DATA_ERROR \n(because email and  course-offering-id missing) \n\n"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "isTable": true,
+            "hasTableHeading": true,
+            "tableHeading": "ALLOT",
+            "tableData": [
+              {
+                "isHeaderRow": true,
+                "data": {
+                  "input": "INPUT",
+                  "output": "OUTPUT"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "input": [
+                    ""
+                  ],
+                  "output": [
+                    ""
+                  ]
+                },
+                "usesCustomData": true,
+                "data": {
+                  "input": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ALLOT"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": " OFFERING-JAVA-JAMES \n\n"
+                    }
+                  ],
+                  "output": [
+                    {
+                      "wordClass": [],
+                      "word": "REG-COURSE-ANDY-JAVA ANDY@GMAIL.COM OFFERING-JAVA-JAMES JAVA JAMES 15062022 CONFIRMED \n\n"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "REG-COURSE-WOO-JAVA WOO@GMAIL.COM OFFERING-JAVA-JAMES JAVA JAMES 15062022 CONFIRMED \n\n"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "(note that ALICE@GMAIL.COM won’t show up here because her registration was rejected with COURSE_FULL_ERROR. Neither is Jon’s data going to show up here)"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "isTable": true,
+            "hasTableHeading": true,
+            "tableHeading": "CANCEL",
+            "tableData": [
+              {
+                "isHeaderRow": true,
+                "data": {
+                  "input": "INPUT",
+                  "output": "OUTPUT"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "input": [
+                    ""
+                  ],
+                  "output": [
+                    ""
+                  ]
+                },
+                "usesCustomData": true,
+                "data": {
+                  "input": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "CANCEL"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": " REG-COURSE-ANDY-JAVA \n\n"
+                    }
+                  ],
+                  "output": [
+                    {
+                      "wordClass": [],
+                      "word": "REG-COURSE-ANDY-JAVA CANCEL_REJECTED\n(because ALLOT course-offering is already run)"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "hasHeading": true,
+        "heading": "Sample Input/Output 1",
+        "subSections": [
+          {
+            "isTable": true,
+            "tableData": [
+              {
+                "isHeaderRow": true,
+                "data": {
+                  "input": "INPUT",
+                  "output": "OUTPUT"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "input": [
+                    ""
+                  ],
+                  "output": [
+                    ""
+                  ]
+                },
+                "usesCustomData": true,
+                "data": {
+                  "input": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ADD-COURSE-OFFERING "
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "DATASCIENCE BOB 05062022 1 3"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "\nREGISTER"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "WOO@GMAIL.COM OFFERING-DATASCIENCE-BOB"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "\nREGISTER"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "ANDY@GMAIL.COM OFFERING-DATASCIENCE-BOB"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "\nALLOT"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "OFFERING-DATASCIENCE-BOB"
+                    }
+                  ],
+                  "output": [
+                    {
+                      "wordClass": [],
+                      "word": "OFFERING-DATASCIENCE-BOB"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "\n\nREG-COURSE-WOO-DATASCIENCE ACCEPTED"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "\n\nREG-COURSE-ANDY-DATASCIENCE ACCEPTED"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "\n\nREG-COURSE-ANDY-DATASCIENCE ANDY@GMAIL.COM OFFERING-DATASCIENCE-BOB DATASCIENCE BOB 05062022 CONFIRMED"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "\nREG-COURSE-WOO-DATASCIENCE WOO@GMAIL.COM OFFERING-DATASCIENCE-BOB DATASCIENCE BOB 05062022 CONFIRMED"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "hasHeading": true,
+        "heading": "Sample Input/Output 2",
+        "subSections": [
+          {
+            "isTable": true,
+            "tableData": [
+              {
+                "isHeaderRow": true,
+                "data": {
+                  "input": "INPUT",
+                  "output": "OUTPUT"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "input": [
+                    ""
+                  ],
+                  "output": [
+                    ""
+                  ]
+                },
+                "usesCustomData": true,
+                "data": {
+                  "input": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ADD-COURSE-OFFERING "
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "PYTHON JOHN 05062022 1 3"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "\nREGISTER"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "WOO@GMAIL.COM OFFERING-PYTHON-JOHN"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "\nREGISTER"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "ANDY@GMAIL.COM OFFERING-PYTHON-JOHN"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "\nREGISTER"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "BOBY@GMAIL.COM OFFERING-PYTHON-JOHN"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "\nCANCEL"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "REG-COURSE-BOBY-PYTHON"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "\nALLOT"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "OFFERING-PYTHON-JOHN"
+                    }
+                  ],
+                  "output": [
+                    {
+                      "wordClass": [],
+                      "word": "OFFERING-PYTHON-JOHN"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "\n\nREG-COURSE-WOO-PYTHON ACCEPTED"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "\n\nREG-COURSE-ANDY-PYTHON ACCEPTED"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "\n\nREG-COURSE-BOBY-PYTHON ACCEPTED"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "\n\nREG-COURSE-BOBY-PYTHON CANCEL_ACCEPTED"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "\nREG-COURSE-ANDY-PYTHON ANDY@GMAIL.COM OFFERING-PYTHON-JOHN  PYTHON  JOHN 05062022 CONFIRMED"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "\nREG-COURSE-WOO-PYTHON WOO@GMAIL.COM OFFERING-PYTHON-JOHN  PYTHON  JOHN  05062022 CONFIRMED\n\n"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

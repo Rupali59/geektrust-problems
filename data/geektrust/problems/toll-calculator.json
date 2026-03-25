@@ -1,0 +1,628 @@
+{
+  "default": {
+    "slug": "toll-calculator",
+    "problemId": "BD-PS19-1"
+  },
+  "slug": "toll-calculator",
+  "problemId": "BD-PS19-1",
+  "problemStatement": {
+    "usesExperimentalComponent": true,
+    "contentSections": [
+      {
+        "isMadeUpOfSubSections": true,
+        "hasSectionHeading": true,
+        "sectionHeading": "Context",
+        "subSections": [
+          {
+            "isStatement": true,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": "A new road has been built and is now open for general traffic. The road construction company needs your help in calculating the money collection via toll from travellers. \n"
+          }
+        ]
+      },
+      {
+        "isMadeUpOfSubSections": true,
+        "hasSectionHeading": true,
+        "sectionHeading": "",
+        "subSections": [
+          {
+            "hasSubsectionHeading": true,
+            "subSectionHeading": "FASTAG",
+            "isStatement": true,
+            "statement": "The construction company prefers money to be collected via FASTAG. FASTAG is an electronic payment utility that can be used to pay tolls.  All vehicles have a vehicle number. The FASTAG is associated with a vehicle number.\n If there is no sufficient balance in the FASTAG, then the remaining cost of the toll needs to be paid by cash. If travellers do not have a FASTAG they can make the payment by Cash. There is a flat fee of 40 for such cash transactions.\n"
+          },
+          {
+            "hasSubsectionHeading": true,
+            "subSectionHeading": "Toll charges",
+            "isStatement": true,
+            "statement": "Amount of toll collected varies based on the weight of the vehicle.\n",
+            "isImage": true,
+            "imageClasses": [
+              "center-align"
+            ],
+            "imageSource": "https://geektrust.sgp1.cdn.digitaloceanspaces.com/assets/v2/problems/toll-calculation/toll-calculation/vehicle-types.png"
+          },
+          {
+            "hasSubsectionHeading": true,
+            "subSectionHeading": "\nJourney Type",
+            "isStatement": true,
+            "statement": "Toll charges are different for a single trip and for a return journey. When a vehicle does a return journey, there is a discount of 50% for the return journey.\nFor eg: If a Van passes through the toll first time, the toll collected is 100. If the same Van passes again through the toll, the amount collected for the return journey is 50. If the Van passes a third time, it will be treated as a new single journey and the toll collected is 100."
+          }
+        ]
+      },
+      {
+        "isMadeUpOfSubSections": true,
+        "hasSectionHeading": true,
+        "sectionHeading": "Goal",
+        "subSections": [
+          {
+            "isStatement": true,
+            "hasSubsectionHeading": false,
+            "statement": "Your task is to build a solution that calculates various tolls collected and print the payment summary and vehicle type summary.\n",
+            "hasOrderedList": true,
+            "orderedList": [
+              "The payment summary should give a breakup of the total amount collected and the total discount given.",
+              "The vehicle type summary should display the total number of vehicles passed per type in descending order of the collection amount.\n"
+            ]
+          },
+          {
+            "hasSubsectionHeading": true,
+            "subSectionHeading": "Assumptions",
+            "isStatement": false,
+            "hasOrderedList": true,
+            "orderedList": [
+              "All vehicles passing through has a vehicle number.",
+              "Some vehicles may not have FASTAG, in that case the toll amount is paid by cash.",
+              "Some vehicles that have FASTAG may not have sufficient money to pay the toll, then the remaining amount is paid by cash.",
+              "Tolls are always collected from FASTAG first, then only cash is taken if needed.",
+              "Every cash transaction has a flat fee of 40.",
+              "Cash amount collected includes the toll charges paid and the flat fee of 40.",
+              "The vehicle count is calculated based on journeys. eg: if the same car passes twice, the count is 2.\n"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "sampleInputOutput": {
+    "usesExperimentalComponent": true,
+    "contentSections": [
+      {
+        "hasHeading": true,
+        "heading": "Input Commands & Format",
+        "subSections": [
+          {
+            "isStatement": true,
+            "statement": "Your program should take as input the FASTAG details of each vehicle and the list of vehicles that passed through the toll.\n"
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "FASTAG"
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "<VEHICLE_NUMBER> <FASTAG_BALANCE>\n"
+              }
+            ]
+          },
+          {
+            "isStatement": false,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": null,
+            "hasOrderedList": true,
+            "orderedList": [
+              "<VEHICLE_NUMBER> is the identifier for a given vehicle.",
+              "<FASTAG_BALANCE> is the amount of money available in the vehicle’s FASTAG balance\n"
+            ]
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "COLLECT_TOLL"
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "<VEHICLE_TYPE> <VEHICLE_NUMBER>\n"
+              }
+            ]
+          },
+          {
+            "isStatement": false,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": null,
+            "hasOrderedList": true,
+            "orderedList": [
+              "<COLLECT_TOLL> command should deduct the appropriate amount of toll from the FASTAG of the vehicle, depending on the vehicle type.\n"
+            ]
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "PRINT_COLLECTION\n"
+              }
+            ]
+          },
+          {
+            "isStatement": true,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": "Prints the calculated toll collection summary as ",
+            "hasOrderedList": true,
+            "orderedList": [
+              "TOTAL_COLLECTION",
+              "PAYMENT_SUMMARY",
+              "VEHICLE_TYPE_SUMMARY"
+            ]
+          }
+        ]
+      },
+      {
+        "hasHeading": true,
+        "heading": "Output Commands & Format",
+        "subSections": [
+          {
+            "isStatement": true,
+            "statement": "Your program should print the payment summary and vehicle type summary in the following format.\n"
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "TOTAL_COLLECTION"
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "<TOTAL_AMOUNT_OF_TOLL_COLLECTED> <TOTAL_DISCOUNT_GIVEN>\n"
+              }
+            ]
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "PAYMENT_SUMMARY"
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "<FASTAG_AMOUNT_COLLECTED> <CASH_AMOUNT_COLLECTED>\n"
+              }
+            ]
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "VEHICLE_TYPE_SUMMARY\n"
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "<VEHICLE_TYPE_WITH_HIGHEST_COLLECTION> <VEHICLE_PASSED_COUNT>\n"
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "<VEHICLE_TYPE_WITH_SECOND_HIGHEST_COLLECTION> <VEHICLE_PASSED_COUNT>\n"
+              },
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": ".\n"
+              },
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": ".\n"
+              },
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": ".\n"
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "<VEHICLE_TYPE_WITH_LEAST_COLLECTION> <VEHICLE_PASSED_COUNT>\n"
+              }
+            ]
+          },
+          {
+            "isStatement": true,
+            "statement": "VEHICLE_TYPE_SUMMARY is sorted by amount collected first, then vehicle name. ie, If the toll collection amount is the same, then VEHICLE_TYPE_SUMMARY should list the vehicles in alphabetical order.\n"
+          }
+        ]
+      },
+      {
+        "hasHeading": true,
+        "heading": "Sample Input/Output 1",
+        "subSections": [
+          {
+            "isTable": true,
+            "tableData": [
+              {
+                "isHeaderRow": true,
+                "data": {
+                  "input": "INPUT",
+                  "output": "OUTPUT"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "input": [
+                    ""
+                  ],
+                  "output": [
+                    ""
+                  ]
+                },
+                "usesCustomData": true,
+                "data": {
+                  "input": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "FASTAG"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "C1N1 200\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "FASTAG"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "T1N1 500 \n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "FASTAG"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "C1N2 50 \n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "FASTAG"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "B1N1 500 \n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "COLLECT_TOLL"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "CAR C1N1 \n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "COLLECT_TOLL"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "TRUCK T1N1 \n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "COLLECT_TOLL"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "CAR C1N2 \n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "COLLECT_TOLL"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "BUS B1N1 \n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "COLLECT_TOLL"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "CAR C1N3 \n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "PRINT_COLLECTION \n"
+                    }
+                  ],
+                  "output": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "TOTAL_COLLECTION"
+                    },
+                    {
+                      "word": "780 0\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "PAYMENT_SUMMARY"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "550 230\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "VEHICLE_TYPE_SUMMARY\n"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "CAR 3\n"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "BUS 1\n"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "TRUCK 1"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "isStatement": true,
+            "statement": "VEHICLE_TYPE_SUMMARY is sorted by Amount collected first, then vehicle name."
+          },
+          {
+            "hasSubsectionHeading": true,
+            "subSectionHeading": "Explanation",
+            "isImage": true,
+            "imageClasses": [
+              "center-align"
+            ],
+            "imageSource": "https://geektrust.sgp1.cdn.digitaloceanspaces.com/assets/v2/problems/toll-calculation/toll-calculation/toll-io-1-explanation.webp"
+          }
+        ]
+      },
+      {
+        "hasHeading": true,
+        "heading": "Sample Input/Output 2",
+        "subSections": [
+          {
+            "isTable": true,
+            "tableData": [
+              {
+                "isHeaderRow": true,
+                "data": {
+                  "input": "INPUT",
+                  "output": "OUTPUT"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "input": [
+                    ""
+                  ],
+                  "output": [
+                    ""
+                  ]
+                },
+                "usesCustomData": true,
+                "data": {
+                  "input": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "FASTAG"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "V2N1 100\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "FASTAG"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "T2N1 300 \n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "COLLECT_TOLL"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "VAN V2N1 \n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "COLLECT_TOLL"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "TRUCK T2N1 \n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "COLLECT_TOLL"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "VAN V2N1 \n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "PRINT_COLLECTION \n"
+                    }
+                  ],
+                  "output": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "TOTAL_COLLECTION"
+                    },
+                    {
+                      "word": "390 50\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "PAYMENT_SUMMARY"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "300 90\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "VEHICLE_TYPE_SUMMARY\n"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "TRUCK 1\n"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "VAN 2\n"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "isStatement": true,
+            "statement": "Van is counted twice based on the journey, even though it’s the same vehicle."
+          },
+          {
+            "hasSubsectionHeading": true,
+            "subSectionHeading": "Explanation",
+            "isImage": true,
+            "imageClasses": [
+              "center-align"
+            ],
+            "imageSource": "https://geektrust.sgp1.cdn.digitaloceanspaces.com/assets/v2/problems/toll-calculation/toll-calculation/toll-io-2-explanation.webp"
+          }
+        ]
+      }
+    ]
+  }
+}

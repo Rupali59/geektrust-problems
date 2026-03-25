@@ -1,0 +1,46 @@
+{
+  "default": {
+    "slug": "finding-falcone",
+    "problemId": "MO-PS1-1"
+  },
+  "slug": "finding-falcone",
+  "problemId": "MO-PS1-1",
+  "problemStatement": {
+    "helpCenterURLS": [
+      "https://help.geektrust.com",
+      "https://help.geektrust.com/article/28-badges-to-earn",
+      "https://help.geektrust.com/category/24-frontend"
+    ],
+    "contentSections": [
+      {
+        "isStatement": true,
+        "hasHeading": false,
+        "statement": "Our coding challenges are set in the planet of Lengaburu. After the recent Falicornian war, King Shan has exiled Queen Al Falcone for 15 years. However, if he finds her before the 15 years are up, she has to go into exile for another 15 years!"
+      },
+      {
+        "isStatement": true,
+        "hasHeading": false,
+        "statement": "King Shan has received intelligence that Al Falcone is hiding in one of six neighbouring planets. In this problem you need to build a UI through which King Shan can choose the planets to search, and the vehicles to use in Finding Falcone. See more details on planets & vehicles."
+      },
+      {
+        "isImage": true,
+        "hasHeading": false,
+        "imageSource": "https://geektrust.sgp1.cdn.digitaloceanspaces.com/assets/images/planets-vehicles.jpg",
+        "imageWidth": 670,
+        "imageHeight": 400
+      },
+      {
+        "isStatement": true,
+        "hasHeading": false,
+        "statement": "All geektrust problems are meant to be solved offline looking at considerations of OOPS, readability and simplicity. Download challenge to see planets, vehicles & mockups"
+      },
+      {
+        "isStatement": true,
+        "hasHeading": false,
+        "hasHyperLink": true,
+        "hyperLink": "https://geektrust.sgp1.cdn.digitaloceanspaces.com/assets/v2/website/coding-challenges/Geektrust-UI-Problems1.pdf",
+        "hyperLinkText": "View Challenge PDF"
+      }
+    ]
+  }
+}

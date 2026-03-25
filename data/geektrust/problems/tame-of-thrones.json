@@ -1,5 +1,6 @@
 {
   "slug": "tame-of-thrones",
   "problemId": "BD-PS5-1",
-  "note": "minimal payload in bundle"
+  "note": "No problemStatement/sampleInputOutput in the app bundle for this slug — open detailedUrl on Geektrust for the full spec.",
+  "detailedUrl": "https://www.geektrust.com/candidates/coding/detailed/tame-of-thrones"
 }

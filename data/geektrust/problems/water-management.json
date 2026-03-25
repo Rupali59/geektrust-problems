@@ -1,0 +1,176 @@
+{
+  "default": {
+    "slug": "water-management",
+    "problemId": "BD-PS11-1"
+  },
+  "slug": "water-management",
+  "problemId": "BD-PS11-1",
+  "problemStatement": {
+    "contentSections": [
+      {
+        "isStatement": true,
+        "hasHeading": false,
+        "statement": "You work at WaterBill, a startup developing smart solutions for water management."
+      },
+      {
+        "isStatement": true,
+        "hasHeading": false,
+        "statement": "GeekHeights community has approached you to use your software to manage their water bills efficiently."
+      },
+      {
+        "isStatement": true,
+        "hasHeading": false,
+        "statement": "Each GeekHeights apartment is allotted with corporation and borewell water in a specific ratio at the start of the month. There are 2 bedroom and 3 bedroom apartments in the community and it is assumed that they will hold 3 and 5 people respectively."
+      },
+      {
+        "isStatement": true,
+        "hasHeading": false,
+        "statement": "Each person is allotted 10L of water per day. So a 2 BHK apartment will be allotted 900 L (3*10*30) of water per month and a 3 BHK apartment will be allotted 1500L (5*10*30) of water per month. The total water consumption is then split between corporation and borewell based on a ratio."
+      },
+      {
+        "isStatement": true,
+        "hasHeading": false,
+        "statement": "If there are additional guests in the apartment, the total allotted water will not suffice and the apartment has to ask for tanker water."
+      },
+      {
+        "isStatement": true,
+        "hasNestedList": true,
+        "statement": "Costs",
+        "listItems": [
+          {
+            "text": "Corporation Water - Flat rate of Rs. 1 per litre"
+          },
+          {
+            "text": "Borewell Water - Flat rate of Rs. 1.5 per litre"
+          },
+          {
+            "text": "Tanker Water - Slab rate:",
+            "children": [
+              {
+                "text": "0 to 500L - Rs. 2 per litre"
+              },
+              {
+                "text": "501L to 1500L - Rs. 3 per litre"
+              },
+              {
+                "text": "1501 to 3000L - Rs. 5 per litre"
+              },
+              {
+                "text": "3001L+ - Rs. 8 per litre"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "isStatement": true,
+        "hasHeading": true,
+        "heading": "Input Commands",
+        "statement": null,
+        "hasSubStatements": true,
+        "subStatements": [
+          {
+            "subStatementHeading": "ALLOT_WATER <apartment-type> <ratio>",
+            "subStatementHasHeading": true,
+            "subStatement": "Allots the water from corporation and borewell based on the apartment type and ratio passed. Here the ratio is always of the format Corporation Water : Borewell Water. This command will be executed only once a month per house and also at the start of the input command set.",
+            "subStatementExamples": "Example- ALLOT_WATER 3 1:5"
+          },
+          {
+            "subStatementHeading": "ADD_GUESTS <no_of_guests>",
+            "subStatementHasHeading": true,
+            "subStatement": "Adds the number of guests to a house. ADD_GUESTS command can be given multiple times in a month and total guests is the sum of all ADD_GUESTS numbers for that month.",
+            "subStatementExamples": "Example - ADD_GUESTS 10"
+          },
+          {
+            "subStatementHeading": "BILL",
+            "subStatementHasHeading": true,
+            "subStatement": "Prints the total water consumed in litres and the total cost, after cumulatively adding up all the guests cost to the bill. This command will be executed only once and at the end of the input set.",
+            "subStatementExamples": "It should print the total water consumption and the cost in the format"
+          },
+          {
+            "subStatementHeading": "<TOTAL_WATER_CONSUMED_IN_LITERS> <TOTAL_COST>",
+            "subStatementHasHeading": true,
+            "subStatement": "",
+            "subStatementExamples": "Example - BILL \n\n 4500 13625"
+          }
+        ]
+      },
+      {
+        "isStatement": true,
+        "hasOrderedList": true,
+        "hasHeading": true,
+        "heading": "Assumptions",
+        "statement": null,
+        "orderedList": [
+          "All the calculations are done for a single apartment in a month. Number of days in the month is assumed to be 30.",
+          "The water consumption is measured in litres.",
+          "All calculations should be rounded off to the nearest integer. No decimal values are used.",
+          "Allotment based on ratio is done only once at the start of the month.",
+          "Guests can be added a multiple number of times.",
+          "The command BILL can be executed only once, which is at the end of the month. It should be a part of the input set."
+        ]
+      }
+    ]
+  },
+  "sampleInputOutput": {
+    "sampleSections": [
+      {
+        "sectionId": 1,
+        "hasHeading": true,
+        "heading": "SAMPLE INPUT-OUTPUT 1",
+        "content": [
+          {
+            "sectionHeading": "INPUT:",
+            "isText": true,
+            "hasHeading": true,
+            "textContent": "ALLOT_WATER 2 3:7\nADD_GUESTS 2\nADD_GUESTS 3\nBILL"
+          },
+          {
+            "sectionHeading": "OUTPUT:",
+            "isText": true,
+            "hasHeading": true,
+            "textContent": "2400 5215"
+          }
+        ]
+      },
+      {
+        "sectionId": 2,
+        "hasHeading": true,
+        "heading": "SAMPLE INPUT-OUTPUT 2",
+        "content": [
+          {
+            "sectionHeading": "INPUT:",
+            "isText": true,
+            "hasHeading": true,
+            "textContent": "ALLOT_WATER 3 2:1\nADD_GUESTS 4\nADD_GUESTS 1\nBILL"
+          },
+          {
+            "sectionHeading": "OUTPUT:",
+            "isText": true,
+            "hasHeading": true,
+            "textContent": "3000 5750"
+          }
+        ]
+      },
+      {
+        "sectionId": 3,
+        "hasHeading": true,
+        "heading": "SAMPLE INPUT-OUTPUT 3",
+        "content": [
+          {
+            "sectionHeading": "INPUT:",
+            "isText": true,
+            "hasHeading": true,
+            "textContent": "ALLOT_WATER 2 1:2\nBILL"
+          },
+          {
+            "sectionHeading": "OUTPUT:",
+            "isText": true,
+            "hasHeading": true,
+            "textContent": "900 1200"
+          }
+        ]
+      }
+    ]
+  }
+}

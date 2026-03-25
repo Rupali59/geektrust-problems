@@ -1,0 +1,722 @@
+{
+  "default": {
+    "slug": "ride-sharing",
+    "problemId": "BD-PS21-1"
+  },
+  "slug": "ride-sharing",
+  "problemId": "BD-PS21-1",
+  "problemStatement": {
+    "usesExperimentalComponent": true,
+    "contentSections": [
+      {
+        "isMadeUpOfSubSections": true,
+        "hasSectionHeading": true,
+        "sectionHeading": "Context",
+        "subSections": [
+          {
+            "isStatement": true,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": "Once upon a time, there was a group of entrepreneurs who were busy building a new ride-sharing service. They were working tirelessly to make sure that their service was the best it could be for their riders (i.e passengers) and drivers. However, they knew that there was one important feature missing, the ability to match riders with drivers within a 5km range (inclusive).\n"
+          },
+          {
+            "hasSubsectionHeading": false,
+            "subSectionHeading": null,
+            "isStatement": true,
+            "statement": "One day, they realized that they needed to implement this feature as soon as possible, and they needed someone to take on the challenge of creating it. Can you help them to complete this?\n"
+          }
+        ]
+      },
+      {
+        "isMadeUpOfSubSections": true,
+        "hasSectionHeading": true,
+        "sectionHeading": "",
+        "subSections": [
+          {
+            "hasSubsectionHeading": true,
+            "subSectionHeading": "Euclidean Distance Formula",
+            "isStatement": true,
+            "statement": "For ease of calculation, this service assumes a Cartesian coordinate system to represent locations, where the location of drivers and riders are represented as a Point(x, y). The Euclidean distance is utilized to calculate the distance between any two points, and 1 unit is equivalent to 1 km.\n"
+          },
+          {
+            "hasSubsectionHeading": false,
+            "subSectionHeading": null,
+            "isStatement": true,
+            "statement": "The Euclidean distance formula says:\n"
+          },
+          {
+            "hasSubsectionHeading": false,
+            "subSectionHeading": null,
+            "isStatement": true,
+            "hasHTMLContent": true,
+            "statement": "d = √[ (x2–x1)<sup style='vertical-align:super;font-size:smaller'>2</sup> + (y2–y1)<sup style='vertical-align:super;font-size:smaller'>2</sup>]\n"
+          },
+          {
+            "hasSubsectionHeading": false,
+            "subSectionHeading": null,
+            "isStatement": true,
+            "statement": "where,\n",
+            "hasOrderedList": true,
+            "orderedList": [
+              "(x1, y1) are the coordinates of one point.",
+              "(x2, y2) are the coordinates of the other point.",
+              "d is the distance between (x1, y1) and (x2, y2).\n"
+            ]
+          }
+        ]
+      },
+      {
+        "isMadeUpOfSubSections": true,
+        "hasSectionHeading": true,
+        "sectionHeading": "Goal",
+        "subSections": [
+          {
+            "isStatement": true,
+            "hasSubsectionHeading": false,
+            "statement": "Your task is to build a solution that will help to match riders with drivers based on their location and generate a bill for the ride. \n",
+            "hasOrderedList": false,
+            "orderedList": []
+          },
+          {
+            "hasSubsectionHeading": true,
+            "subSectionHeading": "Assumptions",
+            "isStatement": false,
+            "hasOrderedList": true,
+            "orderedList": [
+              "It is guaranteed that no two drivers or riders will have the same id.",
+              "Ride can only be started once the match is completed.",
+              "Every start ride request will happen after the match request.",
+              "Every start ride request will have a valid rider id.",
+              "One rider can make multiple match requests.",
+              "Bill for the ride will be calculated based on the distance between the rider's location and the destination.",
+              "Bill can only be generated after the ride is completed.",
+              "The driver will not be available to accept another rider's request after the ride has started.",
+              "Time taken for a ride cannot be negative.",
+              "All floating point numerical values must be rounded to two decimal places.\n"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "sampleInputOutput": {
+    "usesExperimentalComponent": true,
+    "contentSections": [
+      {
+        "hasHeading": true,
+        "heading": "Input Commands & Format",
+        "subSections": [
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "ADD_DRIVER"
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "<DRIVER_ID> <X_COORDINATE> <Y_COORDINATE>\n"
+              }
+            ]
+          },
+          {
+            "isStatement": true,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": "The ADD_DRIVER command allows a driver to join the service. The command should take in the driver's id and current location (x_coordinate and y_coordinate) as arguments.\n"
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "ADD_RIDER"
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "<RIDER_ID> <X_COORDINATE> <Y_COORDINATE>\n"
+              }
+            ]
+          },
+          {
+            "isStatement": true,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": "The ADD_RIDER command allows a rider to request a ride. The command should take in the rider's id, current location (x_coordinate and y_coordinate), as arguments.\n"
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "MATCH"
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "<RIDER_ID>\n"
+              }
+            ]
+          },
+          {
+            "isStatement": true,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": "Matches the rider with the nearest available drivers within 5 kms distance. Print nearest 5 drivers ids in ascending order of their distance from the rider in the following format. In the event of multiple drivers being equidistant, print them in lexicographical order.:\n",
+            "hasOrderedList": true,
+            "orderedList": [
+              "DRIVERS_MATCHED <DRIVER_ID1> <DRIVER_ID2> ... <DRIVER_ID5>",
+              "If no drivers are available then print ‘NO_DRIVERS_AVAILABLE’\n"
+            ]
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "START_RIDE"
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "<RIDE_ID> <N> <RIDER_ID>\n"
+              }
+            ]
+          },
+          {
+            "isStatement": true,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": "Start the ride with the Nth Driver (1 >= N <= 5). If the match has fewer than N number of drivers, driver is not available, or <RIDE_ID> already exists, then print ‘INVALID_RIDE’ otherwise, print ‘RIDE_STARTED <RIDE_ID>’.\n",
+            "hasOrderedList": false,
+            "orderedList": []
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "STOP_RIDE"
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "<RIDE_ID> <DESTINATION_X_COORDINATE> <DESTINATION_Y_COORDINATE> <TIME_TAKEN_IN_MIN>\n"
+              }
+            ]
+          },
+          {
+            "isStatement": true,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": "If the <RIDE_ID> does not exist, or the ride is already stopped, then print ‘INVALID_RIDE’, otherwise, Print ‘RIDE_STOPPED <RIDE_ID>’\n",
+            "hasOrderedList": false,
+            "orderedList": []
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "BILL"
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "<RIDE_ID>\n"
+              }
+            ]
+          },
+          {
+            "isStatement": true,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": "Print the total bill of the ride in the format ‘BILL <RIDE_ID> <DRIVER_ID> <AMOUNT>’. To calculate the total bill use the following formula: \n",
+            "hasOrderedList": true,
+            "orderedList": [
+              "A base fare of ₹50 is charged for every ride.",
+              "An additional ₹6.5 is charged for every kilometer traveled.",
+              "An additional ₹2 is charged for every minute spent in the ride.",
+              "A service tax of 20% is added to the final amount.\n"
+            ]
+          },
+          {
+            "isStatement": true,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": "Note:\n",
+            "hasOrderedList": true,
+            "orderedList": [
+              "If the ride is not completed then print “RIDE_NOT_COMPLETED”",
+              "If the <RIDE_ID> does not exist, then print ‘INVALID_RIDE’\n"
+            ]
+          }
+        ]
+      },
+      {
+        "hasHeading": true,
+        "heading": "Sample Input/Output 1",
+        "subSections": [
+          {
+            "isTable": true,
+            "tableData": [
+              {
+                "isHeaderRow": true,
+                "data": {
+                  "input": "INPUT",
+                  "output": "OUTPUT"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "input": [
+                    ""
+                  ],
+                  "output": [
+                    ""
+                  ]
+                },
+                "usesCustomData": true,
+                "data": {
+                  "input": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ADD_DRIVER"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "D1 1 1\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ADD_DRIVER"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "D2 4 5\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ADD_DRIVER"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "D3 2 2\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ADD_RIDER"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "R1 0 0\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "MATCH"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "R1\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "START_RIDE"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "RIDE-001 2 R1\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "STOP_RIDE"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "RIDE-001 4 5 32\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "BILL"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "RIDE-001\n"
+                    }
+                  ],
+                  "output": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "DRIVERS_MATCHED "
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "D1 D3\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "RIDE_STARTED"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "RIDE-001\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "RIDE_STOPPED"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "RIDE-001\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "BILL"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "RIDE-001 D3 186.72\n"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "hasHeading": true,
+        "heading": "Sample Input/Output 2",
+        "subSections": [
+          {
+            "isTable": true,
+            "tableData": [
+              {
+                "isHeaderRow": true,
+                "data": {
+                  "input": "INPUT",
+                  "output": "OUTPUT"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "input": [
+                    ""
+                  ],
+                  "output": [
+                    ""
+                  ]
+                },
+                "usesCustomData": true,
+                "data": {
+                  "input": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ADD_DRIVER"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "D1 0 1\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ADD_DRIVER"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "D2 2 3\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ADD_RIDER"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "R1 3 5\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ADD_DRIVER"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "D3 4 2\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ADD_RIDER"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "R2 1 1\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "MATCH"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "R1\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "MATCH"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "R2\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "START_RIDE"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "RIDE-101 1 R1\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "START_RIDE"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "RIDE-102 1 R2\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "STOP_RIDE"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "RIDE-101 10 2 48\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "STOP_RIDE"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "RIDE-102 7 9 50\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "BILL"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "RIDE-101\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "BILL"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "RIDE-102\n"
+                    }
+                  ],
+                  "output": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "DRIVERS_MATCHED"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "D2 D3 D1\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "DRIVERS_MATCHED"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "D1 D2 D3\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "RIDE_STARTED"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "RIDE-101\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "RIDE_STARTED"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "RIDE-102\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "RIDE_STOPPED"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "RIDE-101\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "RIDE_STOPPED"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "RIDE-102\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "BILL"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "RIDE-101 D2 234.64\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "BILL"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "RIDE-102 D1 258.00\n"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
