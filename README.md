@@ -51,6 +51,8 @@ Structured copy (JSON): **[`data/geektrust/portfolio-badges.json`](data/geektrus
 
 **Generate / refresh challenge scaffolds** from [`data/geektrust/problems/`](data/geektrust/problems/): `node scripts/scaffold-geektrust-challenges.mjs` (see [`problems/README.md`](problems/README.md) for flags).
 
+**Regenerate PDF stub samples** (family, war, traffic, tame-of-thrones): `cd scripts && npm install && node extract-pdf-samples.mjs` (see [`data/geektrust/README.md`](data/geektrust/README.md)).
+
 **How to run / input file format:** each challenge folder’s **README** follows Geektrust’s guidelines (`metro-card/`, `power-of-g-man/`, `geekdemy-node/`, etc.).
 
 ---
