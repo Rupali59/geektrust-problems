@@ -6,7 +6,7 @@
 |------|------|
 | [`README.md`](../README.md) | Landing page: showcase, challenge table, links |
 | [`scripts/sync-geektrust-data.mjs`](../scripts/sync-geektrust-data.mjs) | Maintainer script that refetches problem JSON from Geektrust’s app bundle (optional) |
-| [`data/geektrust/`](../data/geektrust/) | Catalog + problem JSON + portfolio badge snapshot |
+| [`data/geektrust/`](../data/geektrust/) | Full **24-challenge** export (`problems/*.json`, `problems-index.json`, `catalog.json`) + portfolio badge snapshot |
 | [`PORTFOLIO.md`](../PORTFOLIO.md) | Badges, score, data file index |
 | [`problems/README.md`](../problems/README.md) | Index of repo problems → `data/geektrust/problems/*.json` |
 | `metro-card/` | Metro Card solution (Node) |
