@@ -1,8 +1,0 @@
-{
-  "name": "geektrust-problems",
-  "private": true,
-  "description": "Root helpers only; each challenge has its own package.json",
-  "scripts": {
-    "sync:geektrust": "node scripts/sync-geektrust-data.mjs"
-  }
-}

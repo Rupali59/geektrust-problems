@@ -23,21 +23,11 @@ Structured copy: [`data/geektrust/portfolio-badges.json`](data/geektrust/portfol
 | **All challenge slugs + ids** | [`data/geektrust/catalog.json`](data/geektrust/catalog.json) |
 | **Public share / membership blurb (OG)** | [`data/geektrust/share-summary.json`](data/geektrust/share-summary.json) |
 
-Refresh everything (and optionally your badge share id):
-
-```bash
-npm run sync:geektrust
-# optional:
-GEEKTRUST_SHARE_BADGE_ID=your_public_share_id npm run sync:geektrust
-```
-
-The **share summary** is scraped from Geektrust’s public [`/api/share/badges/<id>`](https://www.geektrust.com/api/share/badges/1644409049) page (Open Graph tags). Example `ogDescription` at last sync:
+The **share summary** comes from Geektrust’s public [`/api/share/badges/<id>`](https://www.geektrust.com/api/share/badges/1644409049) page (Open Graph tags). Example `ogDescription` at last sync:
 
 > *I took up Metro Card challenge on @geektrust.com and earned 5 badges, and was awarded the GOLD membership…*
 
-Exact text updates when you re-run sync with your share id.
-
-**Numeric code-quality scores** are **not** on the public share page; they appear on the logged-in report (also stored in [`portfolio-badges.json`](data/geektrust/portfolio-badges.json) when you refresh that file from the UI).
+**Numeric code-quality scores** are **not** on the public share page; they appear on the logged-in report (also stored in [`portfolio-badges.json`](data/geektrust/portfolio-badges.json)).
 
 ---
 

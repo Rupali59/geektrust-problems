@@ -34,19 +34,7 @@ Structured copy (JSON): **[`data/geektrust/portfolio-badges.json`](data/geektrus
 | **This repo** | [github.com/Rupali59/geektrust-problems](https://github.com/Rupali59/geektrust-problems) |
 | **Link this repo on Geektrust** | [Code portfolio](https://www.geektrust.com/candidates/coding/code-portfolio) |
 
-**Problem specs** in [`data/geektrust/problems/`](data/geektrust/problems/) are refreshed from Geektrust’s live app bundle: `npm run sync:geektrust`. Refresh **`portfolio-badges.json`** when you earn new badges (from the report UI or by editing the JSON).
-
----
-
-## Sync from Geektrust
-
-```bash
-npm run sync:geektrust
-# optional: refresh public share blurb (use your share id from Geektrust)
-GEEKTRUST_SHARE_BADGE_ID=1644409049 npm run sync:geektrust
-```
-
-Writes **`data/geektrust/`** — catalog, per-problem JSON, `sync-meta.json`, and optionally `share-summary.json`. Details: [`data/geektrust/README.md`](data/geektrust/README.md).
+**Problem specs** (JSON) live in [`data/geektrust/problems/`](data/geektrust/problems/). **`portfolio-badges.json`** is your showcase copy from the Geektrust report (update when you earn new badges).
 
 ---
 
@@ -61,16 +49,7 @@ Writes **`data/geektrust/`** — catalog, per-problem JSON, `sync-meta.json`, an
 
 **Definitions index (links to JSON):** [`problems/README.md`](problems/README.md) · **Portfolio notes:** [`PORTFOLIO.md`](PORTFOLIO.md) · **Repo layout:** [`docs/REPO-LAYOUT.md`](docs/REPO-LAYOUT.md)
 
----
-
-## Run challenge code locally
-
-```bash
-cd metro-card   # or power-of-g-man, geekdemy-node
-npm ci
-npm test        # where tests exist
-./run.sh        # macOS/Linux — or run.bat on Windows
-```
+**How to run / input file format:** each challenge folder’s **README** follows Geektrust’s guidelines (`metro-card/`, `power-of-g-man/`, `geekdemy-node/`, etc.).
 
 ---
 

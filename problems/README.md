@@ -1,7 +1,7 @@
 # Problem definitions (index)
 
 **Canonical copies** of Geektrust’s embedded problem JSON (statements, samples where present) live under **[`data/geektrust/problems/`](../data/geektrust/problems/)**.  
-Refresh: `npm run sync:geektrust` · Meta: [`data/geektrust/sync-meta.json`](../data/geektrust/sync-meta.json)
+Last bundle capture: [`data/geektrust/sync-meta.json`](../data/geektrust/sync-meta.json).
 
 | Slug (folder) | `problemId` | This repo | Live problem page |
 |---------------|-------------|-----------|-------------------|

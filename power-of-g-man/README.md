@@ -2,7 +2,7 @@
 
 **Official challenge:** [Power of G-Man on Geektrust](https://www.geektrust.com/candidates/coding/detailed/power-of-g-man)
 
-**Canonical spec (synced from Geektrust):** [`../data/geektrust/problems/power-of-g-man.json`](../data/geektrust/problems/power-of-g-man.json) · Re-run: `npm run sync:geektrust`.
+**Canonical spec (Geektrust):** [`../data/geektrust/problems/power-of-g-man.json`](../data/geektrust/problems/power-of-g-man.json).
 
 **Geektrust catalog:** Problem code **`BD-PS16-1`** · slug `power-of-g-man`.
 

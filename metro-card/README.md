@@ -2,7 +2,7 @@
 
 **Official challenge:** [Metro Card on Geektrust](https://www.geektrust.com/candidates/coding/detailed/metro-card)
 
-**Canonical spec (synced from Geektrust):** [`../data/geektrust/problems/metro-card.json`](../data/geektrust/problems/metro-card.json) · Re-run: `npm run sync:geektrust` from repo root.
+**Canonical spec (Geektrust):** [`../data/geektrust/problems/metro-card.json`](../data/geektrust/problems/metro-card.json).
 
 **Geektrust catalog:** Problem code **`BD-PS20-1`** · slug `metro-card`.
 

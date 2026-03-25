@@ -2,7 +2,7 @@
 
 **Official challenge:** [Geekdemy on Geektrust](https://www.geektrust.com/candidates/coding/detailed/geekdemy)
 
-**Canonical spec (synced from Geektrust):** [`../data/geektrust/problems/geekdemy.json`](../data/geektrust/problems/geekdemy.json) · Re-run: `npm run sync:geektrust`.
+**Canonical spec (Geektrust):** [`../data/geektrust/problems/geekdemy.json`](../data/geektrust/problems/geekdemy.json).
 
 **Geektrust catalog:** Problem code **`BD-PS17-1`** · slug `geekdemy`.
 

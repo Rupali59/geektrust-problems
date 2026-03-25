@@ -4,34 +4,22 @@
 
 | Path | Role |
 |------|------|
-| [`README.md`](../README.md) | Landing page: links, sync instructions, challenge table |
-| [`package.json`](../package.json) | Root-only script: `npm run sync:geektrust` |
-| [`scripts/sync-geektrust-data.mjs`](../scripts/sync-geektrust-data.mjs) | Fetches live Geektrust bundle → [`data/geektrust/`](../data/geektrust/) |
-| [`data/geektrust/`](../data/geektrust/) | **Synced** catalog + problem JSON + optional share OG summary |
-| [`PORTFOLIO.md`](../PORTFOLIO.md) | Where synced files are described + portfolio links |
+| [`README.md`](../README.md) | Landing page: showcase, challenge table, links |
+| [`scripts/sync-geektrust-data.mjs`](../scripts/sync-geektrust-data.mjs) | Maintainer script that refetches problem JSON from Geektrust’s app bundle (optional) |
+| [`data/geektrust/`](../data/geektrust/) | Catalog + problem JSON + portfolio badge snapshot |
+| [`PORTFOLIO.md`](../PORTFOLIO.md) | Badges, score, data file index |
 | [`problems/README.md`](../problems/README.md) | Index of repo problems → `data/geektrust/problems/*.json` |
-| `metro-card/` | **Submitted** Metro Card solution (Node) |
-| `power-of-g-man/` | Power of G-Man — scaffold / work in progress |
-| `geekdemy-node/` | Geekdemy — scaffold / work in progress |
-| `tame-of-thrones/` | Tame of Thrones — **spec + resources** (problem 2 message list) |
+| `metro-card/` | Metro Card solution (Node) |
+| `power-of-g-man/` | Power of G-Man — scaffold |
+| `geekdemy-node/` | Geekdemy — scaffold |
+| `tame-of-thrones/` | Spec + resources |
 
-## Standard shape of a Node challenge folder
+## Challenge folders (Geektrust layout)
 
-Geektrust’s Node template expects:
+Each Node challenge follows Geektrust’s usual layout: `geektrust.js`, `package.json`, `sample_input/`, and `run.sh` / `run.bat`. **How to run and input/command formats** are documented only in each folder’s **README** (Geektrust guidelines).
 
-- `geektrust.js` — entrypoint; first CLI arg = path to input file  
-- `package.json` — `start` runs `node geektrust.js`  
-- `sample_input/` — `input1.txt`, `input2.txt`  
-- `run.sh` / `run.bat` — optional convenience runners  
+**`metro-card/`** adds `commands/`, `core/`, and `test/` around that template.
 
-This repo **extends** that where solutions exist:
+## Tame of Thrones
 
-- **`metro-card/`** — `commands/` (parse), `core/` (domain), `test/` (Mocha)  
-- **Scaffolds** — only template files until you add modules/tests  
-
-## Tame of Thrones (non-standard)
-
-No `package.json` required until you add a solution. Holds:
-
-- `README.md` — problem definitions  
-- `resources/boc-messages.txt` — message pool for *Breaker of Chains*
+No Node app until you add one. Contains `README.md` (problem text) and `resources/boc-messages.txt`.
