@@ -1,0 +1,8 @@
+None
+None
+Allies for Fire : 0
+Allies for Space: 0
+Allies for Fire : 1
+Allies for Space: 2
+Space
+Land Ice

@@ -1,0 +1,5 @@
+Weather is Windy
+Orbit1 max traffic speed is 5 megamiles/hour
+Orbit2 max traffic speed is 10 megamiles/hour
+Orbit3 max traffic speed is 20 megamiles/hour
+Orbit4 max traffic speed is 20 megamiles/hour

@@ -1,0 +1,12 @@
+{
+  "name": "geektrust-problems-scripts",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "extract-pdf-samples": "node extract-pdf-samples.mjs"
+  },
+  "dependencies": {
+    "pdf-parse": "^1.1.1"
+  }
+}

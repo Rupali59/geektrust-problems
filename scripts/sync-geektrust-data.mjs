@@ -15,20 +15,14 @@ import { writeFile, mkdir } from "node:fs/promises"
 import { dirname, join } from "node:path"
 import { fileURLToPath } from "node:url"
 
+import { STUB_SLUG_TO_PROBLEM_SET } from "./geektrust-stub-pdfs.mjs"
+
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, "..")
 const OUT = join(ROOT, "data", "geektrust")
 
 const CHALLENGES_PAGE = "https://www.geektrust.com/candidates/coding/challenges"
 const DETAILED_BASE = "https://www.geektrust.com/candidates/coding/detailed"
-
-/** Bundle has no embedded statement for these slugs; official spec is the Problem Set PDF. */
-const STUB_SLUG_TO_PROBLEM_SET = {
-  family: "PS1",
-  war: "PS2",
-  traffic: "PS3",
-  "tame-of-thrones": "PS5",
-}
 
 async function fetchText(url) {
   const res = await fetch(url)

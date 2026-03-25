@@ -7,6 +7,7 @@
 | [`README.md`](../README.md) | Landing page: showcase, challenge table, links |
 | [`scripts/sync-geektrust-data.mjs`](../scripts/sync-geektrust-data.mjs) | Refetch problem JSON from Geektrust’s app bundle (optional) |
 | [`scripts/scaffold-geektrust-challenges.mjs`](../scripts/scaffold-geektrust-challenges.mjs) | Generate per-slug CLI / UI / stub folders from `data/geektrust/problems/*.json` |
+| [`scripts/extract-pdf-samples.mjs`](../scripts/extract-pdf-samples.mjs) + [`scripts/package.json`](../scripts/package.json) | `pdf-parse`: fill `sample_input` / `sample_output` for PDF-only stubs from PS1–PS5 |
 | [`data/geektrust/`](../data/geektrust/) | Full **24-challenge** export (`problems/*.json`, `problems-index.json`, `catalog.json`) + portfolio badge snapshot |
 | [`PORTFOLIO.md`](../PORTFOLIO.md) | Badges, score, data file index |
 | [`problems/README.md`](../problems/README.md) | Index of repo problems → `data/geektrust/problems/*.json` |

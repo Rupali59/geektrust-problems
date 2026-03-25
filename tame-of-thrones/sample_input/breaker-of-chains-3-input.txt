@@ -1,0 +1,8 @@
+Who is the ruler of Southeros?
+Allies of Ruler?
+Enter the kingdoms competing to be the ruler:
+Input: Fire Space
+Results after round one ballot count
+Results after round two ballot count
+Who is the ruler of Southeros?
+Allies of Ruler?

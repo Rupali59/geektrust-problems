@@ -4,3 +4,5 @@
 node_modules/
 package-lock.json
 dist/
+data/geektrust/extracted-text/
+scripts/node_modules/

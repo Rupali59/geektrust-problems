@@ -1,0 +1,5 @@
+Who is the ruler of Southeros?
+Allies of Ruler?
+Enter the kingdoms competing to be the ruler:
+Input: Ice Space Air
+Results after round one ballot count

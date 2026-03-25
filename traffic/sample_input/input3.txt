@@ -1,0 +1,5 @@
+Weather is Sunny
+Orbit1 max traffic speed is 20 megamiles/hour
+Orbit2 max traffic speed is 12 megamiles/hour
+Orbit3 max traffic speed is 15 megamiles/hour
+Orbit4 max traffic speed is 12 megamiles/hour

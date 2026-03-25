@@ -1,0 +1,8 @@
+None
+None
+Allies for Land : 1
+Allies for Air: 1
+Allies for Land : 1
+Allies for Air: 2
+Air
+Fire Space

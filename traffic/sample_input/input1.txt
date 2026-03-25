@@ -1,0 +1,3 @@
+Weather is Sunny
+Orbit1 traffic speed is 12 megamiles/hour
+Orbit2 traffic speed is 10 megamiles/hour

@@ -16,3 +16,15 @@ The Geektrust app bundle does **not** embed the full `problemStatement` / sample
 
 - **Problem Set PDF (local):** [`../data/geektrust/pdfs/PS2.pdf`](../data/geektrust/pdfs/PS2.pdf) — **PS2**
 - **PDF on Geektrust:** [open PDF](https://www.geektrust.com/api/pdf/open/PS2)
+
+## Sample I/O (from PDF)
+
+[`sample_input/`](sample_input/) / [`sample_output/`](sample_output/) — regenerate with **`cd scripts && npm install && node extract-pdf-samples.mjs`**.
+
+## Run
+
+`./run.sh` or `npm install` then `npm start -- sample_input/input1.txt`.
+
+## Tests
+
+`npm test`

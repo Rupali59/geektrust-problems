@@ -18,10 +18,13 @@ This folder holds the **Tame of Thrones** material (**A Golden Crown** + **Break
 tame-of-thrones/
 ├── README.md                    # This file — full problem write-up
 ├── package.json / geektrust.js / run.sh / test.js
-├── sample_input/
+├── sample_input/                # PDF-derived samples (+ input1.txt = golden-crown-1)
+├── sample_output/
 ├── resources/
 │   └── boc-messages.txt         # Message pool for Problem 2
 ```
+
+Regenerate samples from PS5.pdf: **`cd scripts && npm install && node extract-pdf-samples.mjs`**.
 
 **One-line definition:** [problems/README.md](../problems/README.md#tame-of-thrones)
 
