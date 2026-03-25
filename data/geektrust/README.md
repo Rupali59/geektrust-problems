@@ -6,8 +6,9 @@ Committed snapshots for **portfolio** and **all coding challenges** exposed in t
 |------|------|
 | [`sync-meta.json`](sync-meta.json) | Last update time, bundle URL, counts (catalog size vs full embedded statements) |
 | [`catalog.json`](catalog.json) | All `{ slug, problemId }` pairs (**24** challenges at last export) |
-| [`problems-index.json`](problems-index.json) | Each slug with `detailedUrl` and `hasEmbeddedPayload` |
-| [`problems/*.json`](problems/) | **One file per challenge** — full embedded payload when present, else a small stub + `detailedUrl` |
+| [`problems-index.json`](problems-index.json) | Each slug with `detailedUrl`, `hasEmbeddedPayload`, and `hasProblemSetPdf` (stubs) |
+| [`problems/*.json`](problems/) | **One file per challenge** — full embedded payload when present, else stub + `detailedUrl` + **Problem Set PDF** refs (`pdfUrl`, `localPdf`, `problemSetPdf`) |
+| [`pdfs/*.pdf`](pdfs/) | Official **PS1 / PS2 / PS3 / PS5** PDFs (full spec for bundle stubs: family, war, traffic, tame-of-thrones) |
 | [`share-summary.json`](share-summary.json) | Open Graph text from a **public** badge share URL |
 | [`portfolio-badges.json`](portfolio-badges.json) | Badges, score, and dates from the logged-in **Code Portfolio** report |
 

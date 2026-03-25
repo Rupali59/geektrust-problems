@@ -34,7 +34,7 @@ Structured copy (JSON): **[`data/geektrust/portfolio-badges.json`](data/geektrus
 | **This repo** | [github.com/Rupali59/geektrust-problems](https://github.com/Rupali59/geektrust-problems) |
 | **Link this repo on Geektrust** | [Code portfolio](https://www.geektrust.com/candidates/coding/code-portfolio) |
 
-**All Geektrust coding challenges** in the live app bundle are mirrored as JSON under [`data/geektrust/problems/`](data/geektrust/problems/) (see [`problems-index.json`](data/geektrust/problems-index.json) and [`problems/README.md`](problems/README.md)). **`portfolio-badges.json`** is your showcase copy from the Geektrust report.
+**All Geektrust coding challenges** in the live app bundle are mirrored as JSON under [`data/geektrust/problems/`](data/geektrust/problems/) (see [`problems-index.json`](data/geektrust/problems-index.json) and [`problems/README.md`](problems/README.md)). The four bundle stubs (`family`, `war`, `traffic`, `tame-of-thrones`) also have the official **Problem Set PDFs** committed under [`data/geektrust/pdfs/`](data/geektrust/pdfs/) (PS1–PS3, PS5), linked from each stub’s JSON — refresh with `node scripts/sync-geektrust-data.mjs`. **`portfolio-badges.json`** is your showcase copy from the Geektrust report.
 
 ---
 

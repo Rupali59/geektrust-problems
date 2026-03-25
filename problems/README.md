@@ -6,7 +6,7 @@ Every challenge currently embedded in Geektrust’s **candidate coding challenge
 - **Flat catalog** (slug + `problemId` only): [`../data/geektrust/catalog.json`](../data/geektrust/catalog.json)  
 - **Last fetch metadata**: [`../data/geektrust/sync-meta.json`](../data/geektrust/sync-meta.json)
 
-**20** problems include a full embedded `problemStatement` / samples in the bundle; **4** are **stub** files (`family`, `war`, `traffic`, `tame-of-thrones`) — use the **detailed** link on Geektrust for the full spec (Tame of Thrones also has the [Set 5 PDF](https://www.geektrust.com/api/pdf/open/PS5)).
+**20** problems include a full embedded `problemStatement` / samples in the bundle; **4** are **stub** files in the app bundle (`family`, `war`, `traffic`, `tame-of-thrones`) — each stub JSON points at the official **Problem Set PDF** under [`../data/geektrust/pdfs/`](../data/geektrust/pdfs/) (PS1, PS2, PS3, PS5) and at the [coding challenges](https://www.geektrust.com/candidates/coding/challenges) / per-slug detailed pages on Geektrust. Run `node scripts/sync-geektrust-data.mjs` to refetch bundle + PDFs.
 
 **Scaffolds:** from repo root run `node scripts/scaffold-geektrust-challenges.mjs` (optional `--slug=<slug>`, `--with-tame` to add Node stubs under `tame-of-thrones/`). Skips `metro-card`, `power-of-g-man`, `geekdemy` (use `geekdemy-node/`), and `tame-of-thrones` unless `--with-tame`.
 

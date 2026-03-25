@@ -409,17 +409,22 @@ Frontend challenges often include a PDF or downloadable assets on Geektrust. Use
 function writeStubReadme(dir, slug, data) {
   const problemId = data.problemId || "";
   const title = titleCaseSlug(slug);
+  const pdfBlock =
+    data.pdfUrl && data.localPdf
+      ? `
+- **Problem Set PDF (local):** [\`../data/geektrust/${data.localPdf}\`](../data/geektrust/${data.localPdf}) — **${data.problemSetPdf || ""}**
+- **PDF on Geektrust:** [open PDF](${data.pdfUrl})
+`
+      : "";
   const body = `${readmeHeader(title, slug, problemId)}
 
 ## Spec in this repo
 
 The Geektrust app bundle does **not** embed the full \`problemStatement\` / samples for this slug. This folder only holds a pointer.
 
-- Refresh JSON: \`node scripts/sync-geektrust-data.mjs\`
+- Refresh JSON + PDFs: \`node scripts/sync-geektrust-data.mjs\`
 - Read the full problem on [Geektrust](${detailedUrl(slug)})
-
-For **Tame of Thrones**, also use the [Set 5 PDF](https://www.geektrust.com/api/pdf/open/PS5).
-`;
+${pdfBlock}`;
   fs.mkdirSync(dir, { recursive: true });
   writeIfChanged(path.join(dir, "README.md"), body);
 }

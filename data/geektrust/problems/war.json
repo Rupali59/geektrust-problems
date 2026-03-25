@@ -1,6 +1,9 @@
 {
   "slug": "war",
   "problemId": "BD-PS2-1",
-  "note": "No problemStatement/sampleInputOutput in the app bundle for this slug — open detailedUrl on Geektrust for the full spec.",
-  "detailedUrl": "https://www.geektrust.com/candidates/coding/detailed/war"
+  "note": "No problemStatement/sampleInputOutput in the candidate app bundle — use problemSetPdf / localPdf / pdfUrl for the full spec.",
+  "detailedUrl": "https://www.geektrust.com/candidates/coding/detailed/war",
+  "problemSetPdf": "PS2",
+  "pdfUrl": "https://www.geektrust.com/api/pdf/open/PS2",
+  "localPdf": "pdfs/PS2.pdf"
 }

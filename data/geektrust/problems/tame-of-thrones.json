@@ -1,6 +1,9 @@
 {
   "slug": "tame-of-thrones",
   "problemId": "BD-PS5-1",
-  "note": "No problemStatement/sampleInputOutput in the app bundle for this slug — open detailedUrl on Geektrust for the full spec.",
-  "detailedUrl": "https://www.geektrust.com/candidates/coding/detailed/tame-of-thrones"
+  "note": "No problemStatement/sampleInputOutput in the candidate app bundle — use problemSetPdf / localPdf / pdfUrl for the full spec.",
+  "detailedUrl": "https://www.geektrust.com/candidates/coding/detailed/tame-of-thrones",
+  "problemSetPdf": "PS5",
+  "pdfUrl": "https://www.geektrust.com/api/pdf/open/PS5",
+  "localPdf": "pdfs/PS5.pdf"
 }

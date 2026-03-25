@@ -2,6 +2,8 @@
 /**
  * Pulls ALL coding-problem metadata + embedded statements from Geektrust's
  * candidate app bundle (same JSON as https://www.geektrust.com/candidates/coding/challenges).
+ * Also downloads official Problem Set PDFs (PS1, PS2, PS3, PS5) for the four bundle stubs
+ * into data/geektrust/pdfs/ and links them from each stub's problems/<slug>.json.
  *
  * Usage: node scripts/sync-geektrust-data.mjs
  *
@@ -20,10 +22,24 @@ const OUT = join(ROOT, "data", "geektrust")
 const CHALLENGES_PAGE = "https://www.geektrust.com/candidates/coding/challenges"
 const DETAILED_BASE = "https://www.geektrust.com/candidates/coding/detailed"
 
+/** Bundle has no embedded statement for these slugs; official spec is the Problem Set PDF. */
+const STUB_SLUG_TO_PROBLEM_SET = {
+  family: "PS1",
+  war: "PS2",
+  traffic: "PS3",
+  "tame-of-thrones": "PS5",
+}
+
 async function fetchText(url) {
   const res = await fetch(url)
   if (!res.ok) throw new Error(`${url} -> ${res.status}`)
   return res.text()
+}
+
+async function fetchBinary(url) {
+  const res = await fetch(url)
+  if (!res.ok) throw new Error(`${url} -> ${res.status}`)
+  return Buffer.from(await res.arrayBuffer())
 }
 
 function extractMainScript(html) {
@@ -90,6 +106,20 @@ async function main() {
   const entries = [...catalog.values()].sort((a, b) => a.problemId.localeCompare(b.problemId))
   const generatedAt = new Date().toISOString()
   const withFull = [...fullBySlug.keys()]
+  const problemSetsToFetch = [...new Set(Object.values(STUB_SLUG_TO_PROBLEM_SET))]
+
+  const pdfDir = join(OUT, "pdfs")
+  await mkdir(pdfDir, { recursive: true })
+  for (const ps of problemSetsToFetch) {
+    const pdfUrl = `https://www.geektrust.com/api/pdf/open/${ps}`
+    try {
+      const buf = await fetchBinary(pdfUrl)
+      await writeFile(join(pdfDir, `${ps}.pdf`), buf)
+      console.log("Wrote PDF", join("data/geektrust/pdfs", `${ps}.pdf`), `(${buf.length} bytes)`)
+    } catch (e) {
+      console.warn("PDF fetch failed:", ps, e.message)
+    }
+  }
 
   await writeFile(
     join(OUT, "sync-meta.json"),
@@ -102,6 +132,7 @@ async function main() {
         catalogProblemCount: entries.length,
         problemsWithEmbeddedStatement: withFull.length,
         problemsStubOnly: entries.length - withFull.length,
+        problemSetPdfsFetched: problemSetsToFetch,
       },
       null,
       2
@@ -115,18 +146,34 @@ async function main() {
     problemId: e.problemId,
     detailedUrl: `${DETAILED_BASE}/${e.slug}`,
     hasEmbeddedPayload: fullBySlug.has(e.slug),
+    hasProblemSetPdf: Boolean(STUB_SLUG_TO_PROBLEM_SET[e.slug]),
   }))
 
   await writeFile(join(OUT, "problems-index.json"), JSON.stringify({ generatedAt, problems: problemsIndex }, null, 2) + "\n")
 
   for (const { slug, problemId } of entries) {
     const full = fullBySlug.get(slug)
-    const payload = full ?? {
-      slug,
-      problemId,
-      note: "No problemStatement/sampleInputOutput in the app bundle for this slug — open detailedUrl on Geektrust for the full spec.",
-      detailedUrl: `${DETAILED_BASE}/${slug}`,
-    }
+    const problemSetPdf = STUB_SLUG_TO_PROBLEM_SET[slug]
+    const pdfUrl = problemSetPdf ? `https://www.geektrust.com/api/pdf/open/${problemSetPdf}` : null
+    const localPdfRelative = problemSetPdf ? `pdfs/${problemSetPdf}.pdf` : null
+    const payload =
+      full ??
+      (problemSetPdf
+        ? {
+            slug,
+            problemId,
+            note: "No problemStatement/sampleInputOutput in the candidate app bundle — use problemSetPdf / localPdf / pdfUrl for the full spec.",
+            detailedUrl: `${DETAILED_BASE}/${slug}`,
+            problemSetPdf,
+            pdfUrl,
+            localPdf: localPdfRelative,
+          }
+        : {
+            slug,
+            problemId,
+            note: "No problemStatement/sampleInputOutput in the app bundle for this slug — open detailedUrl on Geektrust for the full spec.",
+            detailedUrl: `${DETAILED_BASE}/${slug}`,
+          })
     await writeFile(join(OUT, "problems", `${slug}.json`), JSON.stringify(payload, null, 2) + "\n")
   }
 

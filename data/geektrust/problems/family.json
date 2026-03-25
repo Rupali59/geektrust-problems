@@ -1,6 +1,9 @@
 {
   "slug": "family",
   "problemId": "BD-PS1-1",
-  "note": "No problemStatement/sampleInputOutput in the app bundle for this slug — open detailedUrl on Geektrust for the full spec.",
-  "detailedUrl": "https://www.geektrust.com/candidates/coding/detailed/family"
+  "note": "No problemStatement/sampleInputOutput in the candidate app bundle — use problemSetPdf / localPdf / pdfUrl for the full spec.",
+  "detailedUrl": "https://www.geektrust.com/candidates/coding/detailed/family",
+  "problemSetPdf": "PS1",
+  "pdfUrl": "https://www.geektrust.com/api/pdf/open/PS1",
+  "localPdf": "pdfs/PS1.pdf"
 }

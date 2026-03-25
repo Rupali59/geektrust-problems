@@ -2,7 +2,7 @@
 
 **Official challenge:** [Tame of Thrones on Geektrust](https://www.geektrust.com/candidates/coding/detailed/tame-of-thrones)
 
-**Bundle snapshot (Geektrust):** [`../data/geektrust/problems/tame-of-thrones.json`](../data/geektrust/problems/tame-of-thrones.json) — currently slug + id only; **full spec** is in the [Set 5 PDF](https://www.geektrust.com/api/pdf/open/PS5) and below.
+**Bundle snapshot (Geektrust):** [`../data/geektrust/problems/tame-of-thrones.json`](../data/geektrust/problems/tame-of-thrones.json) — app bundle has metadata only; **full spec** is in the Problem Set PDF: [local `PS5.pdf`](../data/geektrust/pdfs/PS5.pdf) · [on Geektrust](https://www.geektrust.com/api/pdf/open/PS5). Narrative below follows that PDF.
 
 **Geektrust catalog:** Problem code **`BD-PS5-1`** · slug `tame-of-thrones`.
 
