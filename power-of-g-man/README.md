@@ -2,7 +2,9 @@
 
 **Official challenge:** [Power of G-Man on Geektrust](https://www.geektrust.com/candidates/coding/detailed/power-of-g-man)
 
-**Geektrust catalog:** Set **16** · Problem code **`BD-PS16-1`** · `urlName`: `power-of-g-man` · BACKEND · *“Find the remaining power G-Man has after taking the shortest path”* (wording per API).
+**Canonical spec (synced from Geektrust):** [`../data/geektrust/problems/power-of-g-man.json`](../data/geektrust/problems/power-of-g-man.json) · Re-run: `npm run sync:geektrust`.
+
+**Geektrust catalog:** Problem code **`BD-PS16-1`** · slug `power-of-g-man`.
 
 ## Status
 

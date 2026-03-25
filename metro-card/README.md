@@ -2,21 +2,15 @@
 
 **Official challenge:** [Metro Card on Geektrust](https://www.geektrust.com/candidates/coding/detailed/metro-card)
 
-**Geektrust catalog:** Set **20** · Problem code **`BD-PS20-1`** · `urlName`: `metro-card` · BACKEND · *“Calculate the total charge's incurred for each person travelling in metro train”* (wording per API).
+**Canonical spec (synced from Geektrust):** [`../data/geektrust/problems/metro-card.json`](../data/geektrust/problems/metro-card.json) · Re-run: `npm run sync:geektrust` from repo root.
 
-## Submission status (portfolio)
+**Geektrust catalog:** Problem code **`BD-PS20-1`** · slug `metro-card`.
 
-| | |
-|---|---|
-| **Status** | Submitted & evaluated on Geektrust |
-| **Code quality score** | **95.8** / 100 |
-| **Membership** | **GOLD** |
-| **Stack** | Node.js (evaluation noted **v16.10.0**) |
-| **Unit tests** | **10** passing · coverage reported **~75%** |
-| **Badges earned** | Build · Tests · Correctness · Readability · Maintainability |
-| **Not earned (yet)** | Functional / OO Modelling |
+## Submission highlights (from Geektrust public share page)
 
-Evaluation also noted **magic numbers** (readability sub-criterion)—e.g. consider named constants in `commands/command_parser.js`.
+Public Open Graph text is synced to [`../data/geektrust/share-summary.json`](../data/geektrust/share-summary.json) (e.g. **GOLD** membership, **5 badges**, Metro Card). **Numeric scores** are only on your logged-in dashboard — not in that public endpoint.
+
+Feedback from evaluation (when you last submitted) may mention things like **magic numbers** in `commands/command_parser.js`; see your Geektrust results for the exact rubric.
 
 ## Solution layout (this folder)
 

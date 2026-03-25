@@ -1,0 +1,646 @@
+{
+  "default": {
+    "slug": "metro-card",
+    "problemId": "BD-PS20-1"
+  },
+  "slug": "metro-card",
+  "problemId": "BD-PS20-1",
+  "problemStatement": {
+    "usesExperimentalComponent": true,
+    "contentSections": [
+      {
+        "isMadeUpOfSubSections": true,
+        "hasSectionHeading": true,
+        "sectionHeading": "Context",
+        "subSections": [
+          {
+            "isStatement": true,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": "A new metro train has been launched from the Central station to the Airport. It is a non-stop train, which means the train will stop only at the Airport with no intermediate stops. \nIt is also possible to return from the Airport back to the Central station. This is also a non-stop journey.\n"
+          }
+        ]
+      },
+      {
+        "isMadeUpOfSubSections": true,
+        "hasSectionHeading": true,
+        "sectionHeading": "",
+        "subSections": [
+          {
+            "hasSubsectionHeading": true,
+            "subSectionHeading": "MetroCard",
+            "isStatement": true,
+            "statement": "Metro authority prefers money to be collected via MetroCard. MetroCard is an electronic payment utility that can be used to pay for the metro travel charges. The MetroCard is like a wallet loaded with money. Each person traveling in this metro must carry a MetroCard and each card will have a unique number. \n"
+          },
+          {
+            "hasSubsectionHeading": false,
+            "subSectionHeading": null,
+            "isStatement": true,
+            "statement": "To travel by this train, one needs a MetroCard. If the MetroCard doesn’t have sufficient balance, then the remaining cost for the travel needs to be paid by recharging the MetroCard. This auto recharge loads only the required amount of money for the journey and the station collects a 2% service fee for the transaction."
+          },
+          {
+            "hasSubsectionHeading": true,
+            "subSectionHeading": "Travel charges",
+            "isStatement": true,
+            "statement": "Costs for the journey are based on the passenger's age. It is categorized as below\n",
+            "isImage": true,
+            "imageClasses": [
+              "center-align"
+            ],
+            "imageSource": "https://geektrust.sgp1.digitaloceanspaces.com/assets/v2/problems/metro-card/category_table.png"
+          }
+        ]
+      },
+      {
+        "isMadeUpOfSubSections": true,
+        "hasSectionHeading": true,
+        "sectionHeading": "",
+        "subSections": [
+          {
+            "hasSubsectionHeading": true,
+            "subSectionHeading": "Journey Types",
+            "isStatement": true,
+            "statement": "Travel charges are different for a single trip and for a return journey. When a passenger takes a return journey, there is a discount of 50% for the travel charges of the return journey. \n"
+          },
+          {
+            "hasSubsectionHeading": false,
+            "subSectionHeading": null,
+            "isStatement": true,
+            "statement": "For eg: If a senior citizen travels from Central to Airport, the travel charge collected is 100. If the same citizen travels back to Central station,  the amount collected for the return journey is 50. If the same citizen passes a third time on the same day, it will be treated as a new single journey and the travel charge collected is 100.\n"
+          }
+        ]
+      },
+      {
+        "isMadeUpOfSubSections": true,
+        "hasSectionHeading": true,
+        "sectionHeading": "Goal",
+        "subSections": [
+          {
+            "isStatement": true,
+            "hasSubsectionHeading": false,
+            "statement": "Your task is to build a solution that calculates various travel charges collected at each station and print the collection summary and passenger summary. \n",
+            "hasOrderedList": true,
+            "orderedList": [
+              "The collection summary should give a breakup of the total amount collected and the total discount given.",
+              "The passenger summary should display the total number of passengers traveled per type in descending order of the passenger count.",
+              "If any of the passenger type have same value for passenger count then display in the ascending order of the passenger type for that case. \n\tEx:If ADULT and KID has same value then display it as \n\tADULT <no_of_passengers>\n\tKID <no_of_passengers>\n"
+            ]
+          },
+          {
+            "hasSubsectionHeading": true,
+            "subSectionHeading": "Assumptions",
+            "isStatement": false,
+            "hasOrderedList": true,
+            "orderedList": [
+              "All passengers should have a MetroCard.",
+              "If a passenger does not have sufficient balance in the MetroCard, then the MetroCard needs to be recharged before taking up the journey.",
+              "The service fee for doing the recharge is collected by the origin station of the journey.",
+              "The passenger count is calculated based on journeys eg: if the same passenger travels twice, the count is 2.\n"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "sampleInputOutput": {
+    "usesExperimentalComponent": true,
+    "contentSections": [
+      {
+        "hasHeading": true,
+        "heading": "Input Commands & Format",
+        "subSections": [
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "BALANCE"
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "<METROCARD_NUMBER> <BALANCE_IN_THE_METROCARD>\n"
+              }
+            ]
+          },
+          {
+            "isStatement": false,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": null,
+            "hasOrderedList": true,
+            "orderedList": [
+              "<METROCARD_NUMBER> is the identifier for a given MetroCard.",
+              "<BALANCE_IN_THE_METROCARD> is the amount of money available in the MetroCard for journeys. \n"
+            ]
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "CHECK_IN"
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "<METROCARD_NUMBER>  <PASSENGER_TYPE> <FROM_STATION>\n"
+              }
+            ]
+          },
+          {
+            "isStatement": true,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": "The CHECK_IN command should deduct the appropriate amount of travel charge from the MetroCard of the passenger, depending on the passenger type. If the passenger has already made a single journey, then only 50% of the travel charge should be deducted from the MetroCard for their return journey.\n"
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "PRINT_SUMMARY"
+              }
+            ]
+          },
+          {
+            "isStatement": true,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": "Returns calculated travel charges collected, and passenger summary per station in the following format:\n",
+            "hasOrderedList": true,
+            "orderedList": [
+              "TOTAL_COLLECTION AIRPORT <amount of travel charges collected> <total discount given>",
+              "<PASSENGER_TYPE with highest count from AIRPORT> <passenger type count>",
+              "<PASSENGER_TYPE with second highest count from AIRPORT> <passenger type count>",
+              "<PASSENGER_TYPE with least count from AIRPORT> <passenger type count>",
+              "TOTAL_COLLECTION CENTRAL <amount of travel charges collected> <total discount given>",
+              "<PASSENGER_TYPE with highest count from CENTRAL> <passenger type count>",
+              "<PASSENGER_TYPE with second highest count from CENTRAL> <passenger type count>",
+              "<PASSENGER_TYPE with least count from CENTRAL> <passenger type count> \n"
+            ]
+          }
+        ]
+      },
+      {
+        "hasHeading": true,
+        "heading": "Sample Input/Output 1",
+        "subSections": [
+          {
+            "isTable": true,
+            "tableData": [
+              {
+                "isHeaderRow": true,
+                "data": {
+                  "input": "INPUT",
+                  "output": "OUTPUT"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "input": [
+                    ""
+                  ],
+                  "output": [
+                    ""
+                  ]
+                },
+                "usesCustomData": true,
+                "data": {
+                  "input": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "BALANCE"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "MC1 600\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "BALANCE"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "MC2 500 \n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "BALANCE"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "MC3 50 \n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "BALANCE"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "MC4 50 \n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "BALANCE"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "MC5 200 \n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "CHECK_IN"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "MC1 ADULT CENTRAL \n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "CHECK_IN"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "MC2 SENIOR_CITIZEN CENTRAL \n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "CHECK_IN"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "MC1 ADULT AIRPORT \n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "CHECK_IN"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "MC3 KID AIRPORT \n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "CHECK_IN"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "MC4 ADULT AIRPORT \n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "CHECK_IN"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "MC5 KID AIRPORT \n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "PRINT_SUMMARY \n"
+                    }
+                  ],
+                  "output": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "TOTAL_COLLECTION "
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "CENTRAL 300 0 \n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "PASSENGER_TYPE_SUMMARY\n"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "ADULT 1\n"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "SENIOR_CITIZEN 1\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "TOTAL_COLLECTION "
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "AIRPORT  403 100 \n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "PASSENGER_TYPE_SUMMARY\n"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "ADULT 2\n"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "KID 2\n"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "isStatement": true,
+            "statement": "Each person’s total charges are sorted in  ascending order of their metro card number."
+          },
+          {
+            "hasSubsectionHeading": true,
+            "subSectionHeading": "Explanation",
+            "isImage": true,
+            "imageClasses": [
+              "center-align"
+            ],
+            "imageSource": "https://geektrust.sgp1.digitaloceanspaces.com/assets/v2/problems/metro-card/explanation1.png"
+          }
+        ]
+      },
+      {
+        "hasHeading": true,
+        "heading": "Sample Input/Output 2",
+        "subSections": [
+          {
+            "isTable": true,
+            "tableData": [
+              {
+                "isHeaderRow": true,
+                "data": {
+                  "input": "INPUT",
+                  "output": "OUTPUT"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "input": [
+                    ""
+                  ],
+                  "output": [
+                    ""
+                  ]
+                },
+                "usesCustomData": true,
+                "data": {
+                  "input": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "BALANCE"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "MC1 400\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "BALANCE"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "MC2 100 \n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "BALANCE"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "MC3 50 \n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "BALANCE"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "MC4 50\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "CHECK_IN"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "MC1 SENIOR_CITIZEN AIRPORT \n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "CHECK_IN"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "MC2 KID AIRPORT \n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "CHECK_IN"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "MC3 ADULT CENTRAL \n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "CHECK_IN"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "MC1 SENIOR_CITIZEN CENTRAL \n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "CHECK_IN"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "MC3 ADULT AIRPORT \n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "CHECK_IN"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "MC3 ADULT CENTRAL \n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "PRINT_SUMMARY \n"
+                    }
+                  ],
+                  "output": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "TOTAL_COLLECTION "
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "CENTRAL 457 50\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "PASSENGER_TYPE_SUMMARY\n"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "ADULT 2\n"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "SENIOR_CITIZEN 1\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "TOTAL_COLLECTION "
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "AIRPORT  252 100\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "PASSENGER_TYPE_SUMMARY\n"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "ADULT 1\n"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "KID 1\n"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "SENIOR_CITIZEN 1\n"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "hasSubsectionHeading": true,
+            "subSectionHeading": "Explanation",
+            "isImage": true,
+            "imageClasses": [
+              "center-align"
+            ],
+            "imageSource": "https://geektrust.sgp1.digitaloceanspaces.com/assets/v2/problems/metro-card/EXPLANATION2.png"
+          }
+        ]
+      }
+    ]
+  }
+}

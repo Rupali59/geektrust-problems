@@ -2,7 +2,9 @@
 
 **Official challenge:** [Geekdemy on Geektrust](https://www.geektrust.com/candidates/coding/detailed/geekdemy)
 
-**Geektrust catalog:** Set **17** · Problem code **`BD-PS17-1`** · `urlName`: `geekdemy` · BACKEND · *“Generate the bill of purchases from Geekdemy”* (wording per API).
+**Canonical spec (synced from Geektrust):** [`../data/geektrust/problems/geekdemy.json`](../data/geektrust/problems/geekdemy.json) · Re-run: `npm run sync:geektrust`.
+
+**Geektrust catalog:** Problem code **`BD-PS17-1`** · slug `geekdemy`.
 
 ## Status
 

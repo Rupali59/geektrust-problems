@@ -2,7 +2,9 @@
 
 **Official challenge:** [Tame of Thrones on Geektrust](https://www.geektrust.com/candidates/coding/detailed/tame-of-thrones)
 
-**Geektrust catalog:** Set **5** · Problem code **`BD-PS5-1`** · listed name *“Set 5 - A Golden Crown”* · BACKEND. Problem 2 (*Breaker of Chains*) is bundled with the same Southeros storyline; full spec is in the [Set 5 PDF](https://www.geektrust.com/api/pdf/open/PS5).
+**Bundle snapshot (Geektrust):** [`../data/geektrust/problems/tame-of-thrones.json`](../data/geektrust/problems/tame-of-thrones.json) — currently slug + id only; **full spec** is in the [Set 5 PDF](https://www.geektrust.com/api/pdf/open/PS5) and below.
+
+**Geektrust catalog:** Problem code **`BD-PS5-1`** · slug `tame-of-thrones`.
 
 This folder holds the **Tame of Thrones** material (**A Golden Crown** + **Breaker of Chains**). Narrative and rules below follow that PDF.
 

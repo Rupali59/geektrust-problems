@@ -1,0 +1,101 @@
+{
+  "generatedAt": "2026-03-25T09:47:56.828Z",
+  "problems": [
+    {
+      "slug": "family",
+      "problemId": "BD-PS1-1"
+    },
+    {
+      "slug": "portfolio-overlap",
+      "problemId": "BD-PS10-1"
+    },
+    {
+      "slug": "water-management",
+      "problemId": "BD-PS11-1"
+    },
+    {
+      "slug": "expenses-management",
+      "problemId": "BD-PS12-1"
+    },
+    {
+      "slug": "racetrack-management",
+      "problemId": "BD-PS13-1"
+    },
+    {
+      "slug": "doremi-subscription",
+      "problemId": "BD-PS14-1"
+    },
+    {
+      "slug": "course-scheduling",
+      "problemId": "BD-PS15-1"
+    },
+    {
+      "slug": "power-of-g-man",
+      "problemId": "BD-PS16-1"
+    },
+    {
+      "slug": "geekdemy",
+      "problemId": "BD-PS17-1"
+    },
+    {
+      "slug": "stationery-shop",
+      "problemId": "BD-PS18-1"
+    },
+    {
+      "slug": "toll-calculator",
+      "problemId": "BD-PS19-1"
+    },
+    {
+      "slug": "war",
+      "problemId": "BD-PS2-1"
+    },
+    {
+      "slug": "metro-card",
+      "problemId": "BD-PS20-1"
+    },
+    {
+      "slug": "ride-sharing",
+      "problemId": "BD-PS21-1"
+    },
+    {
+      "slug": "traffic",
+      "problemId": "BD-PS3-1"
+    },
+    {
+      "slug": "tame-of-thrones",
+      "problemId": "BD-PS5-1"
+    },
+    {
+      "slug": "the-ledger-co",
+      "problemId": "BD-PS6-1"
+    },
+    {
+      "slug": "my-money",
+      "problemId": "BD-PS7-1"
+    },
+    {
+      "slug": "train",
+      "problemId": "BD-PS8-1"
+    },
+    {
+      "slug": "make-space",
+      "problemId": "BD-PS9-1"
+    },
+    {
+      "slug": "finding-falcone",
+      "problemId": "MO-PS1-1"
+    },
+    {
+      "slug": "space",
+      "problemId": "UI-PS1-1"
+    },
+    {
+      "slug": "admin-ui",
+      "problemId": "UI-PS2-1"
+    },
+    {
+      "slug": "teerex-store",
+      "problemId": "UI-PS3-1"
+    }
+  ]
+}

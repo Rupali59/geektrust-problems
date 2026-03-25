@@ -1,0 +1,792 @@
+{
+  "default": {
+    "problemId": "BD-PS17-1",
+    "slug": "geekdemy"
+  },
+  "slug": "geekdemy",
+  "problemId": "BD-PS17-1",
+  "problemStatement": {
+    "usesExperimentalComponent": true,
+    "contentSections": [
+      {
+        "isMadeUpOfSubSections": true,
+        "subSections": [
+          {
+            "isStatement": true,
+            "hasHeading": true,
+            "heading": "Context",
+            "statement": "Geekdemy provides a wide variety of online education programmes. Students can purchase them and enroll in these programmes. Geekdemy offers attractive discounts through their coupons so that students can spend less while purchasing these programmes.\n"
+          },
+          {
+            "hasSubsectionHeading": true,
+            "subSectionHeading": "Programmes",
+            "isStatement": true,
+            "statement": "There are 3 different categories of online programmes, and the cost is different for each category. A student can purchase any number of programmes at a time.\n",
+            "hasOrderedList": true,
+            "orderedList": [
+              "CERTIFICATION - Rs.3000",
+              "DEGREE - Rs. 5000",
+              "DIPLOMA - Rs 2500"
+            ]
+          }
+        ]
+      },
+      {
+        "isMadeUpOfSubSections": true,
+        "subSections": [
+          {
+            "hasSubsectionHeading": true,
+            "subSectionHeading": "Coupons",
+            "isStatement": true,
+            "statement": "The discount coupons offered by Geekdemy are based on different criteria. Only one discount coupon can be applied at a time.\n",
+            "hasOrderedList": true,
+            "orderedList": [
+              "B4G1 - This coupon is applied automatically if 4 or more programmes are being purchased. The student gets one programme for free. The lowest priced programme is given for FREE.\n",
+              "DEAL_G20 - This coupon can be applied if the purchased programmes value is Rs.10,000/- or above. It provides a 20% discount on the total programme cost. The coupon needs to be applied explicitly to get a discount.\n",
+              "DEAL_G5 - This coupon can only be applied if there are a minimum of 2 programmes being purchased. It provides a 5% discount on the total programme cost. The coupon needs to be applied explicitly to get a discount.\n"
+            ]
+          },
+          {
+            "hasSubsectionHeading": true,
+            "subSectionHeading": "Enrollment Fee",
+            "isStatement": true,
+            "statement": "If the total programme cost is below Rs. 6666/, an extra enrollment fee Rs.500/- is added to the cart. The enrollment fee is applied after the discount. If the total programme cost is or above Rs.6666/- the enrollment fee is waived off.\n"
+          },
+          {
+            "hasSubsectionHeading": true,
+            "subSectionHeading": "Pro Membership Fee",
+            "isStatement": true,
+            "statement": "A student can choose to purchase a Pro Membership for a small amount of Rs.200/- . The pro membership provides an additional membership discount on each of the individual programmes on top of the other discounts.\n",
+            "hasOrderedList": true,
+            "orderedList": [
+              "DIPLOMA - 1% discount",
+              "CERTIFICATION - 2% discount",
+              "DEGREE - 3% discount\n"
+            ]
+          },
+          {
+            "isImage": true,
+            "imageClasses": [
+              "three-fourth-width",
+              "center-align"
+            ],
+            "imageSource": "https://geektrust.sgp1.cdn.digitaloceanspaces.com/assets/v2/problems/geekdemy/membership_explanation.webp"
+          }
+        ]
+      },
+      {
+        "isMadeUpOfSubSections": true,
+        "hasSectionHeading": true,
+        "sectionHeading": "Goal",
+        "subSections": [
+          {
+            "isStatement": true,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": "Build a command-line application to purchase different kinds of programmes from Geekdemy. The application should generate a total bill of the programmes after applying the discounts, if any.\n"
+          }
+        ]
+      },
+      {
+        "isMadeUpOfSubSections": true,
+        "hasSectionHeading": true,
+        "sectionHeading": " 🛠 Refactoring Goal",
+        "hasSectionClass": true,
+        "sectionClass": [
+          "section-box-shadow"
+        ],
+        "subSections": [
+          {
+            "isStatement": true,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": "Turn bad code into good code!\n\nOverall, this solution is not great, is procedural, and does not follow clean code concepts. The input outputs are wrong too!\n\n You can choose to refactor the existing solution or solve this from scratch. You can download the existing coding solution here.\n\nThe existing coding solutions to this problem: "
+          },
+          {
+            "isStatement": false,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "isButtonList": true,
+            "buttonList": [
+              {
+                "iconName": "downloadcd",
+                "hasGlobalClass": true,
+                "globalClass": [
+                  "align-btn-title"
+                ],
+                "actionParam": "https://geektrust.s3.ap-southeast-1.amazonaws.com/coding-problems/geekdemy/java/geekdemy_java.zip",
+                "buttonTitle": "Java with Maven"
+              }
+            ]
+          },
+          {
+            "isStatement": true,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "hasGlobalClass": true,
+            "globalClass": [
+              "white-bg"
+            ],
+            "statement": "💡 Pro tip: Aim to get the Readability and Correctness (I/O) badges - your profile can go forward with most companies with those 2 badges. The rest can be improved upon later!"
+          }
+        ]
+      },
+      {
+        "isMadeUpOfSubSections": true,
+        "hasSectionHeading": true,
+        "sectionHeading": "Assumptions",
+        "statement": null,
+        "subSections": [
+          {
+            "isStatement": true,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": null,
+            "hasOrderedList": true,
+            "orderedList": [
+              "A student can add any number of programmes to the cart.",
+              "A student can add the same category of programme multiple times.",
+              "A student can choose to buy pro membership or not. ",
+              "If a student has  purchased a pro membership and has applied for a coupon, The coupon discount is applied after applying the pro membership discounts.",
+              "The B4G1 coupon gets auto applied when there are more than 4 programmes in the cart.",
+              "All the other coupons (DEAL_G20, DEAL_G5) need to be applied on the cart, if not no discount is provided.",
+              "If there are 4 or more programmes in the cart and the student has applied for a coupon other than B4G1, B4G1 coupon will be used, and the other coupon needs to be ignored.",
+              "If 2 or more coupons are applied, the higher value coupon needs to be considered (except in the case of 4 or more programmes; in that case B4G1 is auto applied).\n\teg: if a student applies the coupon DEAL_G20 and DEAL_G5 and the purchase value is greater than 10,000, then DEAL_G20 needs to be considered.\n\teg: if a student applies the coupon DEAL_G20 and DEAL_G5 and the purchase value is greater than 10,000, then DEAL_G20 needs to be considered."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "sampleInputOutput": {
+    "usesExperimentalComponent": true,
+    "contentSections": [
+      {
+        "hasHeading": true,
+        "heading": "Input Commands & Format",
+        "subSections": [
+          {
+            "isStatement": true,
+            "statement": "Your program should take the purchase details as input.\n"
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "ADD_PROGRAMME"
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "<CATEGORY_1> <QUANTITY>"
+              }
+            ]
+          },
+          {
+            "isStatement": false,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": null,
+            "hasOrderedList": true,
+            "orderedList": [
+              "Adds the specified category and quantity of programme to the purchases"
+            ]
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "APPLY_COUPON"
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "<COUPON_NAME>"
+              }
+            ]
+          },
+          {
+            "isStatement": false,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": null,
+            "hasOrderedList": true,
+            "orderedList": [
+              "Applies the discount coupon to the total value of the purchases"
+            ]
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "ADD_PRO_MEMBERSHIP"
+              }
+            ]
+          },
+          {
+            "isStatement": false,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": null,
+            "hasOrderedList": true,
+            "orderedList": [
+              "Adds a pro membership along with other purchases. It applies a membership discount on each programme."
+            ]
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "PRINT_BILL"
+              }
+            ]
+          },
+          {
+            "isStatement": false,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": null,
+            "hasOrderedList": true,
+            "orderedList": [
+              "Prints the programme purchase details."
+            ]
+          }
+        ]
+      },
+      {
+        "hasHeading": true,
+        "heading": "Output Commands & Format",
+        "subSections": [
+          {
+            "isStatement": true,
+            "statement": "Your program should print the bill details.\n"
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "SUB_TOTAL"
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "<AMOUNT>"
+              }
+            ]
+          },
+          {
+            "isStatement": false,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": null,
+            "hasOrderedList": true,
+            "orderedList": [
+              "This includes all the items purchased (programmes and pro membership)",
+              "Print the cost of all the programmes purchased, after applying a pro membership discount (if applicable)."
+            ]
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "COUPON_DISCOUNT"
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "<COUPON_NAME> <AMOUNT>"
+              }
+            ]
+          },
+          {
+            "isStatement": false,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": null,
+            "hasOrderedList": true,
+            "orderedList": [
+              "Print the applied coupon and the discounted amount",
+              "If the coupon is not applicable, Print “DISCOUNT NONE 0"
+            ]
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "TOTAL_PRO_DISCOUNT"
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "<AMOUNT>"
+              }
+            ]
+          },
+          {
+            "isStatement": false,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": null,
+            "hasOrderedList": true,
+            "orderedList": [
+              "Print the total amount discounted through pro membership."
+            ]
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "PRO_MEMBERSHIP_FEE"
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "<AMOUNT>"
+              }
+            ]
+          },
+          {
+            "isStatement": false,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": null,
+            "hasOrderedList": true,
+            "orderedList": [
+              "Print the pro membership fee."
+            ]
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "ENROLLMENT_FEE"
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "<AMOUNT>"
+              }
+            ]
+          },
+          {
+            "isStatement": false,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": null,
+            "hasOrderedList": true,
+            "orderedList": [
+              "Print the enrollment fee."
+            ]
+          },
+          {
+            "hasHeading": false,
+            "isArrayOfWords": true,
+            "hasGlobalClass": true,
+            "globalClass": [],
+            "words": [
+              {
+                "wordClass": [
+                  "bold-text"
+                ],
+                "word": "TOTAL"
+              },
+              {
+                "wordClass": [
+                  ""
+                ],
+                "word": "<AMOUNT>"
+              }
+            ]
+          },
+          {
+            "isStatement": false,
+            "hasHeading": false,
+            "hasSubsectionHeading": false,
+            "statement": null,
+            "hasOrderedList": true,
+            "orderedList": [
+              "Print the total value of the shopping cart after discount is applied."
+            ]
+          }
+        ]
+      },
+      {
+        "hasHeading": true,
+        "heading": "Sample Input/Output 1",
+        "subSections": [
+          {
+            "isTable": true,
+            "tableData": [
+              {
+                "isHeaderRow": true,
+                "data": {
+                  "input": "INPUT",
+                  "output": "OUTPUT"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "input": [
+                    ""
+                  ],
+                  "output": [
+                    ""
+                  ]
+                },
+                "usesCustomData": true,
+                "data": {
+                  "input": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ADD_PROGRAMME"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "CERTIFICATION 1\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ADD_PROGRAMME"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "DEGREE 1 \n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ADD_PROGRAMME"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "DIPLOMA 2\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "APPLY_COUPON"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "DEAL_G20\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "PRINT_BILL"
+                    }
+                  ],
+                  "output": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "SUB_TOTAL"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "13000.00\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "COUPON_DISCOUNT"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "B4G1 2500.00\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "TOTAL_PRO_DISCOUNT"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "0.00\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "PRO_MEMBERSHIP_FEE"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "0.00\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ENROLLMENT_FEE"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "0.00\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "TOTAL"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "10500.00"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "isImage": true,
+            "imageClasses": [
+              "three-fourth-width",
+              "center-align"
+            ],
+            "imageSource": "https://geektrust.sgp1.cdn.digitaloceanspaces.com/assets/v2/problems/geekdemy/io1-explanation.webp"
+          }
+        ]
+      },
+      {
+        "hasHeading": true,
+        "heading": "Sample Input/Output 2",
+        "subSections": [
+          {
+            "isTable": true,
+            "tableData": [
+              {
+                "isHeaderRow": true,
+                "data": {
+                  "input": "INPUT",
+                  "output": "OUTPUT"
+                }
+              },
+              {
+                "isDataRow": true,
+                "extraClasses": {
+                  "input": [
+                    ""
+                  ],
+                  "output": [
+                    ""
+                  ]
+                },
+                "usesCustomData": true,
+                "data": {
+                  "input": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ADD_PROGRAMME"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "DEGREE 1 \n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ADD_PROGRAMME"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "DIPLOMA 2\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "APPLY_COUPON"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "DEAL_G20\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "APPLY_COUPON"
+                    },
+                    {
+                      "wordClass": [],
+                      "word": "DEAL_G5\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "PRINT_BILL"
+                    }
+                  ],
+                  "output": [
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "SUB_TOTAL"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "10000.00\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "COUPON_DISCOUNT"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "DEAL_G20 2000.00\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "TOTAL_PRO_DISCOUNT"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "0.00\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "PRO_MEMBERSHIP_FEE"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "0.00\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "ENROLLMENT_FEE"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "0.00\n"
+                    },
+                    {
+                      "wordClass": [
+                        "bold-text"
+                      ],
+                      "word": "TOTAL"
+                    },
+                    {
+                      "wordClass": [
+                        ""
+                      ],
+                      "word": "8000.00"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

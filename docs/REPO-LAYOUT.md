@@ -4,9 +4,12 @@
 
 | Path | Role |
 |------|------|
-| [`README.md`](../README.md) | Landing page: stats, trophies, links, quick navigation |
-| [`PORTFOLIO.md`](../PORTFOLIO.md) | Personal portfolio hub (submissions, badges, GitHub profile tips) |
-| [`problems/README.md`](../problems/README.md) | One place to read **what each problem asks** (definitions index) |
+| [`README.md`](../README.md) | Landing page: links, sync instructions, challenge table |
+| [`package.json`](../package.json) | Root-only script: `npm run sync:geektrust` |
+| [`scripts/sync-geektrust-data.mjs`](../scripts/sync-geektrust-data.mjs) | Fetches live Geektrust bundle → [`data/geektrust/`](../data/geektrust/) |
+| [`data/geektrust/`](../data/geektrust/) | **Synced** catalog + problem JSON + optional share OG summary |
+| [`PORTFOLIO.md`](../PORTFOLIO.md) | Where synced files are described + portfolio links |
+| [`problems/README.md`](../problems/README.md) | Index of repo problems → `data/geektrust/problems/*.json` |
 | `metro-card/` | **Submitted** Metro Card solution (Node) |
 | `power-of-g-man/` | Power of G-Man — scaffold / work in progress |
 | `geekdemy-node/` | Geekdemy — scaffold / work in progress |
