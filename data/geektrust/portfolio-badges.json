@@ -1,0 +1,49 @@
+{
+  "source": "Geektrust UI — Code Portfolio → Metro Card → View report (read from logged-in browser)",
+  "capturedAt": "2026-03-25",
+  "challenge": {
+    "name": "Metro Card",
+    "kind": "Backend coding challenge",
+    "language": "Node.js",
+    "languageVersion": "16.10.0",
+    "buildTool": "npm"
+  },
+  "submissionDate": "2025-06-09",
+  "geektrustScore": 95.8,
+  "badgeSummary": "Congratulations, you have earned 5 badges",
+  "badges": {
+    "basic": [
+      {
+        "name": "Build",
+        "tier": "BASIC"
+      }
+    ],
+    "intermediate": [
+      {
+        "name": "Tests",
+        "tier": "INTERMEDIATE"
+      },
+      {
+        "name": "Correctness",
+        "tier": "INTERMEDIATE"
+      }
+    ],
+    "advanced": [
+      {
+        "name": "Readability",
+        "tier": "ADVANCED"
+      },
+      {
+        "name": "Maintainability",
+        "tier": "ADVANCED"
+      }
+    ]
+  },
+  "badgeNamesFlat": [
+    "Build",
+    "Tests",
+    "Correctness",
+    "Readability",
+    "Maintainability"
+  ]
+}

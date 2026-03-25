@@ -8,6 +8,7 @@ Files here are **generated** from live Geektrust web assets (not hand-written).
 | [`catalog.json`](catalog.json) | All `{ slug, problemId }` pairs extracted from that bundle (24 coding problems at last sync) |
 | [`problems/*.json`](problems/) | Full problem payloads for this repo’s slugs (metro-card, power-of-g-man, geekdemy, tame-of-thrones) where the bundle embeds them |
 | [`share-summary.json`](share-summary.json) | **Optional.** Open Graph tags from a **public** badge share URL (`/api/share/badges/<id>`) — membership / badge blurb |
+| [`portfolio-badges.json`](portfolio-badges.json) | **Manual refresh.** Badge names, tiers, score, and dates copied from the logged-in [code portfolio](https://www.geektrust.com/candidates/coding/code-portfolio) report (not produced by `sync:geektrust`) |
 
 ## Refresh
 

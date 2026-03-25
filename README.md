@@ -2,10 +2,10 @@
 
 [![Node.js](https://img.shields.io/badge/node.js-12%2B-339933?logo=nodedotjs&logoColor=white)](https://nodejs.org/)
 [![Geektrust GOLD](https://img.shields.io/badge/Geektrust-GOLD%20membership-ffd700?style=flat)](https://www.geektrust.com/)
-[![Metro Card](https://img.shields.io/badge/Metro%20Card-5%20badges-22c55e?style=flat)](PORTFOLIO.md)
+[![Metro Card score](https://img.shields.io/badge/Metro%20Card-95.8%20score-22c55e?style=flat)](data/geektrust/portfolio-badges.json)
+[![Badges](https://img.shields.io/badge/badges-5%20earned-blue?style=flat)](data/geektrust/portfolio-badges.json)
 
-Public **Geektrust** work with **problem data pulled from their live site** into [`data/geektrust/`](data/geektrust/) (see [`sync-meta.json`](data/geektrust/sync-meta.json) for last run).  
-Membership / badge line above matches the **Open Graph** text from Geektrust’s public [badge share](https://www.geektrust.com/api/share/badges/1644409049) page — refresh via `npm run sync:geektrust` (see below).
+Public **Geektrust** work. **Problem specs** are synced from their site bundle (`npm run sync:geektrust`). **Badges & score** for Metro Card are captured from the logged-in [code portfolio](https://www.geektrust.com/candidates/coding/code-portfolio) / report UI — see [`data/geektrust/portfolio-badges.json`](data/geektrust/portfolio-badges.json) (refresh that file when you earn new badges).
 
 | | |
 |---:|---|

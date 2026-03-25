@@ -1,5 +1,19 @@
 # Geektrust portfolio — [Rupali59](https://github.com/Rupali59)
 
+## Badges & score (from [Code Portfolio](https://www.geektrust.com/candidates/coding/code-portfolio) report)
+
+Structured copy: [`data/geektrust/portfolio-badges.json`](data/geektrust/portfolio-badges.json)
+
+| | |
+|--:|--|
+| **Challenge** | Metro Card (backend) |
+| **Stack** | Node.js **16.10.0** · **npm** |
+| **Submission** | **2025-06-09** |
+| **Geektrust score** | **95.8** |
+| **Badges (5)** | **Build** (basic) · **Tests**, **Correctness** (intermediate) · **Readability**, **Maintainability** (advanced) |
+
+---
+
 ## Data from Geektrust (automated)
 
 | Asset | Path |
@@ -23,7 +37,7 @@ The **share summary** is scraped from Geektrust’s public [`/api/share/badges/<
 
 Exact text updates when you re-run sync with your share id.
 
-**Numeric code-quality scores** (e.g. 95.8) are **not** exposed on that public page; for those, use your logged-in Geektrust dashboard.
+**Numeric code-quality scores** are **not** on the public share page; they appear on the logged-in report (also stored in [`portfolio-badges.json`](data/geektrust/portfolio-badges.json) when you refresh that file from the UI).
 
 ---
 

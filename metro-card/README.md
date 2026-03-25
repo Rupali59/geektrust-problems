@@ -8,9 +8,10 @@
 
 ## Submission highlights (from Geektrust public share page)
 
-Public Open Graph text is synced to [`../data/geektrust/share-summary.json`](../data/geektrust/share-summary.json) (e.g. **GOLD** membership, **5 badges**, Metro Card). **Numeric scores** are only on your logged-in dashboard — not in that public endpoint.
+**Badges & score** (from your Geektrust report UI): [`../data/geektrust/portfolio-badges.json`](../data/geektrust/portfolio-badges.json) — **95.8**, **Build**, **Tests**, **Correctness**, **Readability**, **Maintainability**.  
+Public **OG** blurb (GOLD, etc.): [`../data/geektrust/share-summary.json`](../data/geektrust/share-summary.json).
 
-Feedback from evaluation (when you last submitted) may mention things like **magic numbers** in `commands/command_parser.js`; see your Geektrust results for the exact rubric.
+Evaluation may also mention **magic numbers** in `commands/command_parser.js`; see the live report for full rubric text.
 
 ## Solution layout (this folder)
 
