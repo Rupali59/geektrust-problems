@@ -1,0 +1,21 @@
+{
+    "name": "geektrust",
+    "version": "1.0.0",
+    "description": "https://www.geektrust.com/coding/detailed/metro-card",
+    "main": "geektrust.js",
+    "scripts": {
+        "start": "node geektrust.js",
+        "test": "mocha --recursive"
+    },
+    "author": "geektrust",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/node": "16.10.0",
+        "chai": "4.3.6",
+        "copyfiles": "2.4.1",
+        "mocha": "9.2.2"
+    },
+    "engines": {
+        "node": ">=16.10.0"
+    }
+}
